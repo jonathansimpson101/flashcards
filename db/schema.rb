@@ -15,6 +15,41 @@ ActiveRecord::Schema.define(version: 2021_03_01_160453) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cards", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "question"
+    t.string "attempt"
+    t.string "answer"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.bigint "deck_id", null: false
+    t.index ["deck_id"], name: "index_categories_on_deck_id"
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "card_id", null: false
+    t.bigint "deck_id", null: false
+    t.index ["card_id"], name: "index_topics_on_card_id"
+    t.index ["deck_id"], name: "index_topics_on_deck_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -29,4 +64,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_160453) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "categories", "decks"
+  add_foreign_key "topics", "cards"
+  add_foreign_key "topics", "decks"
 end
