@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: "pages#dashboard"
   resources :decks do
     resources :cards, only: [:new, :create, :show]
-  end
-  resources :decks [] do
     member do
       get :results
     end
