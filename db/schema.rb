@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_160453) do
+ActiveRecord::Schema.define(version: 2021_03_01_164548) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +40,11 @@ ActiveRecord::Schema.define(version: 2021_03_01_160453) do
   create_table "scores", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "deck_id", null: false
+    t.integer "total"
+    t.index ["deck_id"], name: "index_scores_on_deck_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -65,6 +71,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_160453) do
   end
 
   add_foreign_key "categories", "decks"
+  add_foreign_key "scores", "decks"
+  add_foreign_key "scores", "users"
   add_foreign_key "topics", "cards"
   add_foreign_key "topics", "decks"
 end
