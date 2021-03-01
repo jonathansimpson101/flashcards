@@ -1,0 +1,20 @@
+<!-- create new deck button -->
+<div class="container">
+  <%= link_to "Create new Deck", new_deck_path, class:"btn btn-success", id:"create-new-deck-button" %>
+</div>
+
+<!-- Standard container to control width -->
+<div class="container">
+  <!--the div containing both the deck list on the left and the recently played div -->
+  <div id="deck-list-and-recently-played-container">
+    <div id="deck-list-container">
+      <%= render 'dashboard-deck-list' %>
+    </div>
+    <div id="recently-played-container">
+      <%= render 'recently-played-cards' %>
+    </div>
+  </div>
+
+  <div id="daily-usage">
+  </div>
+</div>
