@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  belongs_to :deck
+  has_many :decks
   validates :name, presence: true, uniqueness: true
 end
