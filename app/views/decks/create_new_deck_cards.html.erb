@@ -9,8 +9,8 @@
 
   <div class="new-card">
   	<%= simple_form_for [@deck, @card] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
+      <%= f.input :question %>
+      <%= f.input :answer %>
       <%= f.submit "Add Card", class: "btn" %>
     <% end %>
   </div>

@@ -20,6 +20,8 @@ class DecksController < ApplicationController
 
   def create_new_deck_cards
     @deck = Deck.find(params[:id])
+    @card = Card.new
+    @card.user = current_user
   end
 
   def edit
