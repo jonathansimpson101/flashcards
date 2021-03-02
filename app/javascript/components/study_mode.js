@@ -2,12 +2,20 @@ const card = document.getElementById('card');
 const attempt = document.querySelector('.attempt-side');
 const answer = document.querySelector('.answer-side');
 const flipButton = document.getElementById('flipButton');
+const cardAttempt = document.querySelector('.card-attempt');
 const correct = document.getElementById("correct");
 const incorrect = document.getElementById("incorrect");
-const guess = document.getElementById('user_attempt');
-const cardAttempt = document.querySelector('.card-attempt');
 
-const displayAttempt = () => {
+const testPrint = () => {
+  console.log('test');
+};
+
+const scoreIncrement = () => {
+  correct.addEventListener("click", (testPrint));
+  // let incor = incorrect.addEventListener("click", (testPrint));
+};
+
+const displayAttempt = (guess) => {
   cardAttempt.innerText = guess.value
 };
 
@@ -23,14 +31,14 @@ const toggleVisible = () => {
 
 const flipCard = () => {
   card.classList.toggle("flipCard");
+  let guess = document.querySelector('attempt_1');
   toggleVisible();
-  displayAttempt();
+  debugger
+  displayAttempt(guess);
 };
 
 const bindFlip = () => {
   flipButton.addEventListener("click", (flipCard));
 };
-// correct.addEventListener("click", (console.log("+1")));
-// incorrect.addEventListener("click", (console.log("-1")));
 
-export { bindFlip }
+export { bindFlip, scoreIncrement }

@@ -20,7 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { bindFlip } from '../components/study_mode';
+import { bindFlip, scoreIncrement } from '../components/study_mode';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -29,4 +29,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   bindFlip();
+  scoreIncrement();
 });
