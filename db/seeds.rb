@@ -19,9 +19,6 @@ puts "Seeding Categories"
 front_end = Category.create!(name: "Front End")
 back_end = Category.create!(name: "Back End")
 
-
-
-
 # Seeding decks
 puts "Seeding decks"
 html = Deck.new(name:"HTML", category_id:front_end.id, user_id:users.sample.id)

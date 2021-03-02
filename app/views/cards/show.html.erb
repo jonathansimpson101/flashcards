@@ -4,31 +4,38 @@
 
   <span class="counter">
     <div class="card-total">
-      <h6>No. of Cards: <%=  %></h6>
+      <h6>No. of Cards: <%= @deck.cards.count %></h6>
     </div>
     <div class="card-completed"></div>
   </span>
 
-
+  <% @deck.cards.each do |card| %>
   <div class="card" id="attempt-side">
-    <div class="card-question"></div>
-    <div class="card-attempt"></div>
+    <div class="card-question">
+      <h3><%= card.question %></h3>
+    </div>
+    <%= simple_form_for "#{card}" do |f| %>
+      <%= f.input :attempt, id: "user_attempt" %>
+      <%= f.submit "Flip", class: "btn" %>
+    <% end %>
   </div>
-  <span class="button">
-    Flip
-  </span>
-
-
 
   <div class="card" id="answer-side">
-    <div class="card-question"></div>
-    <div class="card-attempt"></div>
-    <div class="card-answer"></div>
+    <div class="card-question">
+      <%= card.question %>
+    </div>
+    <div class="card-attempt">
+      <%=  %>
+    </div>
+    <div class="card-answer">
+      card.answer
+    </div>
   </div>
   <span class="button-correct">
     <i class="far fa-check-circle"></i>
     <i class="fas fa-times"></i>
   </span>
+  <% end %>
 </div>
 
 <!-- # variable answered true/false
