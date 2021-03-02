@@ -1,0 +1,42 @@
+#overivew-header{
+  padding:0px;
+  margin-top: 20px;
+}
+
+.card-overview{
+  background-color: yellow;
+  border-radius: 5px;
+  color: blue;
+  border: 2px solid black;
+  margin-top: 5px;
+}
+
+.card-overview:hover{
+  background-color: green;
+}
+
+
+#back-to-dash-button{
+  margin-top: 10px;
+}
+
+#cards-container{
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.buttons-container{
+  display:flex;
+  justify-content: space-between;
+  background-color: green;
+  padding:10px;
+  border-radius:5px;
+  margin-bottom: 10px;
+}
+
+.buttons-container > a{
+ background-color: red;
+ border-radius: 5px;
+ border: 2px solid green;
+}

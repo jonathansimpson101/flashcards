@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 id="overivew-header"><%= @deck.name %></h1>
+  <h5>There are <%= @deck.cards.count %> cards in this deck</h3>
+
+  <div class="buttons-container">
+    <a href="">Reveal All</a>
+    <%= link_to "Edit this deck", edit_deck_path %>
+    <%= link_to "Study this deck", card_path %>
+  </div>
+
+  <h3>Cards:</h3>
+  <div id="cards-container">
+    <% @deck_cards.each do |card| %>
+      <div class="card-overview">
+         <%= card.question %>
+      </div>
+    <% end %>
+  </div>
+
+
+<%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", id:"back-to-dash-button"%>
+
+</div>

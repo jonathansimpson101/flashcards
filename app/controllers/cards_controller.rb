@@ -14,6 +14,13 @@ class CardsController < ApplicationController
     end
   end
 
+  def show
+    @deck = Deck.find(params[:deck_id])
+    @card = Card.find(params[:id])
+    @card_attempt = false
+    @card.attempt = ""
+  end
+
   def edit
     @card = Card.find(params[:id])
   end
