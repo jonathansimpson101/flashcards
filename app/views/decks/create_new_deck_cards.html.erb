@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="deck-name">
+  	<h2><%= @deck.name %></h2>
+    <p><%= @deck.category.name %></p>
+  </div>
+  <div class="deck-cards">
+  		
+  </div>
+
+  <div class="new-card">
+  	<%= simple_form_for [@deck, @card] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Add Card", class: "btn" %>
+    <% end %>
+  </div>
+</div>

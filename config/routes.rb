@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :cards, only: [:new, :create, :show]
     member do
       get :results
+      get :create_new_deck_cards
     end
   end
   resources :cards, only: [:edit, :update, :destroy]
