@@ -9,7 +9,6 @@ class CardsController < ApplicationController
     if @card.valid?
       @card.save
       Topic.create(deck_id: params[:deck_id], card_id: @card.id)
-      redirect_to card_path(@card)
     else
       render 'new'
     end
