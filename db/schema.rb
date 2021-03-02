@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2021_03_01_171658) do
   create_table "decks", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.bigint "category_id", null: false
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.string "name"
     t.index ["category_id"], name: "index_decks_on_category_id"
     t.index ["user_id"], name: "index_decks_on_user_id"
   end

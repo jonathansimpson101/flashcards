@@ -1,12 +1,4 @@
 class CardsController < ApplicationController
-
-  # def show
-  #   @deck = Deck.find(params[:deck_id])
-  #   @card = Card.find(params[:id])
-  #   @card_attempt = false
-  #   raise
-  # end
-
   def new
     @card = Card.new
   end
@@ -21,6 +13,13 @@ class CardsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @deck = Deck.find(params[:deck_id])
+    @card = Card.find(params[:id])
+    @card_attempt = false
+    @card.attempt = ""
   end
 
   def edit
