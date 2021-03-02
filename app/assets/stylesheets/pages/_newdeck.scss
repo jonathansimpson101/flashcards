@@ -1,11 +1,23 @@
-.deck-name {
-
+.new-deck-name body {
+  text-align: center;
 }
 
-.deck-cards {
-
+.new-deck-container {
+	width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.new-card {
+.new-deck-cards {
+  width: 10px;
+}
+
+.new-deck-card {
+  width: 10px;
+}
+
+.new-deck-searchbar {
 
 }
