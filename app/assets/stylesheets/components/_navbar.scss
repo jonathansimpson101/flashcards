@@ -1,8 +1,20 @@
-.navbar {
+.navbar-set {
   justify-content: space-between;
   background: white;
+  display: inline-flex;
+  width: 100%;
+  padding: 15px 25px 0 25px;
 }
 
-.navbar .navbar-logo img {
-  width: 40px;
+.navbar-nav-1 {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
+.navbar-set .navbar-logo img {
+  width: 50px;
+  padding-top: 10px;
+}
+
