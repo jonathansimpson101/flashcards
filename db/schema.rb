@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_153310) do
+ActiveRecord::Schema.define(version: 2021_03_02_160127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "card_scores", force: :cascade do |t|
+    t.boolean "correct"
+    t.bigint "scores_id", null: false
+    t.bigint "cards_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cards_id"], name: "index_card_scores_on_cards_id"
+    t.index ["scores_id"], name: "index_card_scores_on_scores_id"
+  end
 
   create_table "cards", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -74,6 +84,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_153310) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "card_scores", "cards", column: "cards_id"
+  add_foreign_key "card_scores", "scores", column: "scores_id"
   add_foreign_key "cards", "users"
   add_foreign_key "decks", "categories"
   add_foreign_key "decks", "users"
