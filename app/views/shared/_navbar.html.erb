@@ -14,7 +14,7 @@
             <%= link_to "#{current_user.first_name}' Dashbaord", dashboard_path, class: "dropdown-item" %>
             <%= link_to "Search for a Deck", decks_path, class: "dropdown-item" %>
             <%= link_to "Add a New Deck", new_deck_path, class: "dropdown-item" %>
-            <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Sign Out", destroy_user_session_path(@user), class: "dropdown-item" %>
           </div>
         </li>
       </ul>

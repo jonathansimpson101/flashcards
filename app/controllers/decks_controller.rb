@@ -10,7 +10,5 @@ class DecksController < ApplicationController
 
   def edit
   end
-
-
-
+  
 end
