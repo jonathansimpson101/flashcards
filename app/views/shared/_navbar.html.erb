@@ -1,13 +1,23 @@
-<div class="navbar">
-  <div class="navbar-logo">
-    <%= link_to root_path do %>
-      <i class='fas fa-home' id='home'></i>
-    <% end %>
+ <% if !current_page?(root_path) %>
+   <div class="navbar-set">
+    <div class="navbar-logo">
+      <%= link_to root_path do %>
+        <%= image_tag "logo"%>
+      <% end %>
+    </div>
 
-    <% if !user_signed_in? %>
-      <%= link_to "Login", new_user_session_path, class: "btn" %>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
-    <% end %>
-
+    <div class="collapse navbar-collapse-1" id="navbarSupportedContent">
+      <ul class="navbar-nav-1 mr-auto">
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "#{current_user.first_name}' Dashbaord", dashboard_path, class: "dropdown-item" %>
+            <%= link_to "Search for a Deck", decks_path, class: "dropdown-item" %>
+            <%= link_to "Add a New Deck", new_deck_path, class: "dropdown-item" %>
+            <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+<% end %>
