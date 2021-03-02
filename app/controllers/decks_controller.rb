@@ -30,6 +30,7 @@ class DecksController < ApplicationController
   end
 
   def results
+    @deck = Deck.find(params[:id])
   end
 
   private
