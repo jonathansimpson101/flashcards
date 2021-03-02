@@ -6,17 +6,25 @@ const cardAttempt = document.querySelector('.card-attempt');
 const correct = document.getElementById("correct");
 const incorrect = document.getElementById("incorrect");
 
-const testPrint = () => {
-  console.log('test');
+const userCorrect = () => {
+  showNextCard();
 };
+
+const userIncorrect = () => {
+  showNextCard();
+};
+
 
 const scoreIncrement = () => {
-  correct.addEventListener("click", (testPrint));
-  // let incor = incorrect.addEventListener("click", (testPrint));
+  correct.addEventListener("click", (userCorrect));
+  incorrect.addEventListener("click", (userIncorrect));
 };
 
-const displayAttempt = (guess) => {
-  cardAttempt.innerText = guess.value
+const displayAttempt = () => {
+  let index = 0
+  const guess = document.querySelector(`.attempt_${index}`);
+  cardAttempt.innerText = guess.value;
+  index ++;
 };
 
 const showNextCard = () => {
@@ -31,10 +39,8 @@ const toggleVisible = () => {
 
 const flipCard = () => {
   card.classList.toggle("flipCard");
-  let guess = document.querySelector('attempt_1');
   toggleVisible();
-  debugger
-  displayAttempt(guess);
+  displayAttempt();
 };
 
 const bindFlip = () => {

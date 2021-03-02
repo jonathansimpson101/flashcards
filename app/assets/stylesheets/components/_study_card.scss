@@ -8,10 +8,11 @@
   justify-content: space-between;
   position: relative;
   transform-style: preserve-3d;
-  transition: all 0.8s ease;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px lightgrey;
   .card-question, .card-attempt, .card-answer {
-    box-shadow: 1px 1px 2px lightgrey;
     padding: 10px;
+    box-shadow: 1px 1px 2px lightgrey;
   }
 }
 
@@ -19,7 +20,7 @@
   width: 650px;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 .button-correct {

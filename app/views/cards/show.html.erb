@@ -1,5 +1,5 @@
 <div class="container">
-  <button class="finish-now"></button>
+  <%#= link_to "Finish", results_deck_path(@deck) , class: "btn btn-sucsess" %>
 
 
   <span class="counter">
@@ -7,7 +7,7 @@
       <h6>No. of Cards: <%= @deck.cards.count %></h6>
     </div>
     <div class="card-completed">
-      <h6>No. of Cards Completed: <%= @deck.cards.count %> </h6>
+      <h6 class="attempt_score">No. of Correct Cards: <%= @deck.cards.count %></h6>
     </div>
   </span>
 
@@ -18,7 +18,7 @@
         <h3><%= card.question %></h3>
       </div>
       <%= simple_form_for "#{card}", remote: true do |f| %>
-        <%= f.input :attempt, id:"user_attempt", input_html: {class: "attempt_#{card.id}"} %>
+        <%= f.input :attempt, id:"user_attempt", input_html: {class: "attempt_#{index}"} %>
       <% end %>
       <button id="flipButton" class="btn"><i class="fas fa-redo-alt"></i></button>
     </div>
