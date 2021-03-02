@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_160127) do
     t.string "question"
     t.string "attempt"
     t.string "answer"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -84,6 +86,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_160127) do
 
   add_foreign_key "card_scores", "cards", column: "cards_id"
   add_foreign_key "card_scores", "scores", column: "scores_id"
+  add_foreign_key "cards", "users"
   add_foreign_key "decks", "categories"
   add_foreign_key "decks", "users"
   add_foreign_key "scores", "decks"

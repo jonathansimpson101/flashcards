@@ -1,0 +1,33 @@
+<div class="text-center">
+   <h2><%= @deck.name %></h2>
+   <p><%= @deck.category.name %></p>
+</div>
+
+<div class="container">
+  <div class="row">
+  <div class="col-sm-4">
+    <h3>Cards:</h3>
+    <div id="cards-container">
+      <% @deck_cards.each do |card| %>
+        <div class="card-overview">
+          <%= card.question %>
+          <br>
+          <%= card.answer %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <%= simple_form_for [@deck, @card] do |f| %>
+      <%= f.input :question %>
+      <%= f.input :answer %>
+      <%= f.submit "Add Card", class: "btn btn-success" %>
+    <% end %>
+  </div>
+
+  <div class="col-sm-4">
+    <h5>Keyword searchbar</h5>
+  </div>
+  </div>
+</div>
