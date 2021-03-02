@@ -4,6 +4,10 @@ class DecksController < ApplicationController
     @deck_cards = @deck.cards
   end
 
+
+  def index
+    @decks = Deck.all
+
   def new
     @deck = Deck.new
   end

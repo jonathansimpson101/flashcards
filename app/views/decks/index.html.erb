@@ -1,2 +1,23 @@
-<h1>Deck Overview</h1>
+<div class="container">
 
+  <h3 id="deck-search-header">Deck Search</h3>
+
+    <div class="search-bar">
+    <%= form_tag decks_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search through public decks..."%>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <% @decks.each do |deck| %>
+    <div class="deck-container">
+      <h5><strong><%= deck.name %></strong> (<%= deck.cards.count %> cards)</h5>
+      <h5><strong>Made by: </strong><%= deck.user.first_name %></h5>
+
+    </div>
+  <% end %>
+
+</div>
