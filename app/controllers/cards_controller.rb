@@ -1,18 +1,15 @@
 class CardsController < ApplicationController
-  def index
-    @cards = Card.all
-  end
-
   def new
     @card = Card.new
   end
 
   def create
-    @card = card.new(card_params)
+    @card = Card.new(card_params)
     @card.user = current_user
     if @card.valid?
       @card.save
-      redirect_to deck_path
+      Topic.create(deck_id: params[:deck_id], card_id: @card.id)
+      redirect_to card_path(@card)
     else
       render 'new'
     end
@@ -39,6 +36,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:question, :answer, :topic)
+    params.require(:card).permit(:question, :answer)
   end
 end
