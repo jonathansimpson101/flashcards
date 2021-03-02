@@ -21,6 +21,7 @@ class DecksController < ApplicationController
   def create_new_deck_cards
     @deck = Deck.find(params[:id])
     @card = Card.new
+    @deck_cards = @deck.cards
   end
 
   def edit
