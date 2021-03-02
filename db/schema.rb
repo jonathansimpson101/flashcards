@@ -31,21 +31,23 @@ ActiveRecord::Schema.define(version: 2021_03_02_160127) do
     t.string "question"
     t.string "attempt"
     t.string "answer"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.bigint "deck_id", null: false
-    t.index ["deck_id"], name: "index_categories_on_deck_id"
   end
 
   create_table "decks", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.string "name"
+    t.index ["category_id"], name: "index_decks_on_category_id"
     t.index ["user_id"], name: "index_decks_on_user_id"
   end
 
@@ -84,7 +86,8 @@ ActiveRecord::Schema.define(version: 2021_03_02_160127) do
 
   add_foreign_key "card_scores", "cards", column: "cards_id"
   add_foreign_key "card_scores", "scores", column: "scores_id"
-  add_foreign_key "categories", "decks"
+  add_foreign_key "cards", "users"
+  add_foreign_key "decks", "categories"
   add_foreign_key "decks", "users"
   add_foreign_key "scores", "decks"
   add_foreign_key "scores", "users"
