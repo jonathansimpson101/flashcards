@@ -1,40 +1,45 @@
 <div class="container">
-  <button class="finish-now"></button>
+  <%#= link_to "Finish", results_deck_path(@deck) , class: "btn btn-sucsess" %>
 
 
   <span class="counter">
     <div class="card-total">
       <h6>No. of Cards: <%= @deck.cards.count %></h6>
     </div>
-    <div class="card-completed"></div>
+    <div class="card-completed">
+      <h6 class="attempt_score">No. of Correct Cards: <%= @deck.cards.count %></h6>
+    </div>
   </span>
 
-  <% @deck.cards.each do |card| %>
-  <div class="card" id="attempt-side">
-    <div class="card-question">
-      <h3><%= card.question %></h3>
+  <% @deck.cards.each_with_index do |card, index| %>
+  <div id="card<%=index%>" class="card-main <%= 'hideCard' unless index.zero? %>" >
+    <div class="attempt-side" id="attempt<%= index %>">
+      <div class="card-question">
+        <h3><%= card.question %></h3>
+      </div>
+      <%= simple_form_for "#{card}", remote: true do |f| %>
+        <%= f.input :attempt, id:"user_attempt", input_html: {class: "attempt_#{index}"} %>
+      <% end %>
+      <span class="button-correct">
+        <button class="btn flipButton" data-id="<%= index %>"><i class="fas fa-redo-alt"></i></button>
+      </span>
     </div>
-    <%= simple_form_for "#{card}" do |f| %>
-      <%= f.input :attempt, id: "user_attempt" %>
-      <%= f.submit "Flip", class: "btn" %>
-    <% end %>
-  </div>
 
-  <div class="card" id="answer-side">
-    <div class="card-question">
-      <%= card.question %>
-    </div>
-    <div class="card-attempt">
-      <%=  %>
-    </div>
-    <div class="card-answer">
-      card.answer
+    <div class="answer-side hideCard" id="answer<%= index %>">
+      <div class="card-question">
+        <p>Question:</p> <%= card.question %>
+      </div>
+      <div class="attempt card-attempt<%= index %>">
+      </div>
+      <div class="card-answer">
+        <p>Answer:</p> <%= card.answer %>
+      </div>
+      <span class="button-correct">
+        <i id="correct" data-id="<%= index %>" class="far fa-check-circle"></i>
+        <i id="incorrect" data-id="<%= index %>" class="fas fa-times"></i>
+      </span>
     </div>
   </div>
-  <span class="button-correct">
-    <i class="far fa-check-circle"></i>
-    <i class="fas fa-times"></i>
-  </span>
   <% end %>
 </div>
 
