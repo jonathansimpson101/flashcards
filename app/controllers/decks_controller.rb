@@ -5,7 +5,11 @@ class DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.all
+    if params[:query].present?
+      @decks = Deck.search_by_name(params[:query])
+    else
+      @decks = Deck.all
+    end
   end
 
   def new
@@ -28,18 +32,11 @@ class DecksController < ApplicationController
     @deck_cards = @deck.cards
   end
 
-  def new
-    @deck = Deck.new
-  end
-
   def create
     @deck = Deck.new(strong_params)
     @deck.user = current_user
     @deck.save
     redirect_to deck_path(@deck)
-  end
-
-  def index
   end
 
   def results

@@ -13,16 +13,75 @@
   padding-right: 20px;
   padding-left: 20px;
   transition-duration:0.3s;
+  width:70%;
 
 }
 
 .deck-container:hover{
-  background-color: white;
-  transform:scale(1.2,1.2);
-  border: 1px solid black;
 }
 
 .search-bar{
   margin-top:10px;
   margin-bottom:20px;
+}
+
+.study-now-container{
+border: 1px solid black;
+margin:10px;
+border-radius: 5px;
+display:flex;
+align-items: center;
+padding-left: 20px;
+padding-right: 20px;
+transition-duration:0.3s;
+width: 30%;
+justify-content: center;
+}
+
+.study-now-container:hover{
+  background-color: lightgrey;
+  transform: scale(1.1);
+}
+.line-container{
+  display:flex;
+}
+
+.results-container{
+  display:flex;
+  justify-content:center;
+}
+
+#deck-search-button{
+  margin-top:5px;
+  color:black;
+  border:black;
+  border-radius:5px;
+  background-color: lightgrey;
+  transition-duration: .5s;
+}
+
+#deck-search-button:hover{
+  transform:scale(1.1);
+  background-color: white;
+  border:1px solid black;
+}
+
+.study-now-container > a{
+  text-decoration: none;
+  color:black;
+}
+
+.back-to-dash-button{
+  padding: 5px;
+  margin-top: 10px;
+  display:inline-block;
+  transition-duration: .3s
+}
+
+.back-to-dash-button:hover{
+  text-decoration: none;
+  color:black;
+  transform: scale(1.1);
+  background-color: white;
+
 }
