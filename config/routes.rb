@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:edit, :update, :destroy]
+  resources :card_scores, only: [:create]
 end
