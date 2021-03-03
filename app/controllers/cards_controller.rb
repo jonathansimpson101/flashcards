@@ -38,6 +38,10 @@ class CardsController < ApplicationController
     redirect_to card_path
   end
 
+  def index
+    @cards = Card.all
+  end
+
   private
 
   def card_params
