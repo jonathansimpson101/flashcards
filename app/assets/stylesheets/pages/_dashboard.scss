@@ -6,9 +6,12 @@
 
 #deck-list-container{
   display:grid;
-  background-color: red;
+  background-color: lightgrey;
   border-radius:5px;
-  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 10px;
+  padding-left: 10px
 
 }
 
@@ -18,16 +21,44 @@
   grid-gap: 20px;
 }
 
+.deck-link{
+  display:inline-block;
+  text-decoration: none;
+  color:black;
+  transition: .2s;
+}
+
+.deck-link:hover{
+  text-decoration: none;
+  color:black;
+  transform: scale(1.4);
+}
+
 #daily-usage{
   margin-top: 20px;
-  background-color: green;
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding:20px;
 }
 
 .recently-played-card{
-  background-color: blue;
-  color:yellow;
+  background-color: white;
+  color:grey;
   border-radius: 10px;
   padding: 10px;
+  border: 2px solid white;
+  transition: .2s
+}
+
+.recently-played-card a{
+  text-decoration:none;
+  color:black;
+}
+
+.recently-played-card:hover{
+  text-decoration:none;
+  color:black;
+  border: 2px solid black;
 }
 
 .details-box{
@@ -43,4 +74,21 @@
 #create-new-deck-button{
   margin-top: 15px;
   border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  transition: .2s;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#create-new-deck-button:hover{
+  transform: scale(1.1);
+  background-color: darkgrey;
+  color:black;
+}
+
+.create-new-deck-container{
+  display:flex;
+  justify-content:center;
 }
