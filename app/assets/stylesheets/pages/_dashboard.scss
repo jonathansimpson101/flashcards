@@ -119,3 +119,24 @@
   text-align:center;
 
 }
+
+#index-every-card-on-db{
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  transition: .2s;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 50px;
+}
+
+#index-every-card-on-db:hover{
+  transform: scale(1.1);
+  background-color: darkgrey;
+  color:black;
+}
+
+
+
