@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 2021_03_03_110025) do
 
   create_table "card_scores", force: :cascade do |t|
     t.boolean "correct"
-    t.bigint "scores_id", null: false
-    t.bigint "cards_id", null: false
+    t.bigint "score_id", null: false
+    t.bigint "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cards_id"], name: "index_card_scores_on_cards_id"
-    t.index ["scores_id"], name: "index_card_scores_on_scores_id"
+    t.index ["card_id"], name: "index_card_scores_on_card_id"
+    t.index ["score_id"], name: "index_card_scores_on_score_id"
   end
 
   create_table "cards", force: :cascade do |t|
@@ -114,8 +114,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_110025) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "card_scores", "cards", column: "cards_id"
-  add_foreign_key "card_scores", "scores", column: "scores_id"
+  add_foreign_key "card_scores", "cards"
+  add_foreign_key "card_scores", "scores"
   add_foreign_key "cards", "users"
   add_foreign_key "decks", "categories"
   add_foreign_key "decks", "users"
