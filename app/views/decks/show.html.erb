@@ -1,8 +1,5 @@
 <div class="container">
-
-  <%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", id:"back-to-dash-button"%>
-
-  <h2 id="overivew-header"><%= @deck.name %></h2>
+  <h1 id="overivew-header"><%= @deck.name %></h1>
   <h5>There are <%= @deck.cards.count %> cards in this deck</h3>
 
   <div class="buttons-container">
@@ -15,10 +12,12 @@
   <div id="cards-container">
     <% @deck_cards.each do |card| %>
       <div class="card-overview">
-        <ul>
-         <p class="question"><%= card.question %></p>
-        </ul>
+         <%= card.question %>
       </div>
     <% end %>
   </div>
+
+
+<%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", id:"back-to-dash-button"%>
+
 </div>
