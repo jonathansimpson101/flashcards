@@ -8,9 +8,12 @@
 <div class="container">
   <!--the div containing both the deck list on the left and the recently played div -->
   <div id="deck-list-and-recently-played-container">
+    <% if @decks %>
     <div id="deck-list-container">
+      <h5 id="deck-list-header">Your decks:</h5>
       <%= render 'dashboard-deck-list' %>
     </div>
+    <% end %>
     <div id="recently-played-container">
       <%= render 'recently-played-cards' %>
     </div>
