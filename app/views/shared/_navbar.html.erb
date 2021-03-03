@@ -10,8 +10,8 @@
       <div class="collapse navbar-collapse-1" id="navbarSupportedContent">
         <ul class="navbar-nav-1 mr-auto">
           <li class="nav-item dropdown">
-            <% if @user.avatar.attached? %>
-              <%= cl_image_tag user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+            <% if current_user.avatar.attached? %>
+              <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
             <% else %>
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
