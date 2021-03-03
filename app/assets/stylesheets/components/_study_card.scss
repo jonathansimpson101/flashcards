@@ -1,8 +1,8 @@
-#card {
+.card-main {
   width: 650px;
-  height: 500px;
+  height: 600px;
   margin: 25px auto;
-  padding: 25px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -10,10 +10,16 @@
   transform-style: preserve-3d;
   transition: all 0.2s ease;
   box-shadow: 2px 2px 2px lightgrey;
-  .card-question, .card-attempt, .card-answer {
-    padding: 10px;
+  .card-question, .attempt, .card-answer {
+    padding: 30px;
     box-shadow: 1px 1px 2px lightgrey;
+    margin: 20px 15px;
   }
+}
+
+.form-group {
+  margin: 30px 15px;
+  box-shadow: 1px 1px 2px lightgrey;
 }
 
 .counter {
@@ -24,7 +30,11 @@
 }
 
 .button-correct {
-  margin: 0 auto;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 42px;
+  padding-top: 10px;
   i {
     margin: 0 30px;
     font-size: 36px;
@@ -33,6 +43,11 @@
 
 .answer-side {
   transform: rotateY(180deg);
+  position: absolute;;
+}
+
+.attempt-side {
+  position: absolute;
 }
 
 .flipCard {

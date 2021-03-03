@@ -1,50 +1,63 @@
-const card = document.getElementById('card');
-const attempt = document.querySelector('.attempt-side');
-const answer = document.querySelector('.answer-side');
-const flipButton = document.getElementById('flipButton');
-const cardAttempt = document.querySelector('.card-attempt');
-const correct = document.getElementById("correct");
-const incorrect = document.getElementById("incorrect");
+const flipButton = document.querySelectorAll('.flipButton');
+const correct = document.querySelectorAll("#correct");
+const incorrect = document.querySelectorAll("#incorrect");
 
-const userCorrect = () => {
-  showNextCard();
+// move onto next card
+const userCorrect = (event) => {
+  const card = document.getElementById(`card${event.currentTarget.dataset.id}`);
+  showNextCard(card);
 };
 
-const userIncorrect = () => {
-  showNextCard();
+// move onto next  card
+const userIncorrect = (event) => {
+  const card = document.getElementById(`card${event.currentTarget.dataset.id}`);
+  showNextCard(card);
 };
 
-
+// listen for click of tick or cross (will link to card_scores table in time)
 const scoreIncrement = () => {
-  correct.addEventListener("click", (userCorrect));
-  incorrect.addEventListener("click", (userIncorrect));
+  correct.forEach(correctButton => {
+    correctButton.addEventListener("click", (userCorrect));
+  });
+  incorrect.forEach(incorrectButton => {
+    incorrectButton.addEventListener("click", (userIncorrect));
+  });
 };
 
-const displayAttempt = () => {
-  let index = 0
-  const guess = document.querySelector(`.attempt_${index}`);
-  cardAttempt.innerText = guess.value;
-  index ++;
+// increment the form input value for your attempt
+const displayAttempt = (id) => {
+  const guess = document.querySelector(`.attempt_${id}`);
+  const cardAttempt = document.querySelector(`.card-attempt${id}`);
+  cardAttempt.innerText = `Your Answer:\n\n ${guess.value}`;
 };
 
-const showNextCard = () => {
+// hide current question/answer pair and dispaly next
+const showNextCard = (card) => {
+  card.nextElementSibling.classList.remove('flipCard');
   card.nextElementSibling.classList.remove('hideCard');
   card.classList.add('hideCard');
 };
 
-const toggleVisible = () => {
-  attempt.classList.toggle("hideCard");
-  answer.classList.toggle("hideCard");
+// toggle the visibility of a div question/answer
+const toggleVisible = (id) => {
+  document.getElementById(`attempt${id}`).classList.toggle("hideCard");
+  document.getElementById(`answer${id}`).classList.toggle("hideCard");
 };
 
-const flipCard = () => {
+// toggle css class to flip the card
+const flipCard = (event) => {
+  const id = event.currentTarget.dataset.id;
+  const card = document.getElementById(`card${id}`);
   card.classList.toggle("flipCard");
-  toggleVisible();
-  displayAttempt();
+  toggleVisible(id);
+  displayAttempt(id);
 };
 
+// listen for click of flip button
 const bindFlip = () => {
-  flipButton.addEventListener("click", (flipCard));
+  flipButton.forEach(button => {
+    button.addEventListener("click", (flipCard));
+  });
 };
 
 export { bindFlip, scoreIncrement }
