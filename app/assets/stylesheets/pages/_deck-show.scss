@@ -4,17 +4,15 @@
 }
 
 .card-overview{
-  background-color: white;
+  background-color: yellow;
   border-radius: 5px;
-  color: black;
+  color: blue;
   border: 2px solid black;
-  margin-top: 15px;
-  text-align: center;
-  transition: .3s;
+  margin-top: 5px;
 }
 
 .card-overview:hover{
-  transform: scale(1.1);
+  background-color: green;
 }
 
 
@@ -23,7 +21,7 @@
 }
 
 #cards-container{
-  background-color: lightgrey;
+  background-color: red;
   padding: 10px;
   border-radius: 10px;
 }
@@ -31,44 +29,14 @@
 .buttons-container{
   display:flex;
   justify-content: space-between;
-  background-color: lightgrey;
-  padding:20px;
+  background-color: green;
+  padding:10px;
   border-radius:5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .buttons-container > a{
-  text-decoration: none;
-  color:black;
-  border-radius: 5px;
-  border: 2px solid lightgrey;
-  transition: .2s;
+ background-color: red;
+ border-radius: 5px;
+ border: 2px solid green;
 }
-
-.buttons-container > a:hover{
-  transform: scale(1.1)
-}
-
-#back-to-dash-button{
-  background-color: lightgrey;
-  border: 1px solid black;
-  color:black;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.reveal{
-  display:show;
-}
-
-
-
-
-
-
-
-
-
-
-
-
