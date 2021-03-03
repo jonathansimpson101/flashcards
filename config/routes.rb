@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'decks/new'
-  get 'decks/edit'
-  get 'decks/index'
-  get 'decks/results'
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: "pages#dashboard"

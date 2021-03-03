@@ -5,8 +5,6 @@ ruby '2.6.6'
 
 # pg search
 gem 'pg_search','~> 2.3.0'
-# dotenv gem - cloudinary secret key file
-gem 'dotenv-rails', groups: [:development, :test]
 # cloudinary gem
 gem 'cloudinary', '~> 1.16.0'
 # faker gem
