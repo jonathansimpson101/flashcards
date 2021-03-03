@@ -1,7 +1,54 @@
-<div class="container">
-  <%= simple_form_for(@deck) do |f| %>
-    <%= f.input :name %>
-    <%= f.association :category %>
-    <%= f.submit %>
+
+<%= simple_form_for(@deck) do |f| %>
+  <%= f.input :name %>
+  <%= f.association :category %>
+  <%= f.association :cards , label_method: :question, value_method: :id %>
+  <%= f.simple_fields_for :cards do |card|%>
+    <button id="hidden_button" type="button">
+      Create new card
+    </button>
+    <div class="d-none hidden_form">
+      <%= card.input :question_1 %>
+      <%= card.input :answer_1 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_2 %>
+      <%= card.input :answer_2 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_3 %>
+      <%= card.input :answer_3 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_4 %>
+      <%= card.input :answer_4 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_5 %>
+      <%= card.input :answer_5 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_6 %>
+      <%= card.input :answer_6 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_7 %>
+      <%= card.input :answer_7 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_8 %>
+      <%= card.input :answer_8 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_9 %>
+      <%= card.input :answer_9 %>
+    </div>
+    <div class="d-none hidden_form">
+      <%= card.input :question_10 %>
+      <%= card.input :answer_10 %>
+    </div>
+
   <% end %>
-</div>
+<%= f.submit %>
+<% end %>
+
