@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     @decks = Deck.all
     @first_six_decks = Deck.first(6)
+    @user = current_user
   end
 end
