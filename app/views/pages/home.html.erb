@@ -2,7 +2,8 @@
   <div id="main-content">
     <h1>Flashcard</h1>
     <div  class="content">
-      <%= image_tag "logo.png", class:"logo" %>
+      <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1614767455/Landing-page%20background%20and%20logo/logo.png", :type => "fetch", class:"logo") %>
+
       <h3>Start your revision Flashcard, the modern way to study using flashcards. </h3>
       <div class="links">
         <% if user_signed_in? %>
