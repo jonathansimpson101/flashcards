@@ -5,11 +5,11 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-    @card.user = current_user
-    if @card.valid?
-      @card.save
-      Topic.create(deck_id: params[:deck_id], card_id: @card.id)
-      redirect_to card_path(@card)
+    @card.user_id = current_user.id
+    @deck = Deck.find(params[:deck_id])
+    if @card.save
+      Topic.create(deck_id: @deck.id, card_id: @card.id)
+      redirect_to create_new_deck_cards_deck_path(@deck)
     else
       render 'new'
     end

@@ -4,6 +4,6 @@ class Card < ApplicationRecord
   has_many :card_scores
 
   validates :question, presence: true
-  validates :attempt, presence: true
   validates :answer, presence: true
+  # validates :attempt, presence: true
 end
