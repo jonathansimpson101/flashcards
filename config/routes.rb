@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: "pages#dashboard"
+  resources :cards,only: [:index, :edit, :update]
   resources :decks do
     resources :cards, only: [:new, :create, :show]
     member do
