@@ -5,7 +5,11 @@ class DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.all
+    if params[:query].present?
+      @decks = Deck.search_by_name(params[:query])
+    else
+      @decks = Deck.all
+    end
   end
 
   def new

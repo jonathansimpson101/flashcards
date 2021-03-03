@@ -108,6 +108,68 @@ card12 = Card.new(question: "Which placeholder is used in SQL to reprensent all 
                  )
 card12.save!
 
+card13 = Card.new(question: "Which HTML element is generally used to hold other elements?",
+                 attempt: "-",
+                 answer: "<div> tags",
+                 )
+card13.save!
+
+card14 = Card.new(question: "How do you add a blockquote in HTML?",
+                 attempt: "-",
+                 answer: "<blockquote></blockquote>",
+                 )
+card14.save!
+
+card15 = Card.new(question: "What does the action attribute do in a form?",
+                 attempt: "-",
+                 answer: "Gives the URL for where the form is to be submitted.",
+                 )
+card15.save!
+
+card16 = Card.new(question: "What is a form in HTML for?",
+                 attempt: "-",
+                 answer: "It accept some information from the user and submits it via a HTTP to the server.",
+                 )
+card16.save!
+
+card17 = Card.new(question: "Where in your HTML document should the script tags be?",
+                 attempt: "-",
+                 answer: "At the bottom of the body.",
+                 )
+card17.save!
+
+card18 = Card.new(question: "What does HTML stand for?",
+                 attempt: "-",
+                 answer: "Hyper Text Markup Language",
+                 )
+card18.save!
+
+card19 = Card.new(question: "What is the required syntax to add a box shadow to a div in CSS?",
+                 attempt: "-",
+                 answer: "'box-shadow: 1px 1px 2px black;' Where the first two arguments position the box shadow, the third one defines the amount of blur and the final argument defines the colour.",
+                 )
+card19.save!
+
+card20 = Card.new(question: "What is the required syntax to add a box shadow to a div in CSS?",
+                 attempt: "-",
+                 answer: "'box-shadow: 1px 1px 2px black;' Where the first two arguments position the box shadow, the third one defines the amount of blur and the final argument defines the colour.",
+                 )
+card20.save!
+
+card21 = Card.new(question: "Name the four ways in which you can define color in CSS.",
+                 attempt: "-",
+                 answer: "HSL, RGB, Hex colours and Named colours.",
+                 )
+card21.save!
+
+card22 = Card.new(question: "State the five available arguments for justify-position in Flexbox.",
+                 attempt: "-",
+                 answer: "start, center, end, space-around and space-between.",
+                 )
+card22.save!
+
+
+
 # Seeding topics
 puts "Seeding topics"
 Topic.create!(card_id: card1.id, deck_id: html.id)
@@ -116,13 +178,22 @@ Topic.create!(card_id: card3.id, deck_id: javascript.id)
 Topic.create!(card_id: card4.id, deck_id: ruby.id)
 Topic.create!(card_id: card5.id, deck_id: rails.id)
 Topic.create!(card_id: card6.id, deck_id: sql.id)
-
 Topic.create!(card_id: card7.id, deck_id: html.id)
 Topic.create!(card_id: card8.id, deck_id: css.id)
 Topic.create!(card_id: card9.id, deck_id: javascript.id)
 Topic.create!(card_id: card10.id, deck_id: ruby.id)
 Topic.create!(card_id: card11.id, deck_id: rails.id)
 Topic.create!(card_id: card12.id, deck_id: sql.id)
+Topic.create!(card_id: card13.id, deck_id: html.id)
+Topic.create!(card_id: card14.id, deck_id: html.id)
+Topic.create!(card_id: card15.id, deck_id: html.id)
+Topic.create!(card_id: card16.id, deck_id: html.id)
+Topic.create!(card_id: card17.id, deck_id: html.id)
+Topic.create!(card_id: card18.id, deck_id: html.id)
+Topic.create!(card_id: card19.id, deck_id: css.id)
+Topic.create!(card_id: card20.id, deck_id: css.id)
+Topic.create!(card_id: card21.id, deck_id: css.id)
+Topic.create!(card_id: card22.id, deck_id: css.id)
 
 
 puts "Done!"

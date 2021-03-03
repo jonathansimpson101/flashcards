@@ -4,24 +4,30 @@
 }
 
 .card-overview{
-  background-color: yellow;
+  background-color: white;
   border-radius: 5px;
-  color: blue;
+  color: black;
   border: 2px solid black;
   margin-top: 5px;
+  transition: 0.3s;
 }
 
 .card-overview:hover{
-  background-color: green;
+  transform: scale(1.1);
 }
 
 
-#back-to-dash-button{
+.back-to-dash-button{
   margin-top: 10px;
+  background-color: lightgrey;
+  border: 1px solid black;
+  color:black;
+  border-radius: 5px;
+  margin-top: 15px;
 }
 
 #cards-container{
-  background-color: red;
+  background-color: lightgrey;
   padding: 10px;
   border-radius: 10px;
 }
@@ -29,14 +35,20 @@
 .buttons-container{
   display:flex;
   justify-content: space-between;
-  background-color: green;
+  background-color: lightgrey;
   padding:10px;
   border-radius:5px;
   margin-bottom: 10px;
 }
 
 .buttons-container > a{
- background-color: red;
+ color:black;
+ text-decoration: none;
  border-radius: 5px;
- border: 2px solid green;
+ border: 2px solid lightgrey;
+ transition: .3s;
+}
+
+.buttons-container > a:hover{
+  transform: scale(1.1)
 }

@@ -1,15 +1,19 @@
 <!-- create new deck button -->
-<div class="container create-new-deck-container">
+<div class="container dashboard-buttons-container">
   <%= link_to "Create new Deck", new_deck_path, class:"btn btn-success", id:"create-new-deck-button" %>
+  <%= link_to "Find your next deck", decks_path, class:"btn btn-success", id:"find-new-deck-button" %>
 </div>
 
 <!-- Standard container to control width -->
 <div class="container">
   <!--the div containing both the deck list on the left and the recently played div -->
   <div id="deck-list-and-recently-played-container">
+    <% if @decks %>
     <div id="deck-list-container">
+      <h5 id="deck-list-header">Your decks:</h5>
       <%= render 'dashboard-deck-list' %>
     </div>
+    <% end %>
     <div id="recently-played-container">
       <%= render 'recently-played-cards' %>
     </div>

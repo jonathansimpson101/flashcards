@@ -1,0 +1,59 @@
+.card-main {
+  width: 650px;
+  height: 600px;
+  margin: 25px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px lightgrey;
+  .card-question, .attempt, .card-answer {
+    padding: 30px;
+    box-shadow: 1px 1px 2px lightgrey;
+    margin: 20px 15px;
+  }
+}
+
+.form-group {
+  margin: 30px 15px;
+  box-shadow: 1px 1px 2px lightgrey;
+}
+
+.counter {
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+}
+
+.button-correct {
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-around;
+  font-size: 42px;
+  padding-top: 10px;
+  i {
+    margin: 0 30px;
+    font-size: 36px;
+  }
+}
+
+.answer-side {
+  transform: rotateY(180deg);
+  position: absolute;;
+}
+
+.attempt-side {
+  position: absolute;
+}
+
+.flipCard {
+  transform: rotateY(-180deg);
+}
+
+.hideCard {
+  visibility: hidden;
+}

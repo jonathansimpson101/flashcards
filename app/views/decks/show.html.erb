@@ -1,12 +1,14 @@
 <div class="container">
+  <%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", class:"back-to-dash-button"%>
   <h1 id="overivew-header"><%= @deck.name %></h1>
   <h5>There are <%= @deck.cards.count %> cards in this deck</h3>
 
   <div class="buttons-container">
     <a href="">Reveal All</a>
     <%= link_to "Edit this deck", edit_deck_path %>
-    <%= link_to "Study this deck", card_path %>
-     <%= link_to "Delete this deck", deck_path , method: :delete %>
+    <%= link_to "Delete this deck", deck_path , method: :delete %>
+    <%= link_to "Study this deck", deck_card_path(@deck, @deck_cards.first) %>
+
   </div>
 
   <h3>Cards:</h3>
@@ -17,8 +19,4 @@
       </div>
     <% end %>
   </div>
-
-
-<%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", id:"back-to-dash-button"%>
-
 </div>
