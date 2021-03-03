@@ -5,12 +5,28 @@ const incorrect = document.querySelectorAll("#incorrect");
 // move onto next card
 const userCorrect = (event) => {
   const card = document.getElementById(`card${event.currentTarget.dataset.id}`);
+  const button = event.target;
+  const allHiddenField = document.querySelectorAll('.hidden_field');
+  const hiddenField = Array.from(allHiddenField).filter(field => field.dataset.card === button.dataset.card);
+  if (hiddenField) {
+    hiddenField[0].value = true;
+    const trueLink = document.getElementById(`card${event.currentTarget.dataset.id}_true`);
+    trueLink.click();
+  };
   showNextCard(card);
 };
 
 // move onto next  card
 const userIncorrect = (event) => {
   const card = document.getElementById(`card${event.currentTarget.dataset.id}`);
+  const button = event.target;
+  const allHiddenField = document.querySelectorAll('.hidden_field');
+  const hiddenField = Array.from(allHiddenField).filter(field => field.dataset.card === button.dataset.card);
+  if (hiddenField) {
+    hiddenField[0].value = false;
+    const falseLink = document.getElementById(`card${event.currentTarget.dataset.id}_false`);
+    falseLink.click();
+  };
   showNextCard(card);
 };
 

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <ol>
+        <% @deck.scores.each do |score| %>
+          <li>
+            Deck Name: <%= score.deck.name %>,
+            Updated At: <%= score.updated_at %>,
+            Total Correct: <%= score.total %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+</div>
