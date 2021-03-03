@@ -1,4 +1,4 @@
 class CardScore < ApplicationRecord
-  belongs_to :scores
-  belongs_to :cards
+  belongs_to :score
+  belongs_to :card
 end
