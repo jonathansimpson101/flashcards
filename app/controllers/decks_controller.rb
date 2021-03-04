@@ -19,10 +19,16 @@ class DecksController < ApplicationController
   def create
     @deck = Deck.new(strong_params)
     @deck.user = current_user
+    if params[:deck][:category_id].present?
+      category = Category.find(params[:deck][:category_id])
+    elsif params[:deck][:category][:name].present?
+      category = Category.create(name: params[:deck][:category][:name])
+    end
+    @deck.category = category if category
     if @deck.save
       redirect_to create_new_deck_cards_deck_path(@deck)
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -72,6 +78,6 @@ class DecksController < ApplicationController
   private
 
   def strong_params
-    params.require(:deck).permit(:name, :category_id)
+    params.require(:deck).permit(:name)
   end
 end
