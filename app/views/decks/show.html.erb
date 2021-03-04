@@ -1,7 +1,7 @@
 <div class="container">
   <%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", class:"back-to-dash-button"%>
-  <h1 id="overivew-header"><%= @deck.name %></h1>
-  <h3>There are <%= @deck.cards.count %> cards in this deck</h3>
+  <h2 id="overivew-header"><%= @deck.name %></h2>
+  <h4>There are <%= @deck.cards.count %> cards in this deck</h4>
 
   <div class="buttons-container">
     <%= link_to "Edit this deck", edit_deck_path %>
@@ -10,7 +10,7 @@
 
   </div>
 
-  <h3>Cards:</h3>
+  <h4>Cards:</h4>
   <div id="cards-container">
     <% @deck_cards.each do |card| %>
       <div class="card-overview">
