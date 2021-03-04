@@ -59,7 +59,7 @@ class DecksController < ApplicationController
     else
       @deck.cards = Card.where(id: cards)
     end
-    redirect_to deck_path(@deck)
+    redirect_to edit_deck_path(@deck)
   end
 
   def destroy
