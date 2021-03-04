@@ -22,5 +22,7 @@
 
   <div id="daily-usage">
     <h3>Daily Usage:</h3>
+    <h5>You last signed in on: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %> </h5>
+    <h5> Total number of sign-ins: <%= current_user.sign_in_count %> </h5>
   </div>
 </div>
