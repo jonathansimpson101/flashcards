@@ -2,6 +2,11 @@ const flipButton = document.querySelectorAll('.flipButton');
 const correct = document.querySelectorAll("#correct");
 const incorrect = document.querySelectorAll("#incorrect");
 
+const scoreCounter = () => {
+  const counter = document.getElementById('score_count').dataset.counter;
+  console.log(counter)
+};
+
 // move onto next card
 const userCorrect = (event) => {
   const card = document.getElementById(`card${event.currentTarget.dataset.id}`);
@@ -13,6 +18,7 @@ const userCorrect = (event) => {
     const trueLink = document.getElementById(`card${event.currentTarget.dataset.id}_true`);
     trueLink.click();
   };
+  scoreCounter();
   showNextCard(card);
 };
 
