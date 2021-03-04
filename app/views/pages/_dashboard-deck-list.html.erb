@@ -1,5 +1,5 @@
 <% @decks.each do |deck| %>
-  <div class=btn btn-primary>
+  <div class="btn btn-primary deck-button">
     <%= link_to deck.name, deck_path(deck), class:"deck-link" %>
   </div>
 <% end %>
