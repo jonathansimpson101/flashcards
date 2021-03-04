@@ -63,6 +63,7 @@ class DecksController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @deck = Deck.find(params[:id])
     @deck.destroy
     redirect_to dashboard_path
@@ -73,6 +74,4 @@ class DecksController < ApplicationController
   def strong_params
     params.require(:deck).permit(:name, :category_id)
   end
-
-
 end
