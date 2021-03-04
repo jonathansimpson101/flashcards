@@ -1,13 +1,12 @@
+<span class="counter">
+  <div class="card-total">
+    <h6>No. of Cards: <%= @deck.cards.count %></h6>
+  </div>
+  <div class="card-completed">
+    <h6 class="attempt_score">No. of Correct Cards: <%= @deck.cards.count %></h6>
+  </div>
+</span>
 <div class="container" id="card-study-page">
-  <span class="counter">
-    <div class="card-total">
-      <h6>No. of Cards: <%= @deck.cards.count %></h6>
-    </div>
-    <div class="card-completed">
-      <h6 class="attempt_score">No. of Correct Cards: <%= @deck.cards.count %></h6>
-    </div>
-  </span>
-
   <% @deck.cards.each_with_index do |card, index| %>
   <div id="card<%=index%>" class="card-main <%= 'hideCard' unless index.zero? %>" >
     <div class="attempt-side" id="attempt<%= index %>">
@@ -38,8 +37,8 @@
       </span>
     </div>
     <% @final = @deck.cards.size == index + 1 ? true : false %>
-    <%= link_to "", card_scores_path(card_id: card.id,deck_id: @deck.id,correct: true, final: @final), id:"card#{index}_true", method: :post %>
-    <%= link_to "", card_scores_path(card_id: card.id,deck_id: @deck.id,correct: false, final: @final), id:"card#{index}_false", method: :post %>
+    <%= link_to "", card_scores_path(card_id: card.id, deck_id: @deck.id,correct: true, final: @final), id:"card#{index}_true", method: :post %>
+    <%= link_to "", card_scores_path(card_id: card.id, deck_id: @deck.id,correct: false, final: @final), id:"card#{index}_false", method: :post %>
   </div>
   <% end %>
 </div>

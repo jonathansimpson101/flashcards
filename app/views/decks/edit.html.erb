@@ -7,11 +7,6 @@
 
     <%= f.input :name %>
     <%= f.association :category, input_html: { class: 'select2' }  %>
-    <ol class="current-cards">
-      <% @deck.cards.each do |card| %>
-        <li><%= card.question %></li>
-      <% end %>
-    </ol>
     <%= f.association :cards, label_method: :question, value_method: :id, input_html: {  class: 'select2', multiple: true } %>
     <%= f.simple_fields_for :cards do |card|%>
       <button id="hidden_button_edit" type="button">

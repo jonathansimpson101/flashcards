@@ -1,19 +1,32 @@
+#card-study-page {
+  display:flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .card-main {
   width: 650px;
   height: 600px;
-  margin: 25px auto;
-  padding: 20px;
+  margin: 20px auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
+  align-items: center;
+  position: absolute;
   transform-style: preserve-3d;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
   box-shadow: 2px 2px 2px lightgrey;
+  border: 1px solid black;
+  border-radius: 10px;
+  background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
   .card-question, .attempt, .card-answer {
     padding: 30px;
     box-shadow: 1px 1px 2px lightgrey;
     margin: 20px 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
   }
 }
 
@@ -43,11 +56,15 @@
 
 .answer-side {
   transform: rotateY(180deg);
-  position: absolute;;
+  position: absolute;
+  margin-top: 30px;
+  width: 80%;
 }
 
 .attempt-side {
   position: absolute;
+  margin-top: 120px;
+  width: 80%;
 }
 
 .flipCard {
