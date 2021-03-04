@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: "pages#dashboard"
-  resources :cards,only: [:index, :edit, :update]
   resources :decks do
     resources :cards, only: [:new, :create, :show]
     member do
@@ -10,6 +9,6 @@ Rails.application.routes.draw do
       get :create_new_deck_cards
     end
   end
-  resources :cards, only: [:edit, :update, :destroy]
+  resources :cards, only: [:index, :edit, :update, :destroy]
   resources :card_scores, only: [:create]
 end

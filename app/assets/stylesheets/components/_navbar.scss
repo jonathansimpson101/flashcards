@@ -1,9 +1,10 @@
 .navbar-set {
   justify-content: space-between;
-  background: white;
+  background:url('card-background-yellow.png');
   display: inline-flex;
   width: 100%;
   padding: 15px 25px 0 25px;
+  border-bottom: 2px solid grey;
 }
 
 .navbar-nav-1 {
