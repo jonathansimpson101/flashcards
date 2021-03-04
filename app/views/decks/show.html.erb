@@ -4,7 +4,6 @@
   <h5>There are <%= @deck.cards.count %> cards in this deck</h3>
 
   <div class="buttons-container">
-    <a href="">Reveal All</a>
     <%= link_to "Edit this deck", edit_deck_path %>
     <%= link_to "Delete this deck", deck_path , method: :delete %>
     <%= link_to "Study this deck", deck_card_path(@deck, @deck_cards) %>
