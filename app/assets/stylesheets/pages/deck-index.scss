@@ -4,14 +4,12 @@
 
 .deck-container{
   background:url("card-background-orange.png");
-  margin:10px;
-  padding:5px;
+  margin: 10px 10px 10px 0;
+  padding: 13px 20px 5px 20px;
   border-radius: 5px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding-right: 20px;
-  padding-left: 20px;
   transition-duration:0.3s;
   width:90%;
 
