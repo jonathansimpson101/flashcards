@@ -5,8 +5,8 @@ class Deck < ApplicationRecord
   has_many :topics, dependent: :destroy
   has_many :cards, through: :topics
 
-  validates :name, presence: true, uniqueness: true
-
+  validates :name, presence: true, uniqueness: {scope: :category}
+  validates :category, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_name,
