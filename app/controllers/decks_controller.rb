@@ -73,6 +73,4 @@ class DecksController < ApplicationController
   def strong_params
     params.require(:deck).permit(:name, :category_id)
   end
-
-
 end
