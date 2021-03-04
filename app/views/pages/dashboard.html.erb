@@ -7,6 +7,7 @@
 
 <!-- Standard container to control width -->
 <div class="container">
+    <h5 id="most-popular-decks-header">Try out the most popular decks on flashcard.tech:</h5>
   <!--the div containing both the deck list on the left and the recently played div -->
   <div id="deck-list-and-recently-played-container">
     <% if @decks %>
@@ -21,8 +22,8 @@
   </div>
 
   <div id="daily-usage">
-    <h3>Daily Usage:</h3>
-    <h5>You last signed in on: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %> </h5>
-    <h5> Total number of sign-ins: <%= current_user.sign_in_count %> </h5>
+    <h5><strong>Daily Usage:</strong></h5>
+    <h7>You last signed in on: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %> </h7><br>
+    <h7> Total number of sign-ins: <%= current_user.sign_in_count %> </h7>
   </div>
 </div>
