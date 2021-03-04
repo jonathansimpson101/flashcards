@@ -28,6 +28,7 @@ class DecksController < ApplicationController
 
   def create_new_deck_cards
     @deck = Deck.find(params[:id])
+    @deck.name = @deck.name.titleize
     @card = Card.new
     @deck_cards = @deck.cards
   end
