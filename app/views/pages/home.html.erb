@@ -1,21 +1,25 @@
-<span>
-  <div id="main-content">
-    <h1>Flashcard</h1>
-    <div  class="content">
-      <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1614767455/Landing-page%20background%20and%20logo/logo.png", :type => "fetch", class:"logo") %>
-
-      <h3>Start your revision Flashcard, the modern way to study using flashcards. </h3>
-      <div class="links">
-        <% if user_signed_in? %>
-          <%= link_to "My Dashboard", dashboard_path, class:"btn btn-success", id:"log-in" %>
-        <% else %>
-          <%= link_to "Get started today!" , new_user_registration_path ,class:"btn btn-success", id:"sign-up" %>
-          <%= link_to "Log-In", new_user_session_path ,class:"btn btn-primary", id:"log-in" %>
-        <% end %>
-      </div>
+<% if user_signed_in? %>
+  <div class="box1"></div>
+    <h3 id="welcome-back-message"> Welcome back to flashcard.tech!</h3>
+    <%= link_to "My Dashboard", dashboard_path, class:"btn btn-success", id:"home-links" %>
+    <div id="your-current-usage">
+      <h7><strong>You last signed in on: </strong><%= current_user.last_sign_in_at.strftime("%A, %d %B") %> </h7><br><br>
+      <h7><strong>Total number of sign-ins: </strong><%= current_user.sign_in_count %> </h7>
     </div>
   </div>
-</span>
-<div class="container">
 
-</div>
+<% else %>
+
+  <!-- Ignore this for now! -->
+
+  <div class="box1"></div>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+  <%= link_to "Get started today!" , new_user_registration_path ,class:"btn btn-success", id:"sign-up" %>
+  <%= link_to "Log-In", new_user_session_path ,class:"btn btn-primary", id:"log-in" %>
+<% end %>
+
+
+

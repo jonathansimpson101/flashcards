@@ -1,62 +1,78 @@
-#main-content {
-  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url("https://res.cloudinary.com/flashcard/image/upload/v1614767440/Landing-page%20background%20and%20logo/background-slide.png");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#home-links{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  width: 200px;
+  margin-top: -50px;
+  margin-left: -100px;
+  text-align:center;
+  padding-top: 12px;
+  border-radius:10px;
+  border:2px solid white;
+  transition: 0.3s;
 }
 
-h1 {
-  margin-top: 100px;
-  font-size: 96px;
-  padding-bottom: 20px;
+#home-links:hover{
+  transform: scale(1.1);
 }
 
-.logo {
-  width: 350px;
-  height: 250px;
-  margin-bottom: 30px;
-  }
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  h3 {
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  .links {
-    display: flex;
-    flex-direction: column;
-  }
-  a {
-    opacity: 0.9;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px lightgrey;
-    font-size: 30px;
-    margin: 10px;
-    padding: 5px 15px;
-  }
-  // #sign-up {
-  //   top: 170px;
-  //   left: 320px;
-  //   width: 200px;
-  // }
-  // #log-in {
-  //   top: 230px;
-  //   left: 320px;
-  //   width: 200px;
-  // }
-  a:hover {
-    color: black;
-    text-decoration: none;
-    opacity: 1;
-  }
+.box1{
+  background-image: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-orange.png");
+  background-size:cover;
+  height:100vh;
+  width:100vw;
 }
+
+  .box2{
+  background-image: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-green.png");
+  background-size:cover;
+  height:100vh;
+  width:100vw;
+}
+
+  .box3{
+  background-image: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-blue.png");
+  background-size:cover;
+  height:100vh;
+  width:100vw;
+}
+
+  .box4{
+  background-image: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-orange.png");
+  background-size:cover;
+  height:100vh;
+  width:100vw;
+}
+
+#welcome-back-message{
+  position:absolute;
+  top:30vh;
+  left:50vw;
+  margin-left: -243px;
+  margin-top:44px;
+  color:black;
+  font-size: 32px;
+}
+
+#your-current-usage{
+ position:absolute;
+  top:50vh;
+  left:50vw;
+  margin-left: -100px;
+  margin-top:67px;
+  width: 200px;
+  background-color:white;
+  border-radius: 10px;
+  padding:20px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px $black;
+  display:inline-block;
+}
+
+#your-current-usage h5, #your-current-usage > h7 {
+  font-size: 16px;
+}
+
+
 
