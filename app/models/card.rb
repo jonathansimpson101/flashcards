@@ -6,5 +6,4 @@ class Card < ApplicationRecord
 
   validates :question, presence: true
   validates :answer, presence: true
-  # validates :attempt, presence: true
 end
