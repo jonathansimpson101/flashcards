@@ -10,9 +10,7 @@ class Deck < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name,
-    against: :name,
-    using: {
-      tsearch: { prefix: true }
-    }
-
+    against: [:name],
+    associated_against: { cards: :question},
+    using: { tsearch: { prefix: true }}
 end
