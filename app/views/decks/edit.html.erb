@@ -5,7 +5,7 @@
     <%= f.input :name %>
     <%= f.association :category %>
     <%= f.association :cards , label_method: :question, value_method: :id %>
-    <%= f.simple_fields_for :cards do |card|%>
+    <%= f.simple_fields_for :cards, remote: true do |card|%>
       <button id="hidden_button_edit" type="button">
         Create new card
       </button>
@@ -49,7 +49,6 @@
         <%= card.input :question_10 %>
         <%= card.input :answer_10 %>
       </div>
-
     <% end %>
   <%= f.submit %>
   <% end %>
