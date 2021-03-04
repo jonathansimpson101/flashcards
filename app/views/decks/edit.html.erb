@@ -6,7 +6,7 @@
     <%= f.association :category %>
     <%= f.association :cards , label_method: :question, value_method: :id %>
     <%= f.simple_fields_for :cards do |card|%>
-      <button id="hidden_button" type="button">
+      <button id="hidden_button_edit" type="button">
         Create new card
       </button>
       <div class="d-none hidden_form">

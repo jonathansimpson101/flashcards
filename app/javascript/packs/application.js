@@ -31,9 +31,7 @@ import { bindFlip, scoreIncrement } from '../components/study_mode';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
-  initCardListener()
   bindFlip();
   scoreIncrement();
-
+  // initCardListener();
 });
