@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_173342) do
   end
 
   create_table "card_scores", force: :cascade do |t|
-    t.boolean "correct", default: false
+    t.boolean "correct"
     t.bigint "score_id", null: false
     t.bigint "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
