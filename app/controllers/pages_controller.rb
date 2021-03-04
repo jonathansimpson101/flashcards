@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :dashboard]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
   end
@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     user = current_user
     @decks = user.decks
-    @first_six_decks = Deck.first(6)
+    @first_six_decks = Deck.all.first(6)
   end
 end

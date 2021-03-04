@@ -21,7 +21,7 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
-import {initCardListener} from "../channels/card_listner"
+import { initCardListener } from "../channels/card_listner"
 import { bindFlip, scoreIncrement } from '../components/study_mode';
 
 
@@ -31,9 +31,11 @@ import { bindFlip, scoreIncrement } from '../components/study_mode';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
-  initCardListener()
-  bindFlip();
-  scoreIncrement();
-
+  if (document.getElementById('card-study-page')) {
+    bindFlip();
+    scoreIncrement();
+  };
+  if (document.getElementById('hidden_button_edit')) {
+    initCardListener();
+  };
 });

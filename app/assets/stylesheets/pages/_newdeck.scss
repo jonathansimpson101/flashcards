@@ -21,3 +21,31 @@
 .new-deck-searchbar {
 
 }
+
+#new-deck-heading{
+  margin-top: 15px;
+  text-align:center;
+
+}
+
+#create-deck-button{
+  background-color: lightgrey;
+  border-radius: 10px;
+  transition: .3s;
+  width:100%;
+  margin-top: 7%;
+}
+
+
+#create-deck-button:hover{
+  transform: scale(1.1);
+}
+
+div.form-group, .string, .required, .deck_name{
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+#create-deck-form{
+  margin-top: 20vh;
+}

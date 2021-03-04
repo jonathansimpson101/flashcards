@@ -2,6 +2,7 @@
   display:flex;
   justify-content:space-around;
   margin-top:10px;
+  margin-bottom: 30px;
 }
 
 #deck-list-container{
@@ -21,6 +22,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   margin-left: 20px;
+  height:60vh;
+  width: 90%;
 }
 
 .deck-link{
@@ -37,10 +40,18 @@
 }
 
 #daily-usage{
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: lightgrey;
   border-radius: 10px;
   padding:20px;
+  height: 10vh;
+  margin-bottom: 20px;
+  display:inline-block;
+  text-align: center;
+}
+
+#daily-usage > h5,h7{
+  font-size: 10px;
 }
 
 .recently-played-card{
@@ -51,7 +62,10 @@
   border: 2px solid white;
   transition: .2s;
   border: 2px solid black;
+  box-shadow: 2px 2px 4px black;
+  transition: .2s;
 }
+
 
 .recently-played-card a{
   text-decoration:none;
@@ -62,10 +76,14 @@
   text-decoration:none;
   color:black;
   border: 2px solid black;
-  background-color: grey;
+  transform: scale(1.2) rotate(7deg);
+  box-shadow: 4px 4px 8px black;
 }
 
 .details-box{
+  border:1px solid black;
+  padding: 5px;
+  border-radius: 5px;
 
 }
 
@@ -121,5 +139,24 @@
 }
 
 #index-user-cards{
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  transition: .2s;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 50px;
+}
 
+#index-user-cards:hover{
+  transform: scale(1.1);
+  background-color: darkgrey;
+  color:black;
+}
+
+
+#most-popular-decks-header{
+  margin-left: 20%;
 }
