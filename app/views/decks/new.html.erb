@@ -3,7 +3,7 @@
 		<div class="col-6" id="create-deck-form">
       <h3 id="new-deck-heading" >Time to make a new deck!</h3>
 			<%= simple_form_for @deck do |f| %>
-			<%= f.input :name %>
+			<%= f.input :name, :value => f.object.name.capitalize %>
 			<%= f.association :category %>
 			<%= f.submit "Create Deck", class: "btn", id:"create-deck-button" %>
 			<% end %>
