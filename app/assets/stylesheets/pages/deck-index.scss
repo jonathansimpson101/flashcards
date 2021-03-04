@@ -3,18 +3,15 @@
 }
 
 .deck-container{
+  margin: 10px 10px 10px 0;
+  padding: 13px 20px 5px 20px;
   background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-orange.png");
-  margin:10px;
-  padding:5px;
   border-radius: 5px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding-right: 20px;
-  padding-left: 20px;
   transition-duration:0.3s;
   width:90%;
-
 }
 
 .deck-container:hover{
