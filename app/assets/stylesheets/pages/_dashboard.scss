@@ -55,6 +55,8 @@
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
+  display:inline-block;
+  margin-left: 36%;
 }
 
 #daily-usage:hover{
@@ -65,7 +67,6 @@
   padding:20px;
   height: 10vh;
   margin-bottom: 20px;
-  display:inline-block;
   text-align: center;
 }
 
@@ -185,6 +186,7 @@
   border: 2px solid black;
   display:inline-block;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 #most-popular-decks-header{
