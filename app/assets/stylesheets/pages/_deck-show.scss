@@ -23,8 +23,12 @@
 
 }
 
+.buttons-container > a {
+  background: url("card-background-green.png");
+}
+
 .card-overview{
-  background-color: white;
+  background: url("card-background-yellow.png");
   border-radius: 5px;
   color: black;
   border: 2px solid black;
