@@ -8,7 +8,7 @@
 #deck-list-container{
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   background-color:white;
   border-radius:10px;
   padding-top: 10px;
@@ -22,7 +22,7 @@
 }
 
 #deck-list-container:hover{
-  transform: scale(1.1);
+
 }
 
 #recently-played-container{
@@ -44,7 +44,6 @@
 .deck-link:hover{
   text-decoration: none;
   color:black;
-  transform: scale(1.4);
 }
 
 #daily-usage{
@@ -60,14 +59,6 @@
 }
 
 #daily-usage:hover{
-  transform: scale(1.1);
-  margin-top: 10px;
-  background-color: lightgrey;
-  border-radius: 10px;
-  padding:20px;
-  height: 10vh;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
 #daily-usage > h5,h7{
@@ -187,6 +178,12 @@
   display:inline-block;
   border-radius: 10px;
   margin-top: 10px;
+  transition: .3s;
+}
+
+.deck-button:hover{
+  transform: scale(1.1);
+  border: 2px solid black;
 }
 
 #most-popular-decks-header{
