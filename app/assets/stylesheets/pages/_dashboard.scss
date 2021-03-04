@@ -2,6 +2,7 @@
   display:flex;
   justify-content:space-around;
   margin-top:10px;
+  margin-bottom: 30px;
 }
 
 #deck-list-container{
@@ -29,6 +30,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   margin-left: 20px;
+  height:60vh;
+  width: 90%;
 }
 
 .deck-link{
@@ -56,6 +59,18 @@
 
 #daily-usage:hover{
   transform: scale(1.1);
+  margin-top: 10px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding:20px;
+  height: 10vh;
+  margin-bottom: 20px;
+  display:inline-block;
+  text-align: center;
+}
+
+#daily-usage > h5,h7{
+  font-size: 10px;
 }
 
 .recently-played-card{
@@ -146,7 +161,7 @@
 
 }
 
-#index-every-card-on-db{
+#index-user-cards{
   margin-top: 15px;
   border-radius: 10px;
   background: url("card-background-green.png");
@@ -159,7 +174,7 @@
   color: black;
 }
 
-#index-every-card-on-db:hover{
+#index-user-cards:hover{
   transform: scale(1.1);
   background-color: white;
   color:black;
@@ -172,4 +187,6 @@
   border-radius: 10px;
 }
 
-
+#most-popular-decks-header{
+  margin-left: 20%;
+}

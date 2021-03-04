@@ -28,18 +28,22 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     @card.update(card_params)
 
-    redirect_to card_path(@card)
+    redirect_to cards_path
   end
 
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
-
-    redirect_to card_path
+    does_user_have_card = Card.where(user: current_user)
+    if does_user_have_card[0].nil?
+      redirect_to dashboard_path
+    else
+      redirect_to cards_path
+    end
   end
 
   def index
-    @cards = Card.all
+    @cards = Card.where(user: current_user)
   end
 
   private

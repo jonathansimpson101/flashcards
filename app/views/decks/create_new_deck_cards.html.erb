@@ -1,12 +1,15 @@
 <div class="text-center">
-   <h2><%= @deck.name %></h2>
-   <p><%= @deck.category.name %></p>
+  <br>
+  <h2><%= @deck.name %></h2>
+  <p><%= @deck.category.name %></p>
 </div>
+
+<br>
 
 <div class="container">
   <div class="row">
-  <div class="col-sm-4">
-    <h3>Cards:</h3>
+  <div class="col-sm-3 text-center new-deck-function-row">
+    <h4>Cards:</h4>
     <div id="cards-container">
       <% @deck_cards.each do |card| %>
         <div class="card-overview">
@@ -18,16 +21,32 @@
     </div>
   </div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-1 new-deck-function-breaks">
+  </div>
+
+  <div class="col-sm-4 text-center" id="new-deck-function-row-middle">
+    <h4>Add a Card:</h4>
     <%= simple_form_for [@deck, @card] do |f| %>
       <%= f.input :question %>
       <%= f.input :answer %>
-      <%= f.submit "Add Card", class: "btn btn-success" %>
+      <%= f.submit "Add Card", class: "btn btn-success", id:"new-deck-add-button"%>
     <% end %>
   </div>
 
-  <div class="col-sm-4">
-    <h5>Keyword searchbar</h5>
+  <div class="col-sm-1 new-deck-function-breaks">
+  </div>
+
+  <div class="col-sm-3 text-center new-deck-function-row" >
+    <h4>Keyword searchbar:</h4>
   </div>
   </div>
 </div>
+
+<br>
+<br>
+
+<div class="container new-deck-buttons-container text-center">
+  <%= link_to "Confirm deck!", dashboard_path, class:"btn btn-success", id:"new-deck-confirm-button", :data => {:confirm => 'Are you sure you would like to add this deck?'} %>
+  <%= link_to "Delete deck...", deck_path(@deck), class:"btn btn-success", id:"new-deck-delete-button", :data => {:confirm => 'Are you sure you would like to delete this deck?'}, :method => :delete %>
+</div>
+<br>

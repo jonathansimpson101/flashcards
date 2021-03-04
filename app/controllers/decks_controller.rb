@@ -28,6 +28,7 @@ class DecksController < ApplicationController
 
   def create_new_deck_cards
     @deck = Deck.find(params[:id])
+    @deck.name = @deck.name.titleize
     @card = Card.new
     @deck_cards = @deck.cards
   end
@@ -59,10 +60,11 @@ class DecksController < ApplicationController
     else
       @deck.cards = Card.where(id: cards)
     end
-    redirect_to deck_path(@deck)
+    redirect_to edit_deck_path(@deck)
   end
 
   def destroy
+    @user = current_user
     @deck = Deck.find(params[:id])
     @deck.destroy
     redirect_to dashboard_path
@@ -73,6 +75,4 @@ class DecksController < ApplicationController
   def strong_params
     params.require(:deck).permit(:name, :category_id)
   end
-
-
 end

@@ -10,6 +10,21 @@
     margin-left: auto;
 }
 
+.new-deck-function-row {
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  text-align: center;
+}
+
+#new-deck-function-row-middle {
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  text-align: center;
+}
+
 .new-deck-cards {
   width: 10px;
 }
@@ -18,8 +33,46 @@
   width: 10px;
 }
 
-.new-deck-searchbar {
+.new-deck-buttons-container{
+  display:flex;
+  justify-content: space-around;
+  padding-left: 180px;
+  padding-right: 150px;
+}
 
+#new-deck-add-button {
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  transition: .2s;
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+#new-deck-confirm-button {
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  transition: .2s;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 50px;
+}
+
+#new-deck-delete-button {
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color:lightgrey;
+  border:2px solid black;
+  font-size: 20px;
+  transition: .2s;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 50px;
 }
 
 #new-deck-heading{
