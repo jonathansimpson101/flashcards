@@ -44,29 +44,35 @@
   color:black;
   border-radius: 5px;
   margin-top: 15px;
+  background:url("card-background-green.png");
 }
 
 #cards-container{
   background-color: lightgrey;
   padding: 10px;
   border-radius: 10px;
+  background:url("card-background-orange.png");
 }
 
 .buttons-container{
   display:flex;
   justify-content: space-between;
-  background-color: lightgrey;
+  background:url("card-background-blue.png");
   padding:10px;
   border-radius:5px;
   margin-bottom: 10px;
 }
 
 .buttons-container > a{
- color:black;
+ color:grey;
  text-decoration: none;
  border-radius: 5px;
- border: 2px solid lightgrey;
+ border: 2px solid black;
  transition: .3s;
+ background-color:white;
+ padding-right:10px;
+ padding-left:10px;
+ display:inline-block;;
 }
 
 .buttons-container > a:hover{
