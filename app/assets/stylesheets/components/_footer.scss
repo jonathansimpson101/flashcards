@@ -1,10 +1,9 @@
 .footer {
   align-items:center;
-  background-color: white;
+  background:url('card-background-yellow.png');
   height:120px;
-
-  background-color: lightgrey;
   padding:38px;
+  border-top: 2px solid grey;
 }
 
 .links-container{
@@ -17,7 +16,7 @@
   margin-left: 30px;
   margin-right:30px;
   height:20px;
-  color:black;
+  color:$black;
   margin-bottom: 20px;
   transition: .3s;
 }
