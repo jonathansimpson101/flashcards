@@ -12,6 +12,10 @@
   background-color: white;
 }
 
+.select2-selection__choice__display {
+  display: none;
+}
+
 #hidden_button_edit{
     border-radius: 10px;
   background: url("card-background-green.png");
@@ -19,11 +23,10 @@
   padding:10px;
 }
 
-
-
 input{
   border-radius: 10px;
   background: url("card-background-green.png");
   border:none;
   padding:10px;
 }
+
