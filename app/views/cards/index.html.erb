@@ -2,7 +2,7 @@
 
   <%= link_to "Back to dasboard", dashboard_path, class: "back-to-dash-button" %>
 
-  <h3 id="deck-search-header">Deck Search</h3>
+  <h3 id="deck-search-header">Card Search</h3>
 
     <div class="search-bar select2">
     <%= form_tag decks_path, method: :get do %>
@@ -19,20 +19,12 @@
       <div class="deck-container">
         <h5><strong><%= card.question %></strong>
         <h5><strong><%= card.answer %></strong>
-        <h5><strong>Made by: </strong>
-          <% if card.user_id.present? %>
-            <% user = card.user_id %>
-            <%= User.find_by_id(user) %>
-          <% else %>
-            N/A
-          <% end %>
-        </h5>
       </div>
       <div class="study-now-container">
-         <%= link_to "Edit this card" %>
+         <%= link_to "Edit this card", edit_card_path(card) %>
       </div>
       <div class="study-now-container">
-         <%= link_to "Delete this card"%>
+         <%= link_to "Delete this card", card_path(card), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
     </div>
   <% end %>
