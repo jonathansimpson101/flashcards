@@ -1,6 +1,6 @@
 .edit-deck-back-button{
   color:black;
-  background: url("card-background-green.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -12,18 +12,21 @@
   background-color: white;
 }
 
+.select2-selection__choice__display {
+  display: none;
+}
+
 #hidden_button_edit{
     border-radius: 10px;
-  background: url("card-background-green.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
   border:none;
   padding:10px;
 }
-
-
 
 input{
   border-radius: 10px;
-  background: url("card-background-green.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
   border:none;
   padding:10px;
 }
+

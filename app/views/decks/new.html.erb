@@ -3,9 +3,18 @@
 		<div class="col-6" id="create-deck-form">
       <h3 id="new-deck-heading" >Time to make a new deck!</h3>
 			<%= simple_form_for @deck do |f| %>
-			<%= f.input :name %>
-			<%= f.association :category %>
-			<%= f.submit "Create Deck", class: "btn", id:"create-deck-button" %>
+  			<%= f.input :name %>
+  			<%= f.association :category, required: false %>
+                <%= f.simple_fields_for :category, remote: true do |category|%>
+                <p> or </p>
+                  <button id="hidden_button_edit" type="button">
+                    Create a new category
+                  </button>
+                  <div class="d-none hidden_form">
+                    <%= category.input :name %>
+                  </div>
+                <% end %>
+  			<%= f.submit "Create Deck", class: "btn", id:"create-deck-button" %>
 			<% end %>
 		</div>
 	</div>

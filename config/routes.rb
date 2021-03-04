@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :create_new_deck_cards
     end
   end
+  resources :category, only: [:new, :create]
   resources :cards, only: [:index, :edit, :update, :destroy]
   resources :card_scores, only: [:create]
 end
