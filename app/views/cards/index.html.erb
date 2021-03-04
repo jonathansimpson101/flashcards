@@ -20,10 +20,10 @@
         <h5><strong><%= card.question %></strong>
         <h5><strong><%= card.answer %></strong>
       </div>
-      <div class="study-now-container">
+      <div id="edit-card-button">
          <%= link_to "Edit this card", edit_card_path(card) %>
       </div>
-      <div class="study-now-container">
+      <div id="delete-card-button" >
          <%= link_to "Delete this card", card_path(card), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
     </div>
