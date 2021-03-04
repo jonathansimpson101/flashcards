@@ -3,8 +3,9 @@ const correct = document.querySelectorAll("#correct");
 const incorrect = document.querySelectorAll("#incorrect");
 
 const scoreCounter = () => {
-  const counter = document.getElementById('score_count').dataset.counter;
-  console.log(counter)
+  let counter = document.getElementById('score_count');
+  let dataCount =  Number.parseInt(counter.innerHTML, 10);
+  counter.innerText ++;
 };
 
 // move onto next card
