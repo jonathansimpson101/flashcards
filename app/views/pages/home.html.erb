@@ -6,9 +6,10 @@
       <div class="links">
         <% if user_signed_in? %>
           <h3>Welcome back, <%= (current_user.first_name).capitalize %></h3>
+          <h6>You're Last Study Session: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %></h6>
           <%= link_to "My Dashboard", dashboard_path, class:"btn btn-success", id:"log-in" %>
         <% else %>
-          <h3>Start your revision Flashcard, the modern way to study using flashcards. </h3>
+          <h3>Start your revision with Flashcard, the modern way to study using flashcards. </h3>
           <%= link_to "Get started today!" , new_user_registration_path ,class:"btn btn-success", id:"sign-up" %>
           <%= link_to "Log-In", new_user_session_path ,class:"btn btn-primary", id:"log-in" %>
         <% end %>
@@ -16,6 +17,3 @@
     </div>
   </div>
 </span>
-<div class="container">
-
-</div>
