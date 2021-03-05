@@ -13,8 +13,8 @@
       <%= submit_tag "Search", class: "btn btn-primary", id: "deck-search-button" %>
     <% end %>
   </div>
-  <% if @cards.nil? %>
-  <% @cards.each do |card| %>
+  <% if current_user.cards.count != 0 %>
+  <% current_user.cards.each do |card| %>
     <div class="line-container">
       <div class="deck-container">
         <h5><strong><%= card.question %></strong>
@@ -34,6 +34,4 @@
       <p>Head back to your dashboard to add some now.</p>
     </div>
   <% end %>
-
-
 </div>
