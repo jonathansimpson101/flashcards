@@ -1,7 +1,7 @@
 class Deck < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_many :scores, dpendent: :destroy
+  has_many :scores, dependent: :destroy
   has_many :topics, dependent: :destroy
   has_many :cards, through: :topics
 
