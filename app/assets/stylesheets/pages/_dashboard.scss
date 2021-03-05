@@ -76,6 +76,9 @@
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition: .2s;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 
@@ -183,4 +186,8 @@
 
 #most-popular-decks-header{
   margin-left: 20%;
+}
+
+#dash-card-header{
+
 }
