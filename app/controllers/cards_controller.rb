@@ -17,7 +17,7 @@ class CardsController < ApplicationController
 
   def show
     @deck = Deck.find(params[:deck_id])
-    @card = Card.find(params[:id])
+    @card = @deck.cards.first
   end
 
   def edit
