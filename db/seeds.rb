@@ -14,6 +14,11 @@ users = []
   user.save
 end
 
+# Seeding user for demos
+puts "Seeding user for demos. Email: 'demo@gmail.com', Password: 123456, First Name: 'Jonathan', Last Name: Simpson"
+demo_user = User.new(first_name: "Jonathan", last_name: "Simpson", email: "demo@gmail.com", password: "123456")
+demo_user.save!
+
 # Seeding categories
 puts "Seeding Categories"
 front_end = Category.create!(name: "Front End")
@@ -33,6 +38,20 @@ rails = Deck.new(name:"Rails", category_id:back_end.id, user_id:users.sample.id)
 rails.save!
 sql = Deck.new(name:"SQL", category_id:back_end.id, user_id:users.sample.id)
 sql.save!
+
+# Seeding decks for demo user
+puts "Seeding decks for demo user"
+advanced_routing = Deck.new(name:"Advanced Routing", category_id:back_end.id, user_id:demo_user.id)
+advanced_routing.save!
+
+dom_manipulation = Deck.new(name:"DOM Manipulation", category_id:front_end.id, user_id:demo_user.id)
+dom_manipulation.save!
+
+db = Deck.new(name:"Migrations", category_id:back_end.id, user_id:demo_user.id)
+db.save!
+
+heroku = Deck.new(name:"Heroku", category_id:back_end.id, user_id:demo_user.id)
+heroku.save!
 
 # Seeding cards
 puts "Seeding cards"
@@ -169,6 +188,33 @@ card22 = Card.new(question: "State the five available arguments for justify-posi
 card22.save!
 
 
+# Seeding cards for demo user decks
+puts "Seeding cards for demo user decks"
+
+card23 = Card.new(question: "State all of the action names for the CRUD actions in Rails",
+                 attempt: "-",
+                 answer: "Index, Show, New, Create, Edit, Update, Destroy",
+                 )
+card23.save!
+
+card24 = Card.new(question: "Which Javascript methods can you use to identify an object in the DOM?",
+                 attempt: "-",
+                 answer: ".getElementById, .querySelector, .querySelectorAll",
+                 )
+card24.save!
+
+card25 = Card.new(question: "What command do you run in order to create a new colunn in a table?",
+                 attempt: "-",
+                 answer: "rails g migration AddColumnToTable column-name",
+                 )
+card25.save!
+
+card26 = Card.new(question: "Which command do you use in order to put your project on Heroku?",
+                 attempt: "-",
+                 answer: "git push heroku master",
+                 )
+card26.save!
+
 
 # Seeding topics
 puts "Seeding topics"
@@ -194,6 +240,10 @@ Topic.create!(card_id: card19.id, deck_id: css.id)
 Topic.create!(card_id: card20.id, deck_id: css.id)
 Topic.create!(card_id: card21.id, deck_id: css.id)
 Topic.create!(card_id: card22.id, deck_id: css.id)
+Topic.create!(card_id: card23.id, deck_id: advanced_routing.id)
+Topic.create!(card_id: card24.id, deck_id: dom_manipulation.id)
+Topic.create!(card_id: card25.id, deck_id: db.id)
+Topic.create!(card_id: card26.id, deck_id: heroku.id)
 
 
 puts "Done!"
