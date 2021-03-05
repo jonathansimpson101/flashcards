@@ -1,19 +1,39 @@
-<span>
+<div class="whole-grid">
   <div id="main-content">
-    <h1>Flashcard</h1>
-    <div  class="content">
-      <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1614949362/Landing-page%20background%20and%20logo/new-orange-logo_siahlm.png", :type => "fetch", class:"logo") %>
-      <div class="links">
-        <% if user_signed_in? %>
-          <h3>Welcome back, <%= (current_user.first_name).capitalize %></h3>
-          <h6>You're Last Study Session: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %></h6>
-          <%= link_to "My Dashboard", dashboard_path, class:"btn btn-success", id:"log-in" %>
-        <% else %>
-          <h3>Start your revision with Flashcard, the modern way to study using flashcards. </h3>
-          <%= link_to "Get started today!" , new_user_registration_path ,class:"btn btn-success", id:"sign-up" %>
-          <%= link_to "Log-In", new_user_session_path ,class:"btn btn-primary", id:"log-in" %>
-        <% end %>
+    <div id="page-content">
+      <h1>Flashcard</h1>
+      <div  class="content">
+        <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1614949362/Landing-page%20background%20and%20logo/new-orange-logo_siahlm.png", :type => "fetch", class:"logo") %>
+        <div class="links">
+          <% if user_signed_in? %>
+            <h3>Welcome back, <%= (current_user.first_name).capitalize %></h3>
+            <h6>You're Last Study Session: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %></h6>
+            <%= link_to "My Dashboard", dashboard_path, class:"btn btn-success", id:"log-in" %>
+          <% else %>
+            <h3>Start your revision with Flashcard, the modern way to study using flashcards. </h3>
+            <%= link_to "Get started today!" , new_user_registration_path ,class:"btn btn-success", id:"sign-up" %>
+            <%= link_to "Log-In", new_user_session_path ,class:"btn btn-primary", id:"log-in" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div id="page-content">
+      <div class="more-info">
+        <h4><%= "<ul>" %></h4>
+        <h5 class="indented"><%= "<li> Add your decks and cards... </li>" %></h5>
+        <h5 class="indented"><%= "<li> Start your study session now... </li>" %></h5>
+        <h5 class="indented"><%= "<li> See what other's are studying and find the most popular decks... </li>" %></h5>
+        <h5 class="indented"><%= "<li> Teacher's; you can add your decks and share with your students... </li>" %></h5>
+        <h4><%= "</ul>" %></h4>
+      </div>
+      <div class="more-info">
+        <h5><%= "const studyMode = () => { " %></h5>
+        <h5 class="indented"><%= "const doNotDisturb = document.getElementById('no-distraction');" %></h5>
+        <h5 class="indented"><%= "doNotDisturb.addEventListener('click', () => { "  %></h5>
+        <h5 class="indented-2"><%= "completeMyDecksNow()" %></h5>
+        <h5 class="indented"><%= "};"  %></h5>
+        <h5><%= "};" %></h5>
       </div>
     </div>
   </div>
-</span>
+</div>
