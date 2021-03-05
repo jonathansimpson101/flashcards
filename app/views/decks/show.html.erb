@@ -10,7 +10,7 @@
   </div>
 
   <% if @deck.cards.count != 0 %>
-    <h4>Cards:</h4>
+    <h4 id="cards-show-header">Cards:</h4>
     <div id="cards-container">
       <% @deck_cards.each do |card| %>
         <div class="card-overview">
