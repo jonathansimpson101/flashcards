@@ -1,16 +1,41 @@
 <div class="container">
   <h3>Your results for <%= @deck.name %>: </h3>
   <div class="row justify-content-center">
-    <div class="col-12">
-      <ol>
-        <% @deck.scores.each do |score| %>
-          <li>
-            Deck Name: <%= score.deck.name %>,
-            Updated At: <%= score.updated_at %>,
-            Total Correct: <%= score.total %>
-          </li>
+    <div class="results-in-con">
+      <div class="col-12">
+
+        <% if !@deck.scores.last.nil? %>
+          <% most_recent_user_score = @deck.scores.last.total %>
+          <% cards_in_deck = @deck.cards.count.to_f %>
+          <% user_percentage = (most_recent_user_score/cards_in_deck * 100).round%>
+          <% user_score_string_fraction = "#{most_recent_user_score}/#{cards_in_deck.to_i}" %>
+          <% if user_percentage <= 40 %>
+            <div class="big-percent">
+              You just scored <%= user_percentage %> %
+            </div>
+            <%= "You could use some extra time on this deck, you got #{user_score_string_fraction}." %>
+            <%= link_to "Study this deck again", deck_card_path(@deck) %>
+          <% elsif user_percentage <= 75 %>
+            <div class="big-percent">
+              You just scored <%= user_percentage %> %
+            </div>
+            <%= "Well done you got #{user_score_string_fraction} this try!" %>
+          <% elsif user_percentage == 100 %>
+            <div class="big-percent">
+              You just scored <%= user_percentage %> %
+            </div>
+            <%= "OMG! You got a perfect hundo! #{user_score_string_fraction}! Here have a medal :)" %>
+          <% else %>
+            <div class="big-percent">
+              You just scored <%= user_percentage %> %
+            </div>
+            <%= "Wow! Pat yourself on the back you got #{user_score_string_fraction} this try!" %>
+          <% end %>
+        <% else %>
+          <p> Umm... you're not supposed to be here... </p>
+          <p> Please score on a deck before coming to this page! </p>
         <% end %>
-      </ol>
+      </div>
     </div>
   </div>
 
