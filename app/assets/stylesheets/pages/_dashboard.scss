@@ -1,13 +1,13 @@
 #deck-list-and-recently-played-container{
   display:flex;
   justify-content:space-around;
-  margin: 10px 0 30px 0;
+  margin: 25px 0 10px 0;
 }
 
 #deck-list-container{
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:space-between;
   background-color:white;
   border-radius:10px;
   padding: 10px 10px 30px 10px;
@@ -51,10 +51,19 @@
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
   display:inline-block;
-  margin-left: 36%;
+  width:100%;
+  margin-bottom: 0px;
+  background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-orange.png");
 }
 
-#daily-usage:hover{
+#daily-usage > h5{
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration:underline;
+}
+
+#daily-usage > h7{
+  font-size: 12px;
 }
 
 .recently-played-card{

@@ -13,16 +13,14 @@
     <div id="deck-list-container">
     <h5 id="deck-list-header">Your decks:</h5>
       <%= render 'dashboard-deck-list' %>
+      <div id="daily-usage">
+        <h5>Daily Usage:</h5>
+        <h7> Total number of sign-ins: <%= current_user.sign_in_count %> </h7>
+      </div>
     </div>
     <% end %>
     <div id="recently-played-container">
       <%= render 'recently-played-cards' %>
     </div>
-  </div>
-
-  <div id="daily-usage">
-    <h5><strong>Daily Usage:</strong></h5>
-    <h7>You last signed in on: <%= current_user.last_sign_in_at.strftime("%A, %d %B") %> </h7><br>
-    <h7> Total number of sign-ins: <%= current_user.sign_in_count %> </h7>
   </div>
 </div>
