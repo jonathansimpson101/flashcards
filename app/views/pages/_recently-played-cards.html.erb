@@ -1,6 +1,6 @@
 <% @first_six_decks.each do |deck| %>
   <div class="recently-played-card">
-    <h3> <%= link_to deck.name, deck_path(deck) %> </h3>
+    <h3 id="dash-card-header"> <%= link_to deck.name, deck_path(deck) %> </h3>
     <div class="details-box">
       <div class="card-count">
         <p>Number of cards:<%= deck.cards.count %></p>
