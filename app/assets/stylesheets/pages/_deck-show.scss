@@ -34,10 +34,11 @@
   border: 2px solid black;
   margin-top: 13px;
   transition: 0.3s;
+  padding: 3px;
 }
 
 .card-overview:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 
