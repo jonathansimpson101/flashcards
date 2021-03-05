@@ -4,7 +4,7 @@
 
   <h3 id="deck-search-header">Card Search</h3>
 
-    <div class="search-bar select2">
+  <div class="search-bar select2">
     <%= form_tag decks_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -13,7 +13,7 @@
       <%= submit_tag "Search", class: "btn btn-primary", id: "deck-search-button" %>
     <% end %>
   </div>
-
+  <% if @cards.nil? %>
   <% @cards.each do |card| %>
     <div class="line-container">
       <div class="deck-container">
@@ -28,5 +28,12 @@
       </div>
     </div>
   <% end %>
+  <% else %>
+    <div class="no-cards-content">
+      <h3>You've not added any cards yet...</h3>
+      <p>Head back to your dashboard to add some now.</p>
+    </div>
+  <% end %>
+
 
 </div>

@@ -36,3 +36,14 @@
   text-decoration: none;
   color: black;
 }
+
+.no-cards-content {
+  text-align: center;
+  margin: 150px auto;
+  padding: 30px;
+  width: 600px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px $black;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-orange.png");
+}

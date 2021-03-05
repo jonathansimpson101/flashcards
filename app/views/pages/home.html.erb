@@ -7,7 +7,7 @@
       <h3>Start your revision Flashcard, the modern way to study using flashcards. </h3>
       <div class="links">
         <% if user_signed_in? %>
-          <%= link_to "My Dashbaord", dashboard_path, class:"btn btn-success", id:"log-in" %>
+          <%= link_to "My Dashboard", dashboard_path, class:"btn btn-success", id:"log-in" %>
         <% else %>
           <%= link_to "Get started today!" , new_user_registration_path ,class:"btn btn-success", id:"sign-up" %>
           <%= link_to "Log-In", new_user_session_path ,class:"btn btn-primary", id:"log-in" %>
