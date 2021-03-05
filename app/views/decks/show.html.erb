@@ -9,7 +9,7 @@
     <%= link_to "Study this deck", deck_card_path(@deck) %>
   </div>
 
-  <% if @deck.cards.nil? %>
+  <% if @deck.cards.count != 0 %>
     <h4>Cards:</h4>
     <div id="cards-container">
       <% @deck_cards.each do |card| %>
