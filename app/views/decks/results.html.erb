@@ -13,23 +13,31 @@
             <div class="big-percent">
               You just scored <%= user_percentage %> %
             </div>
-            <%= "You could use some extra time on this deck, you got #{user_score_string_fraction}." %>
-            <%= link_to "Study this deck again", deck_card_path(@deck) %>
+            <div class="display-message">
+              <%= "You could use some extra time on this deck, you got #{user_score_string_fraction}." %>
+            </div>
+            <%= link_to "Study this deck again", deck_card_path(@deck), class: "btn retry-button" %>
           <% elsif user_percentage <= 75 %>
             <div class="big-percent">
               You just scored <%= user_percentage %> %
             </div>
-            <%= "Well done you got #{user_score_string_fraction} this try!" %>
+            <div class="display-message">
+              <%= "Well done you got #{user_score_string_fraction} this try!" %>
+            </div>
           <% elsif user_percentage == 100 %>
             <div class="big-percent">
               You just scored <%= user_percentage %> %
             </div>
-            <%= "OMG! You got a perfect hundo! #{user_score_string_fraction}! Here have a medal :)" %>
+            <div class="display-message">
+              <%= "OMG! You got a perfect hundo! #{user_score_string_fraction}! Here have a medal :)" %>
+            </div>
           <% else %>
             <div class="big-percent">
               You just scored <%= user_percentage %> %
             </div>
-            <%= "Wow! Pat yourself on the back you got #{user_score_string_fraction} this try!" %>
+            <div class="display-message">
+              <%= "Wow! Pat yourself on the back you got #{user_score_string_fraction} this try!" %>
+            </div>
           <% end %>
         <% else %>
           <p> Umm... you're not supposed to be here... </p>
@@ -39,7 +47,7 @@
     </div>
   </div>
 
-  <%= link_to "Back to dashboard", dashboard_path, class: "results-buttons" %>
-  <%= link_to "Back to deck overview", deck_path(@deck), class: "results-buttons" %>
+  <%= link_to "Back to dashboard", dashboard_path, class: "btn results-buttons"  %>
+  <%= link_to "Back to deck overview", deck_path(@deck), class: "btn results-buttons"  %>
 
 </div>
