@@ -13,7 +13,7 @@
 
 .results-buttons{
   color:black;
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
   border-radius: 5px;
   margin-top: 25%;
   transition-duration: .3s;
@@ -51,4 +51,16 @@ h3{
 .retry-button:hover{
   transform: scale(1.2);
   text-decoration: none;
+}
+
+.results-in-con {
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
+  border: 2px solid black;
+  box-shadow: 2px 2px 4px $black;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.title-results {
+  margin: 40px auto;
 }
