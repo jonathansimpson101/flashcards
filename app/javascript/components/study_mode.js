@@ -1,6 +1,3 @@
-const correct = document.querySelectorAll("#correct");
-const incorrect = document.querySelectorAll("#incorrect");
-
 const scoreCounter = () => {
   let counter = document.getElementById('score_count');
   let dataCount =  Number.parseInt(counter.innerHTML, 10);
@@ -38,6 +35,8 @@ const userIncorrect = (event) => {
 
 // listen for click of tick or cross (will link to card_scores table in time)
 const scoreIncrement = () => {
+  const correct = document.querySelectorAll("#correct");
+  const incorrect = document.querySelectorAll("#incorrect");
   correct.forEach(correctButton => {
     correctButton.addEventListener("click", (userCorrect));
   });
