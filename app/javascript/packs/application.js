@@ -35,5 +35,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('hidden_button_edit')) {
     initCardListener();
   };
-  initSelect2();
+  if (! document.getElementById('deck-index-search-page')) {
+      initSelect2();
+  };
 });
