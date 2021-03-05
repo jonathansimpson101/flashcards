@@ -7,15 +7,21 @@
     <%= link_to "Edit this deck", edit_deck_path %>
     <%= link_to "Delete this deck", deck_path , method: :delete %>
     <%= link_to "Study this deck", deck_card_path(@deck) %>
-
   </div>
 
-  <h4>Cards:</h4>
-  <div id="cards-container">
-    <% @deck_cards.each do |card| %>
-      <div class="card-overview">
-         <%= card.question %>
-      </div>
-    <% end %>
-  </div>
+  <% if @deck.cards.nil? %>
+    <h4>Cards:</h4>
+    <div id="cards-container">
+      <% @deck_cards.each do |card| %>
+        <div class="card-overview">
+           <%= card.question %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="no-cards-content">
+      <h3>You've not added any cards yet...</h3>
+      <p>Head back to your dashboard to add some now.</p>
+    </div>
+  <% end %>
 </div>

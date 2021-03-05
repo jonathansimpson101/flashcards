@@ -1,4 +1,3 @@
-const flipButton = document.querySelectorAll('.flipButton');
 const correct = document.querySelectorAll("#correct");
 const incorrect = document.querySelectorAll("#incorrect");
 
@@ -78,6 +77,7 @@ const flipCard = (event) => {
 
 // listen for click of flip button
 const bindFlip = () => {
+  const flipButton = document.querySelectorAll('.flipButton');
   flipButton.forEach(button => {
     button.addEventListener("click", (flipCard));
   });
