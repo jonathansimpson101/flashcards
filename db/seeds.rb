@@ -14,6 +14,11 @@ users = []
   user.save
 end
 
+# Seeding user for demos
+puts "Seeding user for demos. Email: 'demo@gmail.com', Password: 123456, First Name: 'Jonathan', Last Name: Simpson"
+demo_user = User.new(first_name: "Jonathan", last_name: "Simpson", email: "demo@gmail.com", password: "123456")
+demo_user.save!
+
 # Seeding categories
 puts "Seeding Categories"
 front_end = Category.create!(name: "Front End")
@@ -38,6 +43,20 @@ rails = Deck.new(name:"Rails", category_id:back_end.id, user_id:users.sample.id)
 rails.save!
 sql = Deck.new(name:"SQL", category_id:back_end.id, user_id:users.sample.id)
 sql.save!
+
+# Seeding decks for demo user
+puts "Seeding decks for demo user"
+advanced_routing = Deck.new(name:"Advanced Routing", category_id:back_end.id, user_id:demo_user.id)
+advanced_routing.save!
+
+dom_manipulation = Deck.new(name:"DOM Manipulation", category_id:front_end.id, user_id:demo_user.id)
+dom_manipulation.save!
+
+db = Deck.new(name:"Migrations", category_id:back_end.id, user_id:demo_user.id)
+db.save!
+
+heroku = Deck.new(name:"Heroku", category_id:back_end.id, user_id:demo_user.id)
+heroku.save!
 
 # Seeding cards
 puts "Seeding Cards"

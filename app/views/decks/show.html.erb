@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to "Back to Dashbord", dashboard_path, class: "btn btn-primary", class:"back-to-dash-button"%>
+  <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-primary", class:"back-to-dash-button"%>
   <h2 id="overivew-header"><%= @deck.name %></h2>
   <h4>There are <%= @deck.cards.count %> cards in this deck</h4>
 
@@ -7,15 +7,21 @@
     <%= link_to "Edit this deck", edit_deck_path %>
     <%= link_to "Delete this deck", deck_path , method: :delete %>
     <%= link_to "Study this deck", deck_card_path(@deck) %>
-
   </div>
 
-  <h4>Cards:</h4>
-  <div id="cards-container">
-    <% @deck_cards.each do |card| %>
-      <div class="card-overview">
-         <%= card.question %>
-      </div>
-    <% end %>
-  </div>
+  <% if @deck.cards.count != 0 %>
+    <h4>Cards:</h4>
+    <div id="cards-container">
+      <% @deck_cards.each do |card| %>
+        <div class="card-overview">
+           <%= card.question %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="no-cards-content">
+      <h3>You've not added any cards yet...</h3>
+      <p>Head back to your dashboard to add some now.</p>
+    </div>
+  <% end %>
 </div>
