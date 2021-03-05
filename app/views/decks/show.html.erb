@@ -5,8 +5,8 @@
 
   <div class="buttons-container">
     <%= link_to "Edit this deck", edit_deck_path %>
-    <%= link_to "Delete this deck", deck_path , method: :delete %>
-    <%= link_to "Study this deck", deck_card_path(@deck) %>
+    <%= link_to "Study this deck", deck_card_path(@deck), id: "deck-show-study-deck-button" %>
+    <%= link_to "Delete this deck", deck_path , method: :delete, id: "deck-show-delete-deck-button" %>
   </div>
 
   <% if @deck.cards.count != 0 %>
