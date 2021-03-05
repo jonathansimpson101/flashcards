@@ -23,9 +23,14 @@ demo_user.save!
 puts "Seeding Categories"
 front_end = Category.create!(name: "Front End")
 back_end = Category.create!(name: "Back End")
+ajax = Category.create!(name: "Ajax")
+authenticating_users = Category.create!(name: "Authenticating Users")
+searching_database = Category.create!(name: "Searching Databases")
+github = Category.create!(name: "Github")
+
 
 # Seeding decks
-puts "Seeding decks"
+puts "Seeding Decks"
 html = Deck.new(name:"HTML", category_id:front_end.id, user_id:users.sample.id)
 html.save!
 css = Deck.new(name:"CSS", category_id:front_end.id, user_id:users.sample.id)
@@ -54,196 +59,260 @@ heroku = Deck.new(name:"Heroku", category_id:back_end.id, user_id:demo_user.id)
 heroku.save!
 
 # Seeding cards
-puts "Seeding cards"
-card1 = Card.new(question: "Where do you write the attributes for a HTML element?",
+puts "Seeding Cards"
+card1 = Card.new(question: "What are the roles of HTML tags?",
                  attempt: "-",
-                 answer: "In the opening tag",
+                 answer: "HTML tags tell browsers what kind of content they should display. Browsers read each tag and implement its associated default style",
                  )
 card1.save!
 
-card2 = Card.new(question: "What does CSS stand for?",
+card2 = Card.new(question: "How do you emphasize a word in a paragraph?",
                  attempt: "-",
-                 answer: "Cascading Style Sheets",
+                 answer: "You can both use <em> or <strong> tags, surrounding the text you wish to emphasize",
                  )
 card2.save!
 
-card3 = Card.new(question: "What does AJAX stand for?",
-                 attempt: "-",
-                 answer: "Asynchronous Javascript and XML",
-                 )
-card3.save!
-
-card4 = Card.new(question: "Which array method would you use to select only the elements which meet a certain condition?",
-                 attempt: "-",
-                 answer: ".select",
-                 )
-card4.save!
-
-card5 = Card.new(question: "Write the command to generate a migration file to add a column to a table",
-                 attempt: "-",
-                 answer: "rails g migration AddColumnToTable column:column_type",
-                 )
-card5.save!
-
-card6 = Card.new(question: "Which Active Record method retrieves all instances of a model from the database?",
-                 attempt: "-",
-                 answer: "Model.all",
-                 )
-card6.save!
-
-card7 = Card.new(question: "In which section of the HTML file is the link to the stylesheet placed?",
-                 attempt: "-",
-                 answer: "The head.",
-                 )
-card7.save!
-
-card8 = Card.new(question: "Write the line of code to add a 3px solid blue border to a div",
-                 attempt: "-",
-                 answer: "border: 3px solid blue;",
-                 )
-card8.save!
-
-card9 = Card.new(question: "Which Javascript function is used to find an element in the DOM?",
-                 attempt: "-",
-                 answer: "document.querySelector()",
-                 )
-card9.save!
-
-card10 = Card.new(question: "Write out a line of code which takes a string and reverses the order of the characters.",
-                 attempt: "-",
-                 answer: "string.reverse",
-                 )
-card10.save!
-
-card11 = Card.new(question: "If no database type is specified, which type will Rails use by default?",
-                 attempt: "-",
-                 answer: "sqlite",
-                 )
-card11.save!
-
-card12 = Card.new(question: "Which placeholder is used in SQL to reprensent all columns in a table?",
-                 attempt: "-",
-                 answer: "*",
-                 )
-card12.save!
-
-card13 = Card.new(question: "Which HTML element is generally used to hold other elements?",
+card3 = Card.new(question: "Which HTML element is generally used to hold other elements?",
                  attempt: "-",
                  answer: "<div> tags",
                  )
-card13.save!
+card3.save!
 
-card14 = Card.new(question: "How do you add a blockquote in HTML?",
+card4 = Card.new(question: "How do you add a blockquote in HTML?",
                  attempt: "-",
-                 answer: "<blockquote></blockquote>",
+                 answer: "<blockquote> </blockquote>",
                  )
-card14.save!
+card4.save!
 
-card15 = Card.new(question: "What does the action attribute do in a form?",
+card5 = Card.new(question: "What does the action attribute do in a form?",
                  attempt: "-",
-                 answer: "Gives the URL for where the form is to be submitted.",
+                 answer: "Gives the URL for where the form is to be submitted",
                  )
-card15.save!
+card5.save!
 
-card16 = Card.new(question: "What is a form in HTML for?",
+card6 = Card.new(question: "What is a form in HTML for?",
                  attempt: "-",
-                 answer: "It accept some information from the user and submits it via a HTTP to the server.",
+                 answer: "It accept some information from the user and submits it via a HTTP to the server",
                  )
-card16.save!
+card6.save!
 
-card17 = Card.new(question: "Where in your HTML document should the script tags be?",
+card7 = Card.new(question: "Where in your HTML document should the script tags be?",
                  attempt: "-",
-                 answer: "At the bottom of the body.",
+                 answer: "At the bottom of the body",
                  )
-card17.save!
+card7.save!
 
-card18 = Card.new(question: "What does HTML stand for?",
+card8 = Card.new(question: "In which section of the HTML file is the link to the stylesheet placed?",
+                 attempt: "-",
+                 answer: "The head.",
+                 )
+card8.save!
+
+card9 = Card.new(question: "What does HTML stand for?",
                  attempt: "-",
                  answer: "Hyper Text Markup Language",
                  )
-card18.save!
+card9.save!
 
-card19 = Card.new(question: "What is the required syntax to add a box shadow to a div in CSS?",
+card10 = Card.new(question: "What does CSS stand for?",
                  attempt: "-",
-                 answer: "'box-shadow: 1px 1px 2px black;' Where the first two arguments position the box shadow, the third one defines the amount of blur and the final argument defines the colour.",
+                 answer: "Cascading Style Sheets!",
                  )
-card19.save!
+card10.save!
 
-card20 = Card.new(question: "What is the required syntax to add a box shadow to a div in CSS?",
+card11 = Card.new(question: "What is the required syntax to add a box shadow to a div in CSS?",
                  attempt: "-",
-                 answer: "'box-shadow: 1px 1px 2px black;' Where the first two arguments position the box shadow, the third one defines the amount of blur and the final argument defines the colour.",
+                 answer: "'box-shadow: 1px 1px 2px black;' --> Where the first two arguments position the box shadow, the third one defines the amount of blur and the final argument defines the colour",
                  )
-card20.save!
+card11.save!
 
-card21 = Card.new(question: "Name the four ways in which you can define color in CSS.",
+card12 = Card.new(question: "How do you define a div as a flexbox in your CSS?",
                  attempt: "-",
-                 answer: "HSL, RGB, Hex colours and Named colours.",
+                 answer: "By applying to your div the CSS property, display: flex; property",
                  )
-card21.save!
+card12.save!
 
-card22 = Card.new(question: "State the five available arguments for justify-position in Flexbox.",
+card13 = Card.new(question: "What is the box model and what 4 dimension properties make up the box model?",
+                 attempt: "-",
+                 answer: "The box model defines the CSS dimension properties of an HTML element. The 4 dimensions are: margin, border, padding and content",
+                 )
+card13.save!
+
+card14 = Card.new(question: "State the five available arguments for justify-position in Flexbox",
                  attempt: "-",
                  answer: "start, center, end, space-around and space-between.",
                  )
+card14.save!
+
+card15 = Card.new(question: "1) In CSS, what syntax defines a CSS component as a CSS id, 2) What is a CSS id, 3) Why is it useful?",
+                 attempt: "-",
+                 answer: "1) Syntax requires #, 2) A CSS id is an HTML attribute used to define specific CSS properties to a unique element, 3) It is useful as it applies to only one specific HTML element",
+                 )
+card15.save!
+
+card16 = Card.new(question: "Write the line of code to add a 3px solid blue border to a div",
+                 attempt: "-",
+                 answer: "border: 3px solid blue;",
+                 )
+card16.save!
+
+card17 = Card.new(question: "What does AJAX stand for?",
+                 attempt: "-",
+                 answer: "Asynchronous Javascript and XML",
+                 )
+card17.save!
+
+card18 = Card.new(question: "Which Javascript function is used to find an element in the DOM?",
+                 attempt: "-",
+                 answer: "document.querySelector()",
+                 )
+card18.save!
+
+card19 = Card.new(question: "How do you store a value in a brand new variable in JS??",
+                 attempt: "-",
+                 answer: "You need to use one of the const or let keywords, then afterwards assign VARIABLE_NAME = VARIABLE_VALUE",
+                 )
+card19.save!
+
+card20 = Card.new(question: "Whats the difference between a const and let variable?",
+                 attempt: "-",
+                 answer: "const defines a variable whose value will not be re-assigned whereas a let variable can be re-assigned (important for iterations as let can be assigned as the 'count' to break the loop)",
+                 )
+card20.save!
+
+card21 = Card.new(question: "How do you interpolate a string in Javascript?",
+                 attempt: "-",
+                 answer: "by using '${ }'",
+                 )
+card21.save!
+
+card22 = Card.new(question: "Which array method would you use to select only the elements which meet a certain condition?",
+                 attempt: "-",
+                 answer: ".select",
+                 )
 card22.save!
 
-
-# Seeding cards for demo user decks
-puts "Seeding cards for demo user decks"
-
-card23 = Card.new(question: "State all of the action names for the CRUD actions in Rails",
+card23 = Card.new(question: "Write out a line of code which takes a string and reverses the order of the characters",
                  attempt: "-",
-                 answer: "Index, Show, New, Create, Edit, Update, Destroy",
+                 answer: "string.reverse",
                  )
 card23.save!
 
-card24 = Card.new(question: "Which Javascript methods can you use to identify an object in the DOM?",
+card24 = Card.new(question: "What is a variable? How do you use them?",
                  attempt: "-",
-                 answer: ".getElementById, .querySelector, .querySelectorAll",
+                 answer: "A variable is like a container, you can put anything you want in it by assigning values to them using an '='",
                  )
 card24.save!
 
-card25 = Card.new(question: "What command do you run in order to create a new colunn in a table?",
+card25 = Card.new(question: "What method can you call on an object to determine its type (String, Integer, Array…)?",
                  attempt: "-",
-                 answer: "rails g migration AddColumnToTable column-name",
+                 answer: ".class method",
                  )
 card25.save!
 
-card26 = Card.new(question: "Which command do you use in order to put your project on Heroku?",
+card26 = Card.new(question: "What is the main difference between single quotes '' and double quotes ""?",
                  attempt: "-",
-                 answer: "git push heroku master",
+                 answer: "You can only interpolate between double quotes --> " '#{ }' "",
                  )
 card26.save!
 
+card27 = Card.new(question: "Write the command to generate a migration file to add a column to a table:",
+                 attempt: "-",
+                 answer: "rails g migration AddColumnToTable column:column_type",
+                 )
+card27.save!
+
+card28 = Card.new(question: "If no database type is specified, which type will Rails use by default?",
+                 attempt: "-",
+                 answer: "sqlite",
+                 )
+card28.save!
+
+card29 = Card.new(question: "Whats is command do you run in terminal to: 1) drop the database, 2) creat an empty database, 3) run pending migrations into the database and 4) run seeds.rb file?",
+                 attempt: "-",
+                 answer: "1) Rails db:drop, 2) Rails db:create, 3) Rails db:migrate, 4) Rails db:seed",
+                 )
+card29.save!
+
+card30 = Card.new(question: "List the 7 CRUD actions:",
+                 attempt: "-",
+                 answer: "index, show, new, create, edit, update and destroy",
+                 )
+card30.save!
+
+card31 = Card.new(question: "How do you build the path to a page of a Rails app?",
+                 attempt: "-",
+                 answer: "Run rails routes in terminal",
+                 )
+card31.save!
+
+card32 = Card.new(question: "Which Active Record method retrieves all instances of a model from the database?",
+                 attempt: "-",
+                 answer: "Model.all",
+                 )
+card32.save!
+
+card33 = Card.new(question: "Which placeholder is used in SQL to reprensent all columns in a table?",
+                 attempt: "-",
+                 answer: "*",
+                 )
+card33.save!
+
+card34 = Card.new(question: "It’s Dr House's birthday. What SQL query would you execute to update his age to its new value 32 knowing his id is 3?",
+                 attempt: "-",
+                 answer: "UPDATE doctors SET age = 42 WHERE id = 3;",
+                 )
+card34.save!
+
+card35 = Card.new(question: "Whose responsibility is it to set the id of a new model instance?",
+                 attempt: "-",
+                 answer: "It’s the DB’s responsibility. Every DB manages the id’s autoincrement",
+                 )
+card35.save!
+
+card36 = Card.new(question: "In a DB with a students table, write an SQL query to get the number of students by age groups?",
+                 attempt: "-",
+                 answer: "SELECT COUNT(*), age FROM students, GROUP BY age;",
+                 )
+card36.save!
 
 # Seeding topics
-puts "Seeding topics"
+puts "Seeding Topics"
 Topic.create!(card_id: card1.id, deck_id: html.id)
-Topic.create!(card_id: card2.id, deck_id: css.id)
-Topic.create!(card_id: card3.id, deck_id: javascript.id)
-Topic.create!(card_id: card4.id, deck_id: ruby.id)
-Topic.create!(card_id: card5.id, deck_id: rails.id)
-Topic.create!(card_id: card6.id, deck_id: sql.id)
+Topic.create!(card_id: card2.id, deck_id: html.id)
+Topic.create!(card_id: card3.id, deck_id: html.id)
+Topic.create!(card_id: card4.id, deck_id: html.id)
+Topic.create!(card_id: card5.id, deck_id: html.id)
+Topic.create!(card_id: card6.id, deck_id: html.id)
 Topic.create!(card_id: card7.id, deck_id: html.id)
-Topic.create!(card_id: card8.id, deck_id: css.id)
-Topic.create!(card_id: card9.id, deck_id: javascript.id)
-Topic.create!(card_id: card10.id, deck_id: ruby.id)
-Topic.create!(card_id: card11.id, deck_id: rails.id)
-Topic.create!(card_id: card12.id, deck_id: sql.id)
-Topic.create!(card_id: card13.id, deck_id: html.id)
-Topic.create!(card_id: card14.id, deck_id: html.id)
-Topic.create!(card_id: card15.id, deck_id: html.id)
-Topic.create!(card_id: card16.id, deck_id: html.id)
-Topic.create!(card_id: card17.id, deck_id: html.id)
-Topic.create!(card_id: card18.id, deck_id: html.id)
-Topic.create!(card_id: card19.id, deck_id: css.id)
-Topic.create!(card_id: card20.id, deck_id: css.id)
-Topic.create!(card_id: card21.id, deck_id: css.id)
-Topic.create!(card_id: card22.id, deck_id: css.id)
-Topic.create!(card_id: card23.id, deck_id: advanced_routing.id)
-Topic.create!(card_id: card24.id, deck_id: dom_manipulation.id)
-Topic.create!(card_id: card25.id, deck_id: db.id)
-Topic.create!(card_id: card26.id, deck_id: heroku.id)
-
+Topic.create!(card_id: card8.id, deck_id: html.id)
+Topic.create!(card_id: card9.id, deck_id: html.id)
+Topic.create!(card_id: card10.id, deck_id: css.id)
+Topic.create!(card_id: card11.id, deck_id: css.id)
+Topic.create!(card_id: card12.id, deck_id: css.id)
+Topic.create!(card_id: card13.id, deck_id: css.id)
+Topic.create!(card_id: card14.id, deck_id: css.id)
+Topic.create!(card_id: card15.id, deck_id: css.id)
+Topic.create!(card_id: card16.id, deck_id: css.id)
+Topic.create!(card_id: card17.id, deck_id: javascript.id)
+Topic.create!(card_id: card18.id, deck_id: javascript.id)
+Topic.create!(card_id: card19.id, deck_id: javascript.id)
+Topic.create!(card_id: card20.id, deck_id: javascript.id)
+Topic.create!(card_id: card21.id, deck_id: javascript.id)
+Topic.create!(card_id: card22.id, deck_id: ruby.id)
+Topic.create!(card_id: card23.id, deck_id: ruby.id)
+Topic.create!(card_id: card24.id, deck_id: ruby.id)
+Topic.create!(card_id: card25.id, deck_id: ruby.id)
+Topic.create!(card_id: card26.id, deck_id: ruby.id)
+Topic.create!(card_id: card27.id, deck_id: rails.id)
+Topic.create!(card_id: card28.id, deck_id: rails.id)
+Topic.create!(card_id: card29.id, deck_id: rails.id)
+Topic.create!(card_id: card30.id, deck_id: rails.id)
+Topic.create!(card_id: card31.id, deck_id: rails.id)
+Topic.create!(card_id: card32.id, deck_id: sql.id)
+Topic.create!(card_id: card33.id, deck_id: sql.id)
+Topic.create!(card_id: card34.id, deck_id: sql.id)
+Topic.create!(card_id: card35.id, deck_id: sql.id)
+Topic.create!(card_id: card36.id, deck_id: sql.id)
 
 puts "Done!"
