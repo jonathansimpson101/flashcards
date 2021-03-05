@@ -7,7 +7,17 @@
           <li>
             Deck Name: <%= score.deck.name %>,
             Updated At: <%= score.updated_at %>,
-            Total Correct: <%= score.total %>
+            Total Correct: <%= score.total.last %>
+            <!-- if score.total.to_f/@deck.cards.count <= 0.4 -->
+              <!-- puts "You could use some extra time on this deck, you got #{score.total}/#{@deck.cards.count}." -->
+              <!-- <%#= link_to "Study this deck again", deck_card_path(@deck, @deck_cards) %> -->
+              <!-- elsif score.total.to_f/@deck.cards.count <= 0.75 -->
+              <!-- puts "Well done you got #{score.total}/#{@deck.cards.count} this try!" -->
+              <!-- elsif #{score.total.to_f/@deck.cards.count * 100} == 1.0 -->
+              <!-- puts "OMG! You got a perfect 100%!#{score.total}/#{@deck.cards.count}! Here have a medal :)" -->
+              <!-- else -->
+              <!-- puts "Wow! Pat yourself on the back you got #{score.total}/#{@deck.cards.count} this try!" -->
+            <!-- end -->
           </li>
         <% end %>
       </ol>
