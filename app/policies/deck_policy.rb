@@ -16,6 +16,10 @@ class DeckPolicy < ApplicationPolicy
     true
   end
 
+  def results?
+    true
+  end
+
   def show?
     true
   end

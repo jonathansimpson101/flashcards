@@ -1,4 +1,11 @@
 class CardsController < ApplicationController
+  before_action :set_card, only: [:edit, :update, :destroy]
+  before_action :set_deck, only: [:show, :create]
+
+  def index
+    @cards = policy_scope(Card)
+  end
+
   def new
     @card = Card.new
   end
@@ -6,7 +13,6 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.user_id = current_user.id
-    @deck = Deck.find(params[:deck_id])
     if @card.save
       Topic.create(deck_id: @deck.id, card_id: @card.id)
       redirect_to create_new_deck_cards_deck_path(@deck)
@@ -16,37 +22,36 @@ class CardsController < ApplicationController
   end
 
   def show
-    @deck = Deck.find(params[:deck_id])
     @card = @deck.cards.first
   end
 
   def edit
-    @card = Card.find(params[:id])
   end
 
   def update
-    @card = Card.find(params[:id])
     @card.update(card_params)
-
     redirect_to cards_path
   end
 
   def destroy
-    @card = Card.find(params[:id])
     @card.destroy
-    does_user_have_card = Card.where(user: current_user)
-    if does_user_have_card[0].nil?
+    index
+    if @cards.nil?
       redirect_to dashboard_path
     else
       redirect_to cards_path
     end
   end
 
-  def index
-    @cards = Card.where(user: current_user)
+  private
+
+  def set_deck
+    @deck = Deck.find(params[:deck_id])
   end
 
-  private
+  def set_card
+    @card = Card.find(params[:id])
+  end
 
   def card_params
     params.require(:card).permit(:question, :answer)
