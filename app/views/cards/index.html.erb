@@ -1,6 +1,8 @@
 <div class="container">
-
-  <%= link_to "Back to dasboard", dashboard_path, class: "back-to-dash-button" %>
+  <span class="buttons-card-index">
+    <%= link_to "Back to dasboard", dashboard_path, class: "back-to-dash-button" %>
+    <button class="reveal-answers">Reveal Answer's</button>
+  </span>
 
   <h3 id="deck-search-header">Card Search</h3>
 
@@ -16,9 +18,9 @@
   <% if current_user.cards.count != 0 %>
   <% current_user.cards.each do |card| %>
     <div class="line-container">
-      <div class="deck-container">
+      <div class="card-container">
         <h5><strong><%= card.question %></strong>
-        <h5><strong><%= card.answer %></strong>
+        <h5 id="card-answer-visible" class="card-answer-hide"><strong><%= card.answer %></strong>
       </div>
       <div id="edit-card-button">
          <%= link_to "Edit this card", edit_card_path(card) %>
