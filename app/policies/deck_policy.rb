@@ -5,6 +5,7 @@ class DeckPolicy < ApplicationPolicy
     end
   end
 
+
   # don't need new as it is passed create in app policy
   # anyone can create a new deck
   def create?
@@ -22,6 +23,10 @@ class DeckPolicy < ApplicationPolicy
   # don't need an edit as update is called by edit in app policy
   # can only edit if you are the user who made the deck, user = current_user, record = @deck
   def update?
+    user == record.user
+  end
+
+  def destroy?
     user == record.user
   end
 end

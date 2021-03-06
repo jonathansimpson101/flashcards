@@ -6,6 +6,7 @@ class DecksController < ApplicationController
   end
 
   def index
+    @decks = policy_scope(Deck)
     if params[:query].present?
       @decks = Deck.search_by_name(params[:query])
     else
