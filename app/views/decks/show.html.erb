@@ -7,7 +7,9 @@
     <% if policy(@deck).edit? %>
       <%= link_to "Edit this deck", edit_deck_path %>
     <% end %>
-    <%= link_to "Study this deck", deck_card_path(@deck), id: "deck-show-study-deck-button" %>
+    <% if !@deck.cards.empty? %>
+      <%= link_to "Study this deck", deck_card_path(@deck), id: "deck-show-study-deck-button" %>
+    <% end %>
     <% if policy(@deck).destroy? %>
       <%= link_to "Delete this deck", deck_path , method: :delete, data: { confirm: 'Are you sure you want to delete?' }, id: "deck-show-delete-deck-button" %>
     <% end %>
