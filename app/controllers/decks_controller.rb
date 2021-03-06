@@ -1,6 +1,7 @@
 class DecksController < ApplicationController
+  before_action :set_deck, except: [:index, :new, :create]
+
   def show
-    @deck = Deck.find(params[:id])
     @deck_cards = @deck.cards
   end
 
@@ -14,10 +15,12 @@ class DecksController < ApplicationController
 
   def new
     @deck = Deck.new
+    authorize @deck
   end
 
   def create
     @deck = Deck.new(strong_params)
+    authorize @deck
     @deck.user = current_user
     if params[:deck][:category_id].present?
       category = Category.find(params[:deck][:category_id])
@@ -33,23 +36,18 @@ class DecksController < ApplicationController
   end
 
   def create_new_deck_cards
-    @deck = Deck.find(params[:id])
     @deck.name = @deck.name.titleize
     @card = Card.new
     @deck_cards = @deck.cards
   end
 
   def results
-    @deck = Deck.find(params[:id])
   end
 
-
   def edit
-    @deck = Deck.find(params[:id])
   end
 
   def update
-    @deck = Deck.find(params[:id])
     @deck.update!(strong_params)
     question_keys = params[:deck][:cards].keys.select { |key| key.match?(/question/) }
     answer_keys = params[:deck][:cards].keys.select { |key| key.match?(/answer/) }
@@ -71,7 +69,6 @@ class DecksController < ApplicationController
 
   def destroy
     @user = current_user
-    @deck = Deck.find(params[:id])
     @deck.destroy
     redirect_to dashboard_path
   end
@@ -80,5 +77,10 @@ class DecksController < ApplicationController
 
   def strong_params
     params.require(:deck).permit(:name)
+  end
+
+  def set_deck
+    @deck = Deck.find(params[:id])
+    authorize @deck
   end
 end
