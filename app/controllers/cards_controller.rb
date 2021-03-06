@@ -12,6 +12,7 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
+    authorize @card
     @card.user_id = current_user.id
     if @card.save
       Topic.create(deck_id: @deck.id, card_id: @card.id)
@@ -23,6 +24,7 @@ class CardsController < ApplicationController
 
   def show
     @card = @deck.cards.first
+    authorize @card
   end
 
   def edit
@@ -51,6 +53,7 @@ class CardsController < ApplicationController
 
   def set_card
     @card = Card.find(params[:id])
+    authorize @card
   end
 
   def card_params

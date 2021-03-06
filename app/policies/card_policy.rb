@@ -5,6 +5,10 @@ class CardPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   #don't need a new? as it inherits to create from the app policy
   def create?
     true
@@ -12,10 +16,10 @@ class CardPolicy < ApplicationPolicy
 
   # don't need an edit? as it inherits from the app policy
   def update?
-    user == record.user
+    user.id == record.user_id
   end
 
   def destroy?
-    user == record.user
+    user.id == record.user_id
   end
 end
