@@ -20,7 +20,7 @@
     <div class="line-container">
       <div class="card-container">
         <h5><strong><%= card.question %></strong>
-        <h5 id="card-answer-visible" class="card-answer-hide"><strong><%= card.answer %></strong>
+        <h5 id="card-answer-visible" class="card-answer-hide"><%= card.answer %>
       </div>
       <div id="edit-card-button">
          <%= link_to "Edit this card", edit_card_path(card) %>
