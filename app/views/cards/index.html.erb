@@ -17,7 +17,7 @@
   </div>
   <% if current_user.cards.count != 0 %>
   <% current_user.cards.each do |card| %>
-    <div class="line-container">
+    <div class="line-container-cards">
       <div class="card-container">
         <h5><strong><%= card.question %></strong>
         <h5 id="card-answer-visible" class="card-answer-hide"><%= card.answer %>
