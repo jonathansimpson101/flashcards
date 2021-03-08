@@ -1,20 +1,18 @@
 <div class="container">
-  <div class="text-center mt-5">
-    <h2><%= @deck.name %></h2>
-    <p><%= @deck.category.name %></p>
-  </div>
-
   <div class="add-new-card">
     <div class="question-form">
       <h4>Add a New Card</h4>
-      <%= simple_form_for [@deck, @card], remote: true do |f| %>
+      <%= simple_form_for [@deck, @card], remote: true, method: :post do |f| %>
         <%= f.input :question, as: :text %>
         <%= f.input :answer, as: :text %>
         <%= f.submit "Add Card", class: "btn btn-success", id:"card-add-button"%>
       <% end %>
     </div>
     <div class="cards-container">
-      <h4>Current Cards</h4>
+        <div class="text-center">
+    <h4><%= @deck.name %>'s Current Cards</h4>
+    <p><%= @deck.category.name %></p>
+  </div>
       <% @deck_cards.each do |card| %>
         <div class="card-overview-deck">
           <%= card.question %>
