@@ -26,6 +26,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initCardListener } from "../channels/card_listner";
 import { bindFlip, scoreIncrement } from '../components/study_mode';
+import { revealCard } from '../components/reveal_cards_index';
 import { initSelect2 } from '../components/init_select2';
 import confetti from "canvas-confetti"
 
@@ -41,6 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   if (! document.getElementById('deck-index-search-page')) {
       initSelect2();
   };
+
 const bigPercent = document.querySelector(".big-percent");
   if (bigPercent && bigPercent.dataset.confetti ){
 
@@ -73,20 +75,9 @@ var end = Date.now() + duration;
 
 }());
 };
-
-// var myCanvas = document.createElement('canvas');
-// document.getElementById("results-container").appendChild(myCanvas);
-
-// var myConfetti = confetti.create(myCanvas, {
-//   resize: true,
-//   useWorker: true
-// });
-// myConfetti({
-//   particleCount: 100,
-//   spread: 160
-//   // any other options from the global
-//   // confetti function
-// });
+  if (document.getElementById('card-answer-visible')) {
+    revealCard();
+  };
 });
 
 

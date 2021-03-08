@@ -1,12 +1,12 @@
 #card-study-page {
   display:flex;
   justify-content: center;
-  margin-bottom: 20px;
+  height: 100vh;
 }
 
 .card-main {
   width: 650px;
-  height: 600px;
+  height: 650px;
   margin: 20px auto;
   padding: 10px;
   display: flex;
@@ -23,7 +23,7 @@
   .card-question, .attempt, .card-answer {
     padding: 30px;
     box-shadow: 1px 1px 2px lightgrey;
-    margin: 20px 15px;
+    margin: 30px 15px;
     background-color: white;
     border-radius: 10px;
     border: 1px solid black;
@@ -43,7 +43,7 @@
 }
 
 .button-correct {
-  margin: 25px auto;
+  margin: 50px auto;
   display: flex;
   justify-content: space-around;
   font-size: 42px;
@@ -77,10 +77,13 @@
 
 .card-total, .card-completed {
   border: 1px solid black;
-  padding: 15px 10px 10px 10px;
+  padding: 15px 30px 10px 30px;
   box-shadow: 1px 1px 2px lightgrey;
   border-radius: 10px;
   background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
+  h6 {
+    font-size: 24px;
+  }
 }
 
 #score_count, #score_count_total {

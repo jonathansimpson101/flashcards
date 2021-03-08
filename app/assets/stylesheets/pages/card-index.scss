@@ -10,14 +10,15 @@
   padding-left: 20px;
   transition-duration:0.3s;
   width:70%;
-
 }
 
 #delete-card-button{
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869202/Landing-page%20background%20and%20logo/card-background.png");
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px;
   margin:10px;
+  opacity: 0.8;
+  text-align: center;
 }
 
 #delete-card-button a{
@@ -26,10 +27,12 @@
 }
 
 #edit-card-button{
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-yellow.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-blue.png");
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px;
   margin:10px;
+  opacity: 0.8;
+  text-align: center;
 }
 
 #edit-card-button a{
@@ -46,4 +49,66 @@
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-orange.png");
+}
+
+.card-container{
+  margin: 10px 10px 10px 0;
+  padding: 13px 20px 5px 20px;
+  background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-orange.png");
+  border-radius: 5px;
+  display:flex;
+  justify-content:space-between;
+  align-items:start;
+  flex-direction: column;
+  transition-duration:0.3s;
+  width:90%;
+  opacity: 0.7;
+}
+
+.line-container-cards {
+  display:flex;
+  #edit-card-button, #delete-card-button {
+    visibility: hidden;
+  }
+}
+
+.line-container-cards:hover {
+  display:flex;
+  background-color: white;
+  #edit-card-button, #delete-card-button {
+    visibility: visible;
+  }
+  .card-container {
+    opacity: 1;
+  }
+}
+.card-answer-hide {
+  visibility: hidden;
+}
+
+.show-card {
+  visibility: visible;
+}
+
+.reveal-answers {
+  margin-top: 15px;
+  border-radius: 5px;
+  background: url(https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png);
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+  padding: 5px;
+}
+
+.reveal-answers:hover{
+  text-decoration: none;
+  color:black;
+  transform: scale(1.1);
+  background-color: white;
+}
+
+.buttons-card-index {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
