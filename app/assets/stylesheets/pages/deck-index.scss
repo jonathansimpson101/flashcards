@@ -70,10 +70,14 @@ background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/La
 }
 
 .back-to-dash-button{
+  display:inline-block;
+  transition-duration: .3s;
   padding: 5px;
   margin-top: 10px;
-  display:inline-block;
-  transition-duration: .3s
+  border: 1px solid black;
+  color:black;
+  border-radius: 5px;
+  background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-orange.png");
 }
 
 .back-to-dash-button:hover{
@@ -81,5 +85,4 @@ background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/La
   color:black;
   transform: scale(1.1);
   background-color: white;
-
 }
