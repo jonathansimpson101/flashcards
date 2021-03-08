@@ -12,11 +12,19 @@
 @import "components/index";
 @import "pages/index";
 
+// .min-height{
+//   min-height:calc(100vh - 138px);
+// }
+
 .min-height{
-  min-height:calc(100vh - 138px);
+  min-height: 100vh;
+  padding-bottom: 120px !important;
+  position: relative;
 }
 
 body{
   // background:url("card-background-yellow.png");
   background-color:white;
+  height: 100%;
+  position: relative;
 }
