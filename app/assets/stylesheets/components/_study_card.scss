@@ -1,13 +1,13 @@
 #card-study-page {
   display:flex;
-  justify-content:center;
-  margin-bottom: 20px;
+  justify-content: center;
+  height: 100vh;
 }
 
 .card-main {
   width: 650px;
-  height: 800px;
-  margin: auto;
+  height: 650px;
+  margin: 20px auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
