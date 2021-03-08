@@ -15,8 +15,10 @@
 #delete-card-button{
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869202/Landing-page%20background%20and%20logo/card-background.png");
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px;
   margin:10px;
+  opacity: 0.8;
+  text-align: center;
 }
 
 #delete-card-button a{
@@ -25,10 +27,12 @@
 }
 
 #edit-card-button{
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-yellow.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-blue.png");
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px;
   margin:10px;
+  opacity: 0.8;
+  text-align: center;
 }
 
 #edit-card-button a{
@@ -70,6 +74,7 @@
 
 .line-container-cards:hover {
   display:flex;
+  background-color: white;
   #edit-card-button, #delete-card-button {
     visibility: visible;
   }
