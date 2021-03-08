@@ -14,10 +14,12 @@
     <h5 id="deck-list-header">Your decks:</h5>
       <%= render 'dashboard-deck-list' %>
       <div id="daily-usage">
-        <h5>Daily Usage:</h5>
-        <h7> <em>Total number of sign-ins:</em> <strong><%= current_user.sign_in_count %></strong> </h7>
+        <h5>Flashcard Usage:</h5>
+        <h7> <em>Number of log-ins this month!:</em> <strong><%= current_user.sign_in_count %></strong> </h7>
         <br>
-        <h7> <em>Study streak!:</em> <strong><%= current_user.streaks %></strong> </h7>
+        <h7> <em>Decks studied this month!:</em> <strong><%= current_user.decks_per_month %></strong> </h7>
+        <br>
+        <h7> <em>Daily streak!:</em> <strong><%= current_user.streaks %></strong> </h7>
       </div>
     </div>
     <% end %>
