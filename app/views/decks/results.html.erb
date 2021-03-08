@@ -3,7 +3,6 @@
   <div class="row justify-content-center">
     <div class="results-in-con">
       <div class="col-12">
-
         <% if !@deck.scores.last.nil? %>
           <% most_recent_user_score = @deck.scores.last.total %>
           <% cards_in_deck = @deck.cards.count.to_f %>
@@ -45,6 +44,13 @@
         <% end %>
       </div>
     </div>
+
+  </div>
+  <div class="correct-cards">
+    <% %>
+    <% @deck.cards.each do |card| %>
+      <%= if card.card_scores.last.correct %>
+    <% end %>
   </div>
 
   <%= link_to "Back to dashboard", dashboard_path, class: "btn results-buttons"  %>
