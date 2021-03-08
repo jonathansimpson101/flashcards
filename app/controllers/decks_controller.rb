@@ -52,12 +52,11 @@ class DecksController < ApplicationController
     @deck = Deck.find(params[:id])
     @deck.update!(strong_params)
     question_keys = params[:deck][:cards].keys.select { |key| key.match?(/question/) }
-    answer_keys = params[:deck][:cards].keys.select { |key| key.match?(/answer/) }
     new_cards = []
     question_keys.each_with_index do | key, index|
       question = "question_#{index + 1}"
       answer = "answer_#{index + 1}"
-      new_cards << Card.create(question: params[:deck][:cards][question], answer: params[:deck][:cards][answer])
+      new_cards << Card.create(question: params[:deck][:cards][question], answer: params[:deck][:cards][answer], user_id: current_user.id)
     end
     cards = params[:deck][:card_ids].reject(&:blank?).map(&:to_i)
     new_cards = new_cards.select(&:valid?)
