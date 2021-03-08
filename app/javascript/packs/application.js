@@ -24,7 +24,7 @@ ActiveStorage.start()
 import "bootstrap";
 
 // Internal imports, e.g:
-import { initCardListener } from "../channels/card_listner";
+import { initCardListener, initCardListener2 } from "../channels/card_listner";
 import { bindFlip, scoreIncrement } from '../components/study_mode';
 import { revealCard } from '../components/reveal_cards_index';
 import { initSelect2 } from '../components/init_select2';
@@ -38,6 +38,9 @@ document.addEventListener('turbolinks:load', () => {
   };
   if (document.getElementById('hidden_button_edit')) {
     initCardListener();
+  };
+  if (document.getElementById('hidden_button_new')) {
+    initCardListener2();
   };
   if (! document.getElementById('deck-index-search-page')) {
       initSelect2();

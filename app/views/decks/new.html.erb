@@ -5,7 +5,7 @@
 			<%= simple_form_for @deck do |f| %>
   			<%= f.input :name %>
   			<%= f.association :category, required: false %>
-                <%= f.simple_fields_for :category, remote: true do |category|%>
+                <%= f.simple_fields_for :category do |category|%>
                 <p> or </p>
                   <button id="hidden_button_new" type="button">
                     Create a new category
