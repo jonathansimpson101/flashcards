@@ -1,9 +1,24 @@
-<div class="container">
+<div class="dash-buttons">
+<%= link_to "Back to dashboard", dashboard_path, class: "btn results-buttons"  %>
+<%= link_to "Back to deck overview", deck_path(@deck), class: "btn results-buttons"  %>
+</div>
+<div id="results-container"></div>
+<style type="text/css">
+  #results-container{
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+  }
+  #results-container canvas{
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
+<div class="container" >
   <h3 class="title-results">Your results for <%= @deck.name %>: </h3>
   <div class="row justify-content-center">
     <div class="results-in-con">
-      <div class="col-12">
-
+      <div class="col-12 results-box">
         <% if !@deck.scores.last.nil? %>
           <% most_recent_user_score = @deck.scores.last.total %>
           <% cards_in_deck = @deck.cards.count.to_f %>
@@ -22,15 +37,16 @@
               You just scored <%= user_percentage %> %
             </div>
             <div class="display-message">
-              <%= "Well done you got #{user_score_string_fraction} this try!" %>
+              <%= "Well done! you got #{user_score_string_fraction} this try!" %>
             </div>
           <% elsif user_percentage == 100 %>
-            <div class="big-percent">
+            <div class="big-percent" data-confetti="true">
               You just scored <%= user_percentage %> %
             </div>
             <div class="display-message">
-              <%= "OMG! You got a perfect hundo! #{user_score_string_fraction}! Here have a medal :)" %>
+              <%= "You got a perfect hundo! #{user_score_string_fraction}! Here have a trophy :)" %>
             </div>
+              <i class="fas fa-trophy"></i>
           <% else %>
             <div class="big-percent">
               You just scored <%= user_percentage %> %
@@ -47,7 +63,6 @@
     </div>
   </div>
 
-  <%= link_to "Back to dashboard", dashboard_path, class: "btn results-buttons"  %>
-  <%= link_to "Back to deck overview", deck_path(@deck), class: "btn results-buttons"  %>
+
 
 </div>
