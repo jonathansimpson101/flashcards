@@ -1,0 +1,74 @@
+.add-new-card {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  .question-form {
+    width: 30%;
+    margin: 30px;
+    h4 {
+      text-align: center;
+    }
+  }
+  .cards-container {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px lightgrey;
+    width: 60%;
+    margin: 30px;
+    background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-blue.png");
+    h4 {
+      text-align: center;
+    }
+  }
+}
+
+.card-overview-deck {
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}
+
+.links-to-pages {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+  .links-buttons {
+    color:black;
+    background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-orange.png");
+    border-radius: 5px;
+  }
+  .links-buttons:hover {
+    text-decoration: none;
+    color: black;
+    transform: scale(1.05);
+  }
+}
+
+.question-form {
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px lightgrey;
+  padding: 20px;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-blue.png");
+}
+
+#card-add-button {
+  border-radius: 5px;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-green.png");
+  margin: 20px 20px 20px 16px;
+  text-align: center;
+  justify-content: center;
+  font-size: 18px;
+  width: inherit;
+}
+
+#card-add-button:hover {
+  text-decoration: none;
+  color: black;
+  transform: scale(1.05);
+}

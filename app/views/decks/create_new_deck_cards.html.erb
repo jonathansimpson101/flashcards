@@ -1,52 +1,28 @@
-<div class="text-center">
-  <br>
-  <h2><%= @deck.name %></h2>
-  <p><%= @deck.category.name %></p>
-</div>
-
-<br>
-
 <div class="container">
-  <div class="row">
-  <div class="col-sm-3 text-center new-deck-function-row">
-    <h4>Cards:</h4>
-    <div id="cards-container">
+  <div class="add-new-card">
+    <div class="question-form">
+      <h4>Add a New Card</h4>
+      <%= simple_form_for [@deck, @card], remote: true, method: :post do |f| %>
+        <%= f.input :question, as: :text %>
+        <%= f.input :answer, as: :text %>
+        <%= f.submit "Add Card", class: "btn btn-success", id:"card-add-button"%>
+      <% end %>
+    </div>
+    <div class="cards-container">
+        <div class="text-center">
+    <h4><%= @deck.name %>'s Current Cards</h4>
+    <p><%= @deck.category.name %></p>
+  </div>
       <% @deck_cards.each do |card| %>
-        <div class="card-overview">
+        <div class="card-overview-deck">
           <%= card.question %>
-          <br>
-          <%= card.answer %>
         </div>
       <% end %>
     </div>
   </div>
 
-  <div class="col-sm-1 new-deck-function-breaks">
-  </div>
-
-  <div class="col-sm-4 text-center" id="new-deck-function-row-middle">
-    <h4>Add a Card:</h4>
-    <%= simple_form_for [@deck, @card] do |f| %>
-      <%= f.input :question %>
-      <%= f.input :answer %>
-      <%= f.submit "Add Card", class: "btn btn-success", id:"new-deck-add-button"%>
-    <% end %>
-  </div>
-
-  <div class="col-sm-1 new-deck-function-breaks">
-  </div>
-
-  <div class="col-sm-3 text-center new-deck-function-row" >
-    <h4>Keyword searchbar:</h4>
-  </div>
-  </div>
+  <span class="links-to-pages">
+    <%= link_to "Add existing cards", deck_path, class: "btn links-buttons" %>
+    <%= link_to "Back to dashboard", deck_path, class: "btn links-buttons" %>
+  </span>
 </div>
-
-<br>
-<br>
-
-<div class="container new-deck-buttons-container text-center">
-  <%= link_to "Confirm deck!", dashboard_path, class:"btn btn-success", id:"new-deck-confirm-button" %>
-  <%= link_to "Delete deck...", deck_path(@deck), class:"btn btn-success", id:"new-deck-delete-button", data: {confirm: 'Are you sure you would like to delete this deck?'}, method: :delete %>
-</div>
-<br>
