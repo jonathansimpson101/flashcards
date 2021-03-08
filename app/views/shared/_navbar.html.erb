@@ -2,7 +2,7 @@
    <div class="navbar-set">
     <div class="navbar-logo">
       <%= link_to root_path do %>
-        <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1614767455/Landing-page%20background%20and%20logo/logo.png", :width => 50, :height => 40) %>
+        <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1615200804/flashcard-logo_hrqipb.png", :width => 50, :height => 40) %>
       <% end %>
     </div>
 
@@ -19,7 +19,7 @@
               <%= link_to "#{current_user.first_name}'s Dashbaord", dashboard_path, class: "dropdown-item" %>
               <%= link_to "Search for a Deck", decks_path, class: "dropdown-item" %>
               <%= link_to "Add a New Deck", new_deck_path, class: "dropdown-item" %>
-              <%= link_to "Sign Out", destroy_user_session_path(@user), class: "dropdown-item" %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         </ul>
