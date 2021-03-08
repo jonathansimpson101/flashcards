@@ -15,7 +15,9 @@
       <%= render 'dashboard-deck-list' %>
       <div id="daily-usage">
         <h5>Daily Usage:</h5>
-        <h7> Total number of sign-ins: <%= current_user.sign_in_count %> </h7>
+        <h7><em>Number of log-ins this month!:</em> <strong><%= current_user.logins_per_month %></strong> </h7>
+        <h7><em>Number of decks completed this month!:</em> <strong><%= current_user.decks_studied_per_month %></strong> </h7>
+        <h7><em>Flashcard streak!:</em> <strong><%= current_user.streaks %></strong></h7>
       </div>
     </div>
     <% end %>
