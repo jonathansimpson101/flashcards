@@ -40,7 +40,7 @@
               <%= "Well done! you got #{user_score_string_fraction} this try!" %>
             </div>
           <% elsif user_percentage == 100 %>
-            <div class="big-percent" data-confetti="true">
+            <div class="big-percent" id="confetti">
               You just scored <%= user_percentage %> %
             </div>
             <div class="display-message">
