@@ -1,8 +1,10 @@
 const showAnswers = () => {
   const cardContainer = document.querySelector('.card-container');
-  const cardAnswer = document.getElementById('card-answer-visible');
+  const cardAnswer = document.querySelectorAll('#card-answer-visible');
   cardContainer.classList.toggle('card-container-toggle');
-  cardAnswer.classList.toggle('show-card');
+  cardAnswer.forEach(answer => {
+    answer.classList.toggle('show-card');
+  });
 };
 
 const revealCard = () => {
