@@ -3,6 +3,7 @@ class DecksController < ApplicationController
 
   def show
     @deck_cards = @deck.cards
+    authorize @deck_cards
   end
 
   def index
