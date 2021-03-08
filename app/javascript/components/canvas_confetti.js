@@ -28,4 +28,4 @@ const canvasConfetti = () => {
   }());
 };
 
-export {canvasConfetti};
+export {canvasConfetti };
