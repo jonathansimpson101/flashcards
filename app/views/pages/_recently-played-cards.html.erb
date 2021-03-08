@@ -1,12 +1,30 @@
 <% @first_six_decks.each do |deck| %>
   <div class="recently-played-card">
-    <h3 id="dash-card-header"> <%= link_to deck.name, deck_path(deck) %> </h3>
+    <div class="card-title-and-subtitle">
+      <h3 id="dash-card-header"> <%= link_to deck.name, deck_path(deck) %> </h3>
+      <h6 id="dash-card-subtitle">  <%= deck.category.name %> </h6>
+    </div>
     <div class="details-box">
-      <div class="card-count">
-        <p>Number of cards:<%= deck.cards.count %></p>
-        <p>Made by: <%= deck.user.first_name %></p>
-        <p>Studied: <%= deck.scores.count %> times </p>
+      <div class="cards-details-box">
+        <p class = "used-count"></i><%= deck.cards.count %> cards</p>
+      </div>
+    </div>
+    <div class="name-and-avatar">
+      <p class="user-name">Made by <%= deck.user.first_name %></p>
+      <div class="card-avatar-div">
+        <% if deck.user.avatar.attached? %>
+          <%= cl_image_tag deck.user.avatar.key, cloud_name: "flashcard", class: "card-avatar" %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1614867653/Landing-page%20background%20and%20logo/default-avatar.jpg", alt: "alttext", class: "card-avatar", alt: "alttext" %>
+        <% end %>
       </div>
     </div>
   </div>
 <% end %>
+
+
+
+
+
+
+<!-- "https://res.cloudinary.com/flashcard/image/upload/v1614867653/Landing-page%20background%20and%20logo/default-avatar.jpg", alt: "alttext", class: "card-avatar" -->
