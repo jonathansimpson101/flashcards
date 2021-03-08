@@ -1,7 +1,9 @@
 <div class="container">
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-primary", class:"back-to-dash-button"%>
   <h2 id="overivew-header"><%= @deck.name %></h2>
-  <h4>There are <%= @deck.cards.count %> cards in this deck</h4>
+  <% if @deck.cards.count != 0 %>
+    <h4>You've got <%= @deck.cards.count %> cards in this deck.</h4>
+  <% end %>
 
   <div class="buttons-container">
     <% if policy(@deck).edit? %>
