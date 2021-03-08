@@ -7,7 +7,7 @@
   			<%= f.association :category, required: false %>
                 <%= f.simple_fields_for :category, remote: true do |category|%>
                 <p> or </p>
-                  <button id="hidden_button_edit" type="button">
+                  <button id="hidden_button_new" type="button">
                     Create a new category
                   </button>
                   <div class="d-none hidden_form">

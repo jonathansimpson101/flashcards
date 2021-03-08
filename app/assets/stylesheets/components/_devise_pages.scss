@@ -9,8 +9,11 @@
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
-    background-color: white;
     margin: 10px auto;
+    background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
+  }
+  .form-actions > .btn {
+    font-weight: 600;
   }
 }
 
@@ -31,16 +34,15 @@
   border-radius: 5px;
   padding: 5px;
   display: inline-block;
-  background-color: white;
   color: black;
   width: inherit;
   text-align: center;
   margin: 10px auto;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-yellow.png");
 }
 
 #links:hover, .form-actions:hover {
   text-decoration:none;
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
 }
 
 .form-check {

@@ -87,6 +87,7 @@
   transition: .3s;
   width:100%;
   margin-top: 7%;
+  font-weight: 600;
 }
 
 
@@ -101,4 +102,13 @@ div.form-group, .string, .required, .deck_name{
 
 #create-deck-form{
   margin-top: 20vh;
+  margin-bottom: 10vh;
+}
+
+#hidden_button_new {
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-blue.png");
+  border:none;
+  padding:10px;
+  margin: 20px;
+  border-radius: 10px;
 }

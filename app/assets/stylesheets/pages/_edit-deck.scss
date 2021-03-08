@@ -18,5 +18,18 @@
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
   border:none;
   padding:10px;
+  margin: 20px;
+}
+
+#hidden_button_edit:hover, .update-btn > input:hover {
+  transform: scale(1.1);
+}
+
+.update-btn > input {
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-blue.png");
+  border:none;
+  padding:10px;
+  margin: 20px;
+  border-radius: 10px;
 }
 
