@@ -96,14 +96,6 @@
   box-shadow: 4px 4px 8px black;
 }
 
-.details-box{
-  // padding: 5px;
-  // border-radius: 5px;
-  // display:flex;
-  // justify-content:space-between;
-}
-
-
 
 .card-count{
   display: flex;
@@ -208,10 +200,11 @@
   display:flex;
   justify-content: center;
   border-radius: 6px;
-  margin: 5px;
+  margin: 5px auto;
   text-align: center;
-  padding: 5px;
-   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-yellow.png");
+  padding: 8px;
+  width: fit-content;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-yellow.png");
 }
 
 .used-count{
