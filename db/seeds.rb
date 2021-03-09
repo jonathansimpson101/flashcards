@@ -10,7 +10,6 @@ User.destroy_all
 
 
 avatar_images = ["https://images.ctfassets.net/1wryd5vd9xez/4DxzhQY7WFsbtTkoYntq23/a4a04701649e92a929010a6a860b66bf/https___cdn-images-1.medium.com_max_2000_1_Y6l_FDhxOI1AhjL56dHh8g.jpeg",
-"https://lh3.googleusercontent.com/proxy/x3NAg3Tm72B2liDaxlK0Z5VWb_MPeqoOJ-Cy-nU3I6TyM4afe1ZTLJiZfaRNQPkeCEBg40Vj0i5JuYEiM6vilEczTutHxbijObUVZAF0jTgRAUm7_9SIIpggMGjPqg",
 "https://alzheimer.ca/sites/default/files/styles/hero/public/2020-09/National-ambassador-Jane-Kennedy.jpg?itok=etAp5n27",
 "https://mk0qomafemocnned3wjh.kinstacdn.com/wp-content/uploads/2019/02/AI-thispersondoesnotexist.jpg",
 "https://i2.wp.com/therighthairstyles.com/wp-content/uploads/2014/03/8-choppy-collarbone-cut.jpg?resize=500%2C500&ssl=1",
