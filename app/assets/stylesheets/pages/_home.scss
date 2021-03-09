@@ -12,6 +12,15 @@
 }
 
 #page-content {
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+}
+
+#page-content-title {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,7 +39,7 @@
   flex-direction: column;
   justify-content: center;
   height: fit-content;
-  max-width: 90%;
+  width: 90%;
   opacity: 0.9;
   margin: 30px 0;
   .indented {
@@ -87,3 +96,11 @@ h1 {
   }
 }
 
+#type-here, #type-here-2 {
+  background-color: white;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 20px;
+  width: 90%;
+  height: 40px;
+}

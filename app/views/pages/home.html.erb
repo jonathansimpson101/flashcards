@@ -1,5 +1,6 @@
 <div class="whole-grid">
   <div id="main-content">
+    <div id="page-content-title">
     <div id="page-content">
       <div  class="content">
         <%= image_tag("https://res.cloudinary.com/flashcard/image/upload/v1615200804/flashcard-logo_hrqipb.png", class:"logo") %>
@@ -18,6 +19,12 @@
     </div>
     <div id="page-content">
       <div class="more-info">
+        <h4><%= "Question:" %></h4>
+        <h5 class="indented"><%= "What is the definition of HTML?" %></h5>
+        <h4><%= "Answer:" %></h4>
+        <h5 class="indented" id='type-here'><%=  %></h5>
+      </div>
+      <div class="more-info">
         <h4><%= "<ul>" %></h4>
         <h5 class="indented"><%= "<li> Add your decks and cards... </li>" %></h5>
         <h5 class="indented"><%= "<li> Start your study session now... </li>" %></h5>
@@ -26,12 +33,10 @@
         <h4><%= "</ul>" %></h4>
       </div>
       <div class="more-info">
-        <h5><%= "const studyMode = () => { " %></h5>
-        <h5 class="indented"><%= "const doNotDisturb = document.getElementById('no-distraction');" %></h5>
-        <h5 class="indented"><%= "doNotDisturb.addEventListener('click', () => { "  %></h5>
-        <h5 class="indented-2"><%= "completeMyDecksNow()" %></h5>
-        <h5 class="indented"><%= "};"  %></h5>
-        <h5><%= "};" %></h5>
+        <h4><%= "Question:" %></h4>
+        <h5 class="indented"><%= "How to do you say 'Good Morning, How are you today?' in French?" %></h5>
+        <h4><%= "Answer:" %></h4>
+        <h5 class="indented" id='type-here-2'><%=  %></h5>
       </div>
     </div>
   </div>

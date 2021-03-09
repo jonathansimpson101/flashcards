@@ -31,6 +31,7 @@ import { initCardListener, initCardListener2 } from "../channels/card_listner";
 import { bindFlip, scoreIncrement } from '../components/study_mode';
 import { revealCard } from '../components/reveal_cards_index';
 import { initSelect2 } from '../components/init_select2';
+import { initTyped, initTyped2 } from '../components/init_typed';
 import { canvasConfetti } from '../components/canvas_confetti';
 
 document.addEventListener('turbolinks:load', () => {
@@ -48,6 +49,9 @@ document.addEventListener('turbolinks:load', () => {
   if (! document.getElementById('deck-index-search-page')) {
       initSelect2();
   };
+  if (document.getElementById('page-content')) {
+    initTyped();
+    initTyped2();
   if (document.getElementById('card-answer-visible')) {
     revealCard();
   };
