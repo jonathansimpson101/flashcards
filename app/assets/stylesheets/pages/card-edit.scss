@@ -1,0 +1,18 @@
+#card-edit-form {
+  box-shadow: 2px 2px 2px lightgrey;
+  border: 1px solid black;
+  border-radius: 10px;
+  background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
+  padding: 15px 30px;
+  margin: 30px auto;
+}
+
+.card-edit-btn > input {
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
+  border:none;
+  padding:10px;
+  margin: 20px 20px 20px 15px;
+  border-radius: 10px;
+  width: inherit;
+  text-align: center;
+}

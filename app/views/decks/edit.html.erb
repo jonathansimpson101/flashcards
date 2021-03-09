@@ -8,15 +8,17 @@
     <%= f.input :name %>
     <%= f.association :category, input_html: { class: 'select2' }  %>
     <%= f.association :cards, label_method: :question, value_method: :id, input_html: {  class: 'select2', multiple: true } %>
-    <%= f.simple_fields_for :cards do |card|%>
+    <%= f.simple_fields_for :cards do |card| %>
       <button id="hidden_button_edit" type="button">
         Create new card
       </button>
-      <div class="d-none hidden_form">
+      <div class="d-none hidden_form" , id="update-deck-btn" >
         <%= card.input :question_1 %>
         <%= card.input :answer_1 %>
       </div>
     <% end %>
-  <%= f.submit %>
+  <span class="update-btn">
+    <%= f.submit %>
+  </span>
   <% end %>
 </div>

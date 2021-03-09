@@ -85,6 +85,7 @@
 .recently-played-card a{
   text-decoration:none;
   color:black;
+  font-family: 'Dancing Script', cursive;
 }
 
 .recently-played-card:hover{
@@ -96,16 +97,19 @@
 }
 
 .details-box{
-  border:1px solid black;
-  padding: 5px;
-  border-radius: 5px;
-  background-color:white;
+  // padding: 5px;
+  // border-radius: 5px;
+  // display:flex;
+  // justify-content:space-between;
 }
 
 
 
 .card-count{
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #create-new-deck-button{
@@ -190,4 +194,62 @@
 
 #dash-card-header{
 
+}
+
+.user-name{
+  font-family: 'Dancing Script', cursive;
+  margin-right: 10px;
+  margin-bottom:0;
+}
+
+.cards-details-box{
+  background-color: white;
+  border: 1px solid black;
+  display:flex;
+  justify-content: center;
+  border-radius: 6px;
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-yellow.png");
+}
+
+.used-count{
+  margin-bottom: 0
+}
+
+.studied-count{
+  margin-bottom: 0;
+}
+
+.card-avatar-div{
+  height: 35px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.card-avatar{
+  height: 100%;
+  width: 35px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.name-and-avatar{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.card-title-and-subtitle{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+}
+
+#dash-card-subtitle{
+    font-family: 'Dancing Script', cursive;
+    opacity: 50%;
 }

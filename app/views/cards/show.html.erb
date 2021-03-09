@@ -14,7 +14,7 @@
         <h3><%= card.question %></h3>
       </div>
       <%= simple_form_for "#{card}", remote: true do |f| %>
-        <%= f.input :attempt, id:"user_attempt", input_html: {class: "attempt_#{index}"} %>
+        <%= f.input :attempt, as: :text, id:"user_attempt", input_html: {class: "attempt_#{index}"} %>
         <%= f.hidden_field :card_id, data: {card: card.id}, class: "hidden_field", value: false %>
       <% end %>
       <span class="button-correct">
@@ -26,13 +26,13 @@
       <div class="card-question">
         <p>Question:</p> <%= card.question %>
       </div>
-      <div class="attempt card-attempt<%= index %>">
-      </div>
+      <pre><code><div class="attempt card-attempt<%= index %>">
+      </div></code></pre>
       <div class="card-answer">
         <p>Answer:</p> <%= card.answer %>
       </div>
       <span class="button-correct">
-        <i id="correct" data-id="<%= index %>" data-card="<%= card.id %>" class="far fa-check-circle"></i>
+        <i id="correct" data-id="<%= index %>" data-card="<%= card.id %>" class="fas fa-check"></i>
         <i id="incorrect" data-id="<%= index %>" data-card="<%= card.id %>" class="fas fa-times"></i>
       </span>
     </div>
@@ -42,4 +42,3 @@
   </div>
   <% end %>
 </div>
-

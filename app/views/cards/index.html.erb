@@ -1,6 +1,8 @@
 <div class="container">
-
-  <%= link_to "Back to dasboard", dashboard_path, class: "back-to-dash-button" %>
+  <span class="buttons-card-index">
+    <%= link_to "Back to dasboard", dashboard_path, class: "back-to-dash-button" %>
+    <button class="reveal-answers">Reveal Answers</button>
+  </span>
 
   <h3 id="deck-search-header">Card Search</h3>
 
@@ -15,16 +17,16 @@
   </div>
   <% if current_user.cards.count != 0 %>
   <% current_user.cards.each do |card| %>
-    <div class="line-container">
-      <div class="deck-container">
+    <div class="line-container-cards">
+      <div class="card-container">
         <h5><strong><%= card.question %></strong>
-        <h5><strong><%= card.answer %></strong>
+        <h5 id="card-answer-visible" class="card-answer-hide"><%= card.answer %>
       </div>
       <div id="edit-card-button">
-         <%= link_to "Edit this card", edit_card_path(card) %>
+         <%= link_to "Edit", edit_card_path(card) %>
       </div>
       <div id="delete-card-button" >
-         <%= link_to "Delete this card", card_path(card), method: :delete, data: { confirm: "Are you sure?" } %>
+         <%= link_to "Delete", card_path(card), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
     </div>
   <% end %>
