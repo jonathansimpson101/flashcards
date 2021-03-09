@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
   before_update :add_streak
   has_many :decks, dependent: :destroy
-  has_one_attached :avatar
+  has_one_attached :avatar, dependent: :destroy
   has_many :cards, dependent: :destroy
   has_many :scores, dependent: :destroy
 
