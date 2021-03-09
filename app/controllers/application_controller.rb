@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     dashboard_path(current_user)
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # def user_not_authorized
