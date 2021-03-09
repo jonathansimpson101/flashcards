@@ -1,7 +1,6 @@
 #deck-list-and-recently-played-container{
   display:flex;
-  justify-content:space-around;
-  margin: 25px 0 10px 0;
+  margin-bottom: 10px;
 }
 
 #deck-list-container{
@@ -11,23 +10,41 @@
   background-color:white;
   border-radius:10px;
   padding: 10px 10px 30px 10px;
-  width: 20%;
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
+  height: 90%;
 }
 
-#deck-list-container:hover{
+.dashboard-subheadings {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration:underline;
+  text-align: center;
+  padding-top: 6px;
+}
 
+.dashboard-subheadings-2 {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration:underline;
+  text-align: center;
 }
 
 #recently-played-container{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: 20px;
+}
+
+.dashboard-right {
   margin-left: 20px;
-  height:60vh;
-  width: 90%;
+  width: 100%;
+}
+
+.dashboard-left {
+  margin-top: 76px;
+  width: 20%;
 }
 
 .deck-link{
@@ -46,20 +63,24 @@
   margin-top: 20px;
   background-color:white;
   border-radius: 10px;
-  padding:20px;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
   display:inline-block;
-  width:100%;
-  margin-bottom: 0px;
+  align-items: flex-end;
+  margin-bottom: 20px;
   background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-orange.png");
 }
 
 #daily-usage > h5{
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration:underline;
+  margin-bottom: 0px;
 }
 
 #daily-usage > h7{
@@ -105,12 +126,13 @@
 }
 
 #create-new-deck-button{
-  margin: 15px 50px 20px 0;
+  margin: 15px 76px 20px 0px;
   border-radius: 10px;
   border:2px solid black;
   font-size: 20px;
   transition: .2s;
   text-align: center;
+  justify-content: space-between;
   color: black;
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
 }
@@ -141,7 +163,10 @@
 
 .dashboard-buttons-container{
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
+  padding-left: pxpx;
+  padding-right: 59px;
+  padding-left: 56px;
 }
 
 #deck-list-header{
@@ -150,7 +175,7 @@
 }
 
 #index-user-cards{
-  margin: 15px 50px 20px 0;
+  margin: 15px 70px 20px 0px;
   border-radius: 10px;
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
   border:2px solid black;
@@ -178,10 +203,6 @@
 .deck-button:hover{
   transform: scale(1.1);
   border: 2px solid black;
-}
-
-#most-popular-decks-header{
-  margin-left: 20%;
 }
 
 #dash-card-header{
