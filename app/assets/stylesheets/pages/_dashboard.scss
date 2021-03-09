@@ -9,13 +9,10 @@
   background-color:white;
   border-radius:10px;
   padding: 10px 10px 30px 10px;
-  width: 20%;
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
-  margin-bottom: 20px;
-  margin-top: 108px;
-  margin-right: 10px;
+  height: 90%;
 }
 
 .dashboard-subheadings {
@@ -42,6 +39,11 @@
 .dashboard-right {
   margin-left: 20px;
   width: 100%;
+}
+
+.dashboard-left {
+  margin-top: 76px;
+  width: 20%;
 }
 
 .deck-link{
@@ -131,7 +133,7 @@
 }
 
 #create-new-deck-button{
-  margin: 15px 50px 20px 0;
+  margin: 15px 65px 20px 0px;
   border-radius: 10px;
   border:2px solid black;
   font-size: 20px;
@@ -169,8 +171,9 @@
 .dashboard-buttons-container{
   display:flex;
   justify-content:space-between;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: pxpx;
+  padding-right: 56px;
+  padding-left: 56px;
 }
 
 #deck-list-header{
@@ -179,7 +182,7 @@
 }
 
 #index-user-cards{
-  margin: 15px 50px 20px 0;
+  margin: 15px 70px 20px 0px;
   border-radius: 10px;
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
   border:2px solid black;

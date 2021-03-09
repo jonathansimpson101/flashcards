@@ -3,9 +3,11 @@
   <!--the div containing both the deck list on the left and the recently played div -->
   <div id="deck-list-and-recently-played-container">
     <% if @decks %>
-    <div id="deck-list-container">
+    <div class="dashboard-left">
       <h5 class="dashboard-subheadings" id="deck-list-header">Your decks:</h5>
+    <div id="deck-list-container">
       <%= render 'dashboard-deck-list' %>
+    </div>
     </div>
     <% end %>
     <div class="dashboard-right">
