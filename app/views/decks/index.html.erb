@@ -17,8 +17,15 @@
   <% @decks.each do |deck| %>
     <div class="line-container">
       <div class="deck-container">
-        <h5><strong><%= deck.name %></strong> (<%= deck.cards.count %> cards)</h5>
-        <h5><strong>Made by: </strong><%= deck.user.first_name %></h5>
+        <h5><strong><%= deck.name %></strong> ~ <%= deck.cards.count %> <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1615289621/Landing-page%20background%20and%20logo/cards-icon.png", class: "cards-icon" %> </h5>
+        <div class="username-avatar">
+          <h5><%= deck.user.first_name %></h5>
+          <% if deck.user.avatar.attached? %>
+            <%= cl_image_tag deck.user.avatar.key, cloud_name: "flashcard", class: "card-avatar" %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1614867653/Landing-page%20background%20and%20logo/default-avatar.jpg", alt: "alttext", class: "card-avatar", alt: "alttext" %>
+          <% end %>
+        </div>
       </div>
       <div class="study-now-container">
          <%= link_to "Study now", deck_path(deck) %>
