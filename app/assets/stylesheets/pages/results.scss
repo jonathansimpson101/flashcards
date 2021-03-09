@@ -39,9 +39,13 @@ h3{
   margin: 30px auto;
 }
 
-.previous, .first-previous, .second-previous, .answer-overall {
+.previous, .first-previous, .second-previous {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.answer-first {
+  display: flex;
 }
 
 .display-message{

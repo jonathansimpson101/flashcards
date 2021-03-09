@@ -65,17 +65,31 @@
       <p id="results-header">Just now:</p>
       <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
         <% if score.correct %>
+        <div class="answer-first">
           <div class="previous-correct-cards-container">
             <div class="results-question">
               <%= score.card.question %>
             </div>
           </div>
+          <div class="answer-cards-container">
+            <div class="results-answer">
+              <%= score.card.answer %>
+            </div>
+          </div>
+        </div>
         <% else %>
+        <div class="answer-first">
           <div class="previous-incorrect-cards-container">
             <div class="results-question">
               <%= score.card.question %>
             </div>
           </div>
+          <div class="answer-cards-container">
+            <div class="results-answer">
+              <%= score.card.answer %>
+            </div>
+          </div>
+        </div>
         <% end %>
       <% end %>
     </div>
@@ -87,14 +101,14 @@
           <% if score.correct %>
             <div class="previous-correct-cards-container">
               <div class="results-question">
-                <%= score.card.question %>
-              </div>
+<!--                 <%= score.card.question %>
+ -->              </div>
             </div>
           <% else %>
             <div class="previous-incorrect-cards-container">
               <div class="results-question">
-                <%= score.card.question %>
-              </div>
+<!--                 <%= score.card.question %>
+ -->              </div>
             </div>
           <% end %>
         <% end %>
@@ -108,28 +122,17 @@
           <% if score.correct %>
             <div class="previous-correct-cards-container">
               <div class="results-question">
-                <%= score.card.question %>
-              </div>
+<!--                 <%= score.card.question %>
+ -->              </div>
             </div>
           <% else %>
             <div class="previous-incorrect-cards-container">
               <div class="results-question">
-                <%= score.card.question %>
-              </div>
+<!--                 <%= score.card.question %>
+ -->              </div>
             </div>
           <% end %>
         <% end %>
-      <% end %>
-    </div>
-
-    <div class="answer-overall">
-      <p id="answers-header">Answers:</p>
-      <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
-        <div class="answer-cards-container">
-          <div class="results-answer">
-            <%= score.card.answer %>
-          </div>
-        </div>
       <% end %>
     </div>
   </div>
