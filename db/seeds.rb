@@ -17,8 +17,8 @@ avatar_images = ["https://images.ctfassets.net/1wryd5vd9xez/4DxzhQY7WFsbtTkoYntq
 "https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg",
 "https://grademiners.com/wp-content/uploads/2017/07/Descriptive-Essay-About-a-Person.jpg",
 "https://img.buzzfeed.com/buzzfeed-static/static/2016-07/7/5/enhanced/buzzfeed-prod-fastlane01/original-grid-image-13357-1467884354-3.jpg?crop=1024:1024;0,0",
-"https://img.buzzfeed.com/buzzfeed-static/static/2016-07/7/5/enhanced/buzzfeed-prod-fastlane01/original-grid-image-13974-1467884399-11.jpg?crop=1024:1024;0,0"]
-
+"https://img.buzzfeed.com/buzzfeed-static/static/2016-07/7/5/enhanced/buzzfeed-prod-fastlane01/original-grid-image-13974-1467884399-11.jpg?crop=1024:1024;0,0",
+"https://mk0qomafemocnned3wjh.kinstacdn.com/wp-content/uploads/2019/02/AI-thispersondoesnotexist.jpg"]
 # Seeding users
 puts 'Seeding Users'
 users = []
