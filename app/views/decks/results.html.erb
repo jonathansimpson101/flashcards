@@ -61,7 +61,7 @@
     </div>
   </div>
   <div class="correct-cards">
-    <div class="">
+    <div class="previous">
       <p id="results-header">Just now:</p>
       <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
         <% if score.correct %>
@@ -80,8 +80,7 @@
       <% end %>
     </div>
 
-    <div class="">
-
+    <div class="first-previous">
       <% if @deck.scores.where(user: current_user).size > 1 %>
         <p id="results-header"><%= @deck.scores.where(user: current_user).last.created_at.strftime("%D %R") %>:</p>
         <% @deck.scores.where(user: current_user)[-2].card_scores.each do |score| %>
@@ -90,23 +89,19 @@
               <div class="results-question">
                 <%= score.card.question %>
               </div>
-
             </div>
           <% else %>
             <div class="previous-incorrect-cards-container">
               <div class="results-question">
                 <%= score.card.question %>
               </div>
-
             </div>
           <% end %>
         <% end %>
       <% end %>
     </div>
 
-
-    <div class="">
-
+    <div class="second-previous">
       <% if @deck.scores.where(user: current_user).size > 2 %>
         <p id="results-header"><%= @deck.scores.where(user: current_user)[-3].created_at.strftime("%D %R") %>:</p>
         <% @deck.scores.where(user: current_user)[-3].card_scores.each do |score| %>
@@ -115,21 +110,19 @@
               <div class="results-question">
                 <%= score.card.question %>
               </div>
-
             </div>
           <% else %>
             <div class="previous-incorrect-cards-container">
               <div class="results-question">
                 <%= score.card.question %>
               </div>
-
             </div>
           <% end %>
         <% end %>
       <% end %>
     </div>
 
-    <div class="">
+    <div class="answer-overall">
       <p id="answers-header">Answers:</p>
       <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
         <div class="answer-cards-container">
@@ -139,6 +132,5 @@
         </div>
       <% end %>
     </div>
-
   </div>
 </div>
