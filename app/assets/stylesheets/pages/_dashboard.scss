@@ -1,5 +1,6 @@
 #deck-list-and-recently-played-container{
   display:flex;
+  margin-bottom: 10px;
 }
 
 #deck-list-container{
@@ -133,7 +134,7 @@
 }
 
 #create-new-deck-button{
-  margin: 15px 65px 20px 0px;
+  margin: 15px 76px 20px 0px;
   border-radius: 10px;
   border:2px solid black;
   font-size: 20px;
@@ -172,7 +173,7 @@
   display:flex;
   justify-content:space-between;
   padding-left: pxpx;
-  padding-right: 56px;
+  padding-right: 59px;
   padding-left: 56px;
 }
 
