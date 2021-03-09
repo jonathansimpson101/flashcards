@@ -52,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('page-content')) {
     initTyped();
     initTyped2();
+  };
   if (document.getElementById('card-answer-visible')) {
     revealCard();
   };
