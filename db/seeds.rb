@@ -10,7 +10,6 @@ User.destroy_all
 
 
 avatar_images = ["https://images.ctfassets.net/1wryd5vd9xez/4DxzhQY7WFsbtTkoYntq23/a4a04701649e92a929010a6a860b66bf/https___cdn-images-1.medium.com_max_2000_1_Y6l_FDhxOI1AhjL56dHh8g.jpeg",
-"https://lh3.googleusercontent.com/proxy/x3NAg3Tm72B2liDaxlK0Z5VWb_MPeqoOJ-Cy-nU3I6TyM4afe1ZTLJiZfaRNQPkeCEBg40Vj0i5JuYEiM6vilEczTutHxbijObUVZAF0jTgRAUm7_9SIIpggMGjPqg",
 "https://alzheimer.ca/sites/default/files/styles/hero/public/2020-09/National-ambassador-Jane-Kennedy.jpg?itok=etAp5n27",
 "https://mk0qomafemocnned3wjh.kinstacdn.com/wp-content/uploads/2019/02/AI-thispersondoesnotexist.jpg",
 "https://i2.wp.com/therighthairstyles.com/wp-content/uploads/2014/03/8-choppy-collarbone-cut.jpg?resize=500%2C500&ssl=1",
@@ -18,8 +17,8 @@ avatar_images = ["https://images.ctfassets.net/1wryd5vd9xez/4DxzhQY7WFsbtTkoYntq
 "https://cdn.lifehack.org/wp-content/uploads/2014/03/shutterstock_97566446.jpg",
 "https://grademiners.com/wp-content/uploads/2017/07/Descriptive-Essay-About-a-Person.jpg",
 "https://img.buzzfeed.com/buzzfeed-static/static/2016-07/7/5/enhanced/buzzfeed-prod-fastlane01/original-grid-image-13357-1467884354-3.jpg?crop=1024:1024;0,0",
-"https://img.buzzfeed.com/buzzfeed-static/static/2016-07/7/5/enhanced/buzzfeed-prod-fastlane01/original-grid-image-13974-1467884399-11.jpg?crop=1024:1024;0,0"]
-
+"https://img.buzzfeed.com/buzzfeed-static/static/2016-07/7/5/enhanced/buzzfeed-prod-fastlane01/original-grid-image-13974-1467884399-11.jpg?crop=1024:1024;0,0",
+"https://mk0qomafemocnned3wjh.kinstacdn.com/wp-content/uploads/2019/02/AI-thispersondoesnotexist.jpg"]
 # Seeding users
 puts 'Seeding Users'
 users = []
@@ -29,7 +28,8 @@ i=0
 
 10.times do
   user = User.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123456")
-  file = URI.open(avatar_images[i])
+  puts "uploading image #{i}"
+  file = URI.open("#{avatar_images[i]}")
   user.avatar.attach(io: file, filename: 'person.jpg', content_type: 'image/jpg')
   users << user
   user.save
