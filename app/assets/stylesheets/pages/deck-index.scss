@@ -12,6 +12,9 @@
   align-items:center;
   transition-duration:0.3s;
   width:90%;
+  h5 {
+    font-family: 'Dancing Script', cursive;
+  }
 }
 
 .deck-container:hover{
@@ -30,10 +33,10 @@ display:flex;
 align-items: center;
 padding-left: 20px;
 padding-right: 20px;
-transition-duration:0.3s;
 width: 16%;
 justify-content: center;
 background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
+visibility:hidden;
 }
 
 .study-now-container:hover{
@@ -42,6 +45,12 @@ background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/La
 }
 .line-container{
   display:flex;
+}
+
+.line-container:hover {
+  .study-now-container {
+    visibility: visible;
+  }
 }
 
 .results-container{
@@ -85,4 +94,24 @@ background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/La
   color:black;
   transform: scale(1.1);
   background-color: white;
+}
+
+.cards-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+}
+
+.username-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  h5 {
+    margin: 5px;
+  }
+  img {
+    height: 35px;
+    width: 35px;
+  }
 }
