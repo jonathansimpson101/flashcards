@@ -5,11 +5,15 @@ const divContent2 = document.getElementById('type-here-2');
 
 const initTyped = new Typed(divContent, {
                             strings: [
+                              "Hypr Test Mark-Up Lnguage",
                               "Hyper-Text Mark-Up Language"
                             ],
-                            typeSpeed: 100,
-                            backSpeed: 100,
-                            loop: true
+                            typeSpeed: 60,
+                            backSpeed: 20,
+                            smartBackspace: true,
+                            loop: true,
+                            cursorChar: ""
+                            // fadeOut: true
                       });
 
 const initTyped2 = new Typed(divContent2, {
@@ -17,10 +21,11 @@ const initTyped2 = new Typed(divContent2, {
                               "Bonjour le monde.",
                               "Bonjour, comment vas tu aujourdi'hui?"
                             ],
-                            typeSpeed: 100,
-                            backSpeed: 100,
+                            typeSpeed: 60,
+                            backSpeed: 40,
                             smartBackspace: true,
-                            loop: true
+                            loop: true,
+                            cursorChar: ""
                         });
 
-export { initTyped2 }
+export { initTyped, initTyped2 }
