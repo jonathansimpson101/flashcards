@@ -80,3 +80,68 @@ h3{
   display: flex;
   justify-content: space-around;
 }
+
+.previous-correct-cards-container{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px lightgrey;
+  width: 60%;
+  margin: 30px;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
+  display: flex;
+  flex-direction: column;
+}
+
+.previous-incorrect-cards-container{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px lightgrey;
+  width: 60%;
+  margin: 30px;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background.png");
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+.correct-cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.results-question{
+
+}
+.results-answer{
+}
+#results-header{
+  font-size:22px;
+}
+
+#previous-results-header{
+  font-size:22px;
+}
+.fa-trophy{
+  font-size:100px;
+  color:gold;
+}
+
+.answer-cards-container{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px lightgrey;
+  width: 60%;
+  margin: 30px;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
+
+}
+
+#answers-header{
+font-size:22px;
+}
