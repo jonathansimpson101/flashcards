@@ -13,8 +13,8 @@
       <%= submit_tag "Search", class: "btn btn-primary", id: "deck-search-button" %>
     <% end %>
   </div>
-
-  <% @decks.each do |deck| %>
+  <% shuffled_decks = @decks.shuffle %>
+  <% shuffled_decks.each do |deck| %>
     <div class="line-container">
       <div class="deck-container">
         <h5><strong><%= deck.name %></strong> ~ <%= deck.cards.count %> <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1615289621/Landing-page%20background%20and%20logo/cards-icon.png", class: "cards-icon" %> </h5>
