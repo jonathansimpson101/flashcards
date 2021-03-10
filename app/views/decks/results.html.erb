@@ -43,8 +43,8 @@
     <tbody>
       <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
       <tr class="table-row">
-        <td class="card-question"><%= score.card.question %></td>
-        <td class="card-answer"><%= score.card.answer %></td>
+        <td class="card-question-results"><%= score.card.question %></td>
+        <td class="card-answer-results"><%= score.card.answer %></td>
         <% if score.correct %>
           <td class='correct-table'></td>
         <% else %>
