@@ -9,7 +9,9 @@
 #deck-list-and-recently-played-container{
   display:flex;
   margin-top: 30px;
-  height: 86vh;
+  height: 80vh;
+  flex-grow: 1;
+  align-items: stretch;
 }
 
 #deck-list-container{
@@ -45,6 +47,7 @@
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+  height: 60%;
 }
 
 .dashboard-right {
@@ -87,6 +90,7 @@
   align-items: flex-end;
   margin-bottom: 20px;
   background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-orange.png");
+  height: 10%;
 }
 
 #daily-usage > h5{

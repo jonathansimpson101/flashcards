@@ -46,9 +46,9 @@
         <td class="card-question-results"><%= score.card.question %></td>
         <td class="card-answer-results"><%= score.card.answer %></td>
         <% if score.correct %>
-          <td class='correct-table'></td>
+          <td class='correct-table'><i class="fas fa-check"></i></td>
         <% else %>
-          <td class='incorrect-table'> </td>
+          <td class='incorrect-table'><i class="fas fa-times"></i></td>
         <% end %>
         <%= render 'first_previous', score: score %>
         <%= render 'second_previous', score: score %>

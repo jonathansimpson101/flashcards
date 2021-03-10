@@ -82,31 +82,36 @@ h3{
 }
 
 .correct-table {
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
   border: 1px solid lightgrey;
   width: 6%;
   box-shadow: 2px 2px 2px lightgrey;
+  text-align: center;
+  font-size: 20px;
+  color: green;
+  opacity: 0.6;
 }
 
 .incorrect-table {
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background.png");
   border: 1px solid lightgrey;
   width: 6%;
   box-shadow: 2px 2px 2px lightgrey;
+  text-align: center;
+  font-size: 20px;
+  color: rgba(230, 160, 215, 1);
 }
 
 .table-headers {
   text-align: center;
   padding: 5px;
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-yellow.png");
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-blue.png");
 }
 
 .table-of-results {
-  margin: 30px auto;
+  margin: 50px auto;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 1px 1px 2px lightgrey;
-  background-color: white;
+  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
   border: 1px solid lightgrey;
 }
 
@@ -117,20 +122,23 @@ h3{
 .card-question-results {
   width: 40%;
   padding: 10px;
-  background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 2px lightgrey;
+  text-align: center;
 }
 
 .card-answer-results {
- width: 40%;
- padding: 10px;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 2px lightgrey;
+  text-align: center;
 }
 
-// .card-question-results:nth-child(even) {
-//   // opacity: 1;
-//   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-blue.png");
-// }
+.table-row:nth-child(even) {
+  background-color: rgba(255, 255, 255, 1);
+}
 
-// .card-question-results:nth-child(odd) {
-//   // opacity: 0.5;
-//   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-green.png");
-// }
+.table-row:nth-child(odd) {
+  background-color: rgba(245, 245, 245, 1);
+}
