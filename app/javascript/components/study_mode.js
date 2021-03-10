@@ -46,13 +46,16 @@ const scoreIncrement = () => {
 };
 
 // comparison and embolden of words in user guess and correct answer
-const compareWords = (guess) => {
-  const correctAnswer = document.querySelector('.card-answer').innerHTML;
-  let answerSplitArray = correctAnswer.split(' ');
-  answerSplitArray = answerSplitArray.map(function(word) { return word.toLowerCase(); });
-  guess = guess.split(' ').map(function(word) {
+const compareWords = (guess, id) => {
+  const correctAnswer = document.getElementById(`card-answer-${id}`).innerHTML;
+  let answerSplitArray = correctAnswer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()↵]/g," ").split(' ');
+  console.log(answerSplitArray);
+  answerSplitArray = answerSplitArray.map(word => { return word.replace(/\s+/g, '').toLowerCase(); });
+  console.log(answerSplitArray);
+  guess = guess.split(' ').map((word) => {
     return answerSplitArray.indexOf(word.toLowerCase()) >= 0 ? '<strong class="green-text">'+word+'</strong>' : word;
   }).join(' ');
+  console.log(guess);
   return guess;
 };
 
@@ -60,7 +63,9 @@ const compareWords = (guess) => {
 const displayAttempt = (id) => {
   const guess = document.querySelector(`.attempt_${id}`).value;
   const cardAttempt = document.querySelector(`.card-attempt${id}`);
-  let newGuess = compareWords(guess);
+  let currentId = id
+  let newGuess = compareWords(guess, currentId);
+  console.log(newGuess);
   cardAttempt.innerHTML = `${newGuess}`;
 };
 
