@@ -48,7 +48,7 @@ const scoreIncrement = () => {
 // comparison and embolden of words in user guess and correct answer
 const compareWords = (guess, id) => {
   const correctAnswer = document.getElementById(`card-answer-${id}`).innerHTML;
-  let answerSplitArray = correctAnswer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()↵]/g," ").split(' ');
+  let answerSplitArray = correctAnswer.replace(/[,\/!%\^&\*;\`~↵]/g," ").split(' ');
   console.log(answerSplitArray);
   answerSplitArray = answerSplitArray.map(word => { return word.replace(/\s+/g, '').toLowerCase(); });
   console.log(answerSplitArray);
