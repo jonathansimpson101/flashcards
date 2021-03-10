@@ -1,22 +1,24 @@
 <div class="container">
   <span class="buttons-card-index">
-    <%= link_to "Back to dasboard", dashboard_path, class: "back-to-dash-button" %>
+    <%= link_to "Back to dashboard", dashboard_path, class: "back-to-dash-button" %>
     <button class="reveal-answers">Reveal Answers</button>
   </span>
 
   <h3 id="deck-search-header">Card Search</h3>
 
-  <div class="search-bar select2">
-    <%= form_tag decks_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control select2",
-      placeholder: "Search through public decks..."%>
-      <%= submit_tag "Search", class: "btn btn-primary", id: "deck-search-button" %>
-    <% end %>
-  </div>
+  <%= form_tag cards_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find you cards"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+
   <% if current_user.cards.count != 0 %>
-  <% current_user.cards.each do |card| %>
+  <% @my_cards.each do |card| %>
     <div class="line-container-cards">
       <div class="card-container">
         <h5><strong><%= card.question %></strong>

@@ -4,6 +4,12 @@ class CardsController < ApplicationController
 
   def index
     @cards = policy_scope(Card)
+    if params[:query].present?
+      @cards = Card.where(user_id: current_user.id)
+      @my_cards = @cards.search_by_question(params[:query])
+    else
+      @my_cards = Card.where(user_id: current_user.id)
+    end
   end
 
   def new
