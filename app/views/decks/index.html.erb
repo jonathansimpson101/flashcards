@@ -10,7 +10,7 @@
       params[:query],
       class: "form-control select2",
       placeholder: "Search through public decks..."%>
-      <%= submit_tag "Search", class: "btn btn-primary", id: "deck-search-button" %>
+      <%= submit_tag "Search", class: "btn btn-primary deck-index-search-button", id: "deck-search-button" %>
     <% end %>
   </div>
   <% shuffled_decks = @decks.shuffle %>
