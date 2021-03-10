@@ -58,6 +58,7 @@
   text-decoration: none;
   color:black;
   transition: .2s;
+  margin: 7px 0;
 }
 
 .deck-link:hover{
@@ -204,6 +205,7 @@
   border-radius: 10px;
   margin-top: 10px;
   transition: .3s;
+  position: relative;
 }
 
 .deck-button:hover{
@@ -272,6 +274,16 @@
 #dash-card-subtitle{
     font-family: 'Dancing Script', cursive;
     opacity: 50%;
+}
+
+
+.hidden-hundo{
+  font-color: url("https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png");
+  position: absolute;
+  right:4px;
+  top:3px;
+  color:#000000;
+  margin: 3px;
 }
 
 .whole-dash-container{

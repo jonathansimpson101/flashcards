@@ -1,5 +1,15 @@
 <% @decks.each do |deck| %>
   <div class="btn btn-primary deck-button">
     <%= link_to deck.name, deck_path(deck), class:"deck-link" %>
+    <% if deck.scores.where(user: current_user).size >= 1 %>
+      <% most_recent_user_score = deck.scores.last.total %>
+      <% cards_in_deck = deck.cards.count %>
+      <% hundo = deck.scores.where(user: current_user).find do |score| %>
+        <% score.total == cards_in_deck %>
+      <% end %>
+      <% if !hundo.nil? %>
+        <i class="fas fa-medal hidden-hundo"></i>
+      <% end %>
+    <% end %>
   </div>
 <% end %>
