@@ -1,8 +1,8 @@
 <% if @deck.scores.where(user: current_user).size > 1 %>
   <% @score = @deck.scores.where(user: current_user)[-2].card_scores.find_by(card_id: score.card.id) %>
   <% if @score.correct %>
-    <td class='correct-table'>CORRECT</td>
+    <td class='correct-table'></td>
   <% else %>
-    <td class='incorrect-table'>INCORRECT</td>
+    <td class='incorrect-table'></td>
   <% end %>
 <% end %>

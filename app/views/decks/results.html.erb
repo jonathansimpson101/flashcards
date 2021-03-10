@@ -25,29 +25,30 @@
     </div>
   </div>
 
-  <table>
+  <div class="table-of-results">
+  <table class="results-table">
     <thead>
       <tr>
-        <th>Question</th>
-        <th>Answer</th>
-        <th>Just Now</th>
+        <th class="table-headers">Question</th>
+        <th class="table-headers">Answer</th>
+        <th class="table-headers">Just Now</th>
         <% if @deck.scores.where(user: current_user).size > 1 %>
-          <th><%= @deck.scores.where(user: current_user).last.created_at.strftime("%D %R") %>:</th>
+          <th class="table-headers"><%= @deck.scores.where(user: current_user).last.created_at.strftime("%D %R") %></th>
         <% end %>
         <% if @deck.scores.where(user: current_user).size > 2 %>
-          <th><%= @deck.scores.where(user: current_user)[-3].created_at.strftime("%D %R") %>:</th>
+          <th class="table-headers"><%= @deck.scores.where(user: current_user)[-3].created_at.strftime("%D %R") %></th>
         <% end %>
       </tr>
     </thead>
     <tbody>
       <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
-      <tr>
-        <td><%= score.card.question %></td>
-        <td><%= score.card.answer %></td>
+      <tr class="table-row">
+        <td class="card-question"><%= score.card.question %></td>
+        <td class="card-answer"><%= score.card.answer %></td>
         <% if score.correct %>
-          <td class='correct-table'>CORRECT</td>
+          <td class='correct-table'></td>
         <% else %>
-          <td class='incorrect-table'> INCORRECT</td>
+          <td class='incorrect-table'> </td>
         <% end %>
         <%= render 'first_previous', score: score %>
         <%= render 'second_previous', score: score %>
@@ -55,4 +56,5 @@
       <% end %>
     </tbody>
   </table>
+  </div>
 </div>
