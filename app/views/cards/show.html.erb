@@ -23,14 +23,17 @@
     </div>
 
     <div class="answer-side hideCard" id="answer<%= index %>">
+      <h5 class="question-answer-underline">Question</h5>
       <div class="card-question">
-        <p>Question:</p> <%= card.question %>
+        <%= card.question %>
       </div>
+      <h5 class="question-answer-underline">Correct Answer</h5>
+      <div class="card-answer" id="card-answer-<%= index %>">
+        <%= card.answer %>
+      </div>
+      <h5 class="question-answer-underline">Your Answer</h5>
       <pre><code><div class="attempt card-attempt<%= index %>">
       </div></code></pre>
-      <div class="card-answer">
-        <p>Answer:</p> <%= card.answer %>
-      </div>
       <span class="button-correct">
         <i id="correct" data-id="<%= index %>" data-card="<%= card.id %>" class="fas fa-check"></i>
         <i id="incorrect" data-id="<%= index %>" data-card="<%= card.id %>" class="fas fa-times"></i>

@@ -45,11 +45,28 @@ const scoreIncrement = () => {
   });
 };
 
+// comparison and embolden of words in user guess and correct answer
+const compareWords = (guess, id) => {
+  const correctAnswer = document.getElementById(`card-answer-${id}`).innerHTML;
+  let answerSplitArray = correctAnswer.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()↵]/g," ").split(' ');
+  console.log(answerSplitArray);
+  answerSplitArray = answerSplitArray.map(word => { return word.replace(/\s+/g, '').toLowerCase(); });
+  console.log(answerSplitArray);
+  guess = guess.split(' ').map((word) => {
+    return answerSplitArray.indexOf(word.toLowerCase()) >= 0 ? '<strong class="green-text">'+word+'</strong>' : word;
+  }).join(' ');
+  console.log(guess);
+  return guess;
+};
+
 // increment the form input value for your attempt
 const displayAttempt = (id) => {
-  const guess = document.querySelector(`.attempt_${id}`);
+  const guess = document.querySelector(`.attempt_${id}`).value;
   const cardAttempt = document.querySelector(`.card-attempt${id}`);
-  cardAttempt.innerText = `Your Answer:\n\n ${guess.value}`;
+  let currentId = id
+  let newGuess = compareWords(guess, currentId);
+  console.log(newGuess);
+  cardAttempt.innerHTML = `${newGuess}`;
 };
 
 // hide current question/answer pair and dispaly next
