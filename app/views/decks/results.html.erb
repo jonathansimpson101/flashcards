@@ -20,125 +20,41 @@
   <div class="row justify-content-center">
     <div class="results-in-con">
       <div class="col-12 results-box">
-        <% if !@deck.scores.last.nil? %>
-          <% most_recent_user_score = @deck.scores.last.total %>
-          <% cards_in_deck = @deck.cards.count.to_f %>
-          <% user_percentage = (most_recent_user_score/cards_in_deck * 100).round%>
-          <% user_score_string_fraction = "#{most_recent_user_score}/#{cards_in_deck.to_i}" %>
-          <% if user_percentage <= 40 %>
-            <div class="big-percent">
-              You just scored <%= user_percentage %>%
-            </div>
-            <div class="display-message">
-              <%= "You could use some extra time on this deck, you got #{user_score_string_fraction}." %>
-            </div>
-            <%= link_to "Study this deck again", deck_card_path(@deck), class: "btn retry-button" %>
-          <% elsif user_percentage <= 75 %>
-            <div class="big-percent">
-              You just scored <%= user_percentage %>%
-            </div>
-            <div class="display-message">
-              <%= "Well done! you got #{user_score_string_fraction} this try!" %>
-            </div>
-          <% elsif user_percentage == 100 %>
-            <div class="big-percent" id="confetti">
-              You just scored <%= user_percentage %>%!
-            </div>
-              <i class="fas fa-trophy"></i>
-          <% else %>
-            <div class="big-percent">
-              You just scored <%= user_percentage %>%
-            </div>
-            <div class="display-message">
-              <%= "Wow! Pat yourself on the back you got #{user_score_string_fraction} this try!" %>
-            </div>
-          <% end %>
-        <% else %>
-          <p> Umm... you're not supposed to be here... </p>
-          <p> Please score on a deck before coming to this page! </p>
-        <% end %>
+        <%= render 'results_text_query' %>
       </div>
     </div>
   </div>
-  <div class="correct-cards">
-    <div class="">
-      <p id="results-header">Just now:</p>
+
+  <div class="table-of-results">
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th class="table-headers">Question</th>
+        <th class="table-headers">Answer</th>
+        <th class="table-headers">Just Now</th>
+        <% if @deck.scores.where(user: current_user).size > 1 %>
+          <th class="table-headers"><%= @deck.scores.where(user: current_user).last.created_at.strftime("%D %R") %></th>
+        <% end %>
+        <% if @deck.scores.where(user: current_user).size > 2 %>
+          <th class="table-headers"><%= @deck.scores.where(user: current_user)[-3].created_at.strftime("%D %R") %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
       <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
+      <tr class="table-row">
+        <td class="card-question-results"><%= score.card.question %></td>
+        <td class="card-answer-results"><%= score.card.answer %></td>
         <% if score.correct %>
-          <div class="previous-correct-cards-container">
-            <div class="results-question">
-              <%= score.card.question %>
-            </div>
-          </div>
+          <td class='correct-table'></td>
         <% else %>
-          <div class="previous-incorrect-cards-container">
-            <div class="results-question">
-              <%= score.card.question %>
-            </div>
-          </div>
+          <td class='incorrect-table'> </td>
         <% end %>
+        <%= render 'first_previous', score: score %>
+        <%= render 'second_previous', score: score %>
+      </tr>
       <% end %>
-    </div>
-
-    <div class="">
-
-      <% if @deck.scores.where(user: current_user).size > 1 %>
-        <p id="results-header"><%= @deck.scores.where(user: current_user).last.created_at.strftime("%D %R") %>:</p>
-        <% @deck.scores.where(user: current_user)[-2].card_scores.each do |score| %>
-          <% if score.correct %>
-            <div class="previous-correct-cards-container">
-              <div class="results-question">
-                <%= score.card.question %>
-              </div>
-
-            </div>
-          <% else %>
-            <div class="previous-incorrect-cards-container">
-              <div class="results-question">
-                <%= score.card.question %>
-              </div>
-
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-
-
-    <div class="">
-
-      <% if @deck.scores.where(user: current_user).size > 2 %>
-        <p id="results-header"><%= @deck.scores.where(user: current_user)[-3].created_at.strftime("%D %R") %>:</p>
-        <% @deck.scores.where(user: current_user)[-3].card_scores.each do |score| %>
-          <% if score.correct %>
-            <div class="previous-correct-cards-container">
-              <div class="results-question">
-                <%= score.card.question %>
-              </div>
-
-            </div>
-          <% else %>
-            <div class="previous-incorrect-cards-container">
-              <div class="results-question">
-                <%= score.card.question %>
-              </div>
-
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div class="">
-      <p id="answers-header">Answers:</p>
-      <% @deck.scores.where(user: current_user).last.card_scores.each do |score| %>
-        <div class="answer-cards-container">
-          <div class="results-answer">
-            <%= score.card.answer %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
+    </tbody>
+  </table>
   </div>
 </div>

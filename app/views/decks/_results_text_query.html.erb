@@ -1,0 +1,37 @@
+<% if !@deck.scores.last.nil? %>
+  <% most_recent_user_score = @deck.scores.last.total %>
+  <% cards_in_deck = @deck.cards.count.to_f %>
+  <% user_percentage = (most_recent_user_score/cards_in_deck * 100).round%>
+  <% user_score_string_fraction = "#{most_recent_user_score}/#{cards_in_deck.to_i}" %>
+  <% if user_percentage <= 40 %>
+    <div class="big-percent">
+      You just scored <%= user_percentage %>%
+    </div>
+    <div class="display-message">
+      <%= "You could use some extra time on this deck, you got #{user_score_string_fraction}." %>
+    </div>
+    <%= link_to "Study this deck again", deck_card_path(@deck), class: "btn retry-button" %>
+  <% elsif user_percentage <= 75 %>
+    <div class="big-percent">
+      You just scored <%= user_percentage %>%
+    </div>
+    <div class="display-message">
+      <%= "Well done! you got #{user_score_string_fraction} this try!" %>
+    </div>
+  <% elsif user_percentage == 100 %>
+    <div class="big-percent" id="confetti">
+      You just scored <%= user_percentage %>%!
+    </div>
+      <i class="fas fa-trophy"></i>
+  <% else %>
+    <div class="big-percent">
+      You just scored <%= user_percentage %>%
+    </div>
+    <div class="display-message">
+      <%= "Wow! Pat yourself on the back you got #{user_score_string_fraction} this try!" %>
+    </div>
+  <% end %>
+<% else %>
+  <p> Umm... you're not supposed to be here... </p>
+  <p> Please score on a deck before coming to this page! </p>
+<% end %>
