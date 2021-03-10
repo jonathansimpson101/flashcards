@@ -1,8 +1,15 @@
+.container-dashboard {
+    width: 100%;
+    padding-right: 160px;
+    padding-left: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #deck-list-and-recently-played-container{
   display:flex;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  height: 76vh;
+  margin-top: 30px;
+  height: 86vh;
 }
 
 #deck-list-container{
@@ -46,7 +53,7 @@
 }
 
 .dashboard-left {
-  margin-top: 76px;
+  margin-top: 16px;
   width: 20%;
   height: 100%;
 }
@@ -97,7 +104,7 @@
   background-size: cover;
   color:black;
   border-radius: 10px;
-  padding: 10px;
+  padding: 2px;
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition: .2s;
