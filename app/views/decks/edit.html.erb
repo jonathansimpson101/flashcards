@@ -12,13 +12,16 @@
       <button id="hidden_button_edit" type="button">
         Create new card
       </button>
-      <div class="d-none hidden_form" , id="update-deck-btn" >
+      <span class="update-btn">
+    <%= f.submit %>
+      </span>
+      <div class="d-none hidden_form" , id="add-card-btn" >
         <%= card.input :question_1 %>
         <%= card.input :answer_1 %>
+        <span id="add-card-btn" >
+          <input type="submit" name="commit" value="Add Card" data-disable-with="Add Card">
+        </span>
       </div>
     <% end %>
-  <span class="update-btn">
-    <%= f.submit %>
-  </span>
   <% end %>
 </div>
