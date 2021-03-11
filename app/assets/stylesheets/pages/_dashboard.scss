@@ -8,24 +8,27 @@
 
 #deck-list-and-recently-played-container{
   display:flex;
-  margin-top: 30px;
+  margin-top: 5vh;
   height: 80vh;
   flex-grow: 1;
   align-items: stretch;
 }
 
 #deck-list-container{
+
   display:flex;
-  flex-direction:column;
-  justify-content:space-around;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
+  justify-content:flex-start;
   background-color:white;
   border-radius:10px;
-  padding: 10px 10px 30px 10px;
+  padding: 10px 10px;
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
-  height: 90%;
-  overflow: auto;
+  height: 67vh;
+  overflow: scroll;
 }
 
 .dashboard-subheadings {
@@ -41,7 +44,7 @@
   font-weight: bold;
   text-decoration:underline;
   text-align: center;
-  padding-top: 6px; 
+  padding-top: 6px;
 }
 
 .dashboard-subheadings-2 {
@@ -56,6 +59,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   height: 60%;
+  grid-template-columns: repeat(auto-fill, minmax(1fr 1fr 1fr, 1fr));
 }
 
 .dashboard-right {
@@ -67,7 +71,7 @@
 .dashboard-left {
   margin-top: 16px;
   width: 20%;
-  height: 100%;
+  height: 50vh;
 }
 
 .deck-link{
@@ -84,7 +88,7 @@
 }
 
 #daily-usage{
-  margin-top: 20px;
+  margin-top: 20px !important;
   background-color:white;
   border-radius: 10px;
   width: 100%;
@@ -95,10 +99,11 @@
   box-shadow: 2px 2px 4px $black;
   transition-duration: .3s;
   display:inline-block;
-  align-items: flex-end;
+  align-items: flex-center;
   margin-bottom: 20px;
   background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869198/Landing-page%20background%20and%20logo/card-background-orange.png");
   height: 10%;
+  overflow: scroll;
 }
 
 #daily-usage > h5{
@@ -308,3 +313,12 @@
   height: 100%;
 }
 
+@media all and  (max-height: 700px) {
+  #daily-usage{
+    display:none;
+  }
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
