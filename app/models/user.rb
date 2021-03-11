@@ -14,6 +14,7 @@ class User < ApplicationRecord
   end
 
   def add_streak
+    self.streaks = 1
     if last_sign_in_at.beginning_of_day == current_sign_in_at.beginning_of_day
       # last sign in within a day therefore, no streak added
     elsif last_sign_in_at.beginning_of_day == current_sign_in_at.yesterday.beginning_of_day
@@ -21,7 +22,7 @@ class User < ApplicationRecord
       self.streaks += 1
     else
       # sign-in was more than 48 hours ago therefore, reset streak to 0
-      self.streaks = 0
+      self.streaks = 1
     end
   end
 
