@@ -33,3 +33,14 @@
   border-radius: 10px;
 }
 
+#hidden_button_edit:hover, #add-card-btn > input:hover {
+  transform: scale(1.1);
+}
+
+#add-card-btn > input {
+  background:url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-orange.png");
+  border:none;
+  padding:10px;
+  margin: 20px;
+  border-radius: 10px;
+}
