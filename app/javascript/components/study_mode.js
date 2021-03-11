@@ -55,11 +55,14 @@ const scoreIncrement = () => {
 // finally it then emboldens and turns green the words in the users guess that are matched
 const compareWords = (guess, id) => {
   const correctAnswer = document.getElementById(`card-answer-${id}`).innerHTML;
-  let answerSplitArray = correctAnswer.replace(/[,\/!%\^&\*;\`~↵]/g," ").split(' ');
+  let answerSplitArray = correctAnswer.split(/\b/);
+  console.log(answerSplitArray);
   answerSplitArray = answerSplitArray.map(word => { return word.replace(/\s+/g, '').toLowerCase(); });
-  guess = guess.split(' ').map((word) => {
+  console.log(answerSplitArray);
+  guess = guess.split(/\b/).map((word) => {
     return answerSplitArray.indexOf(word.toLowerCase()) >= 0 ? '<strong class="green-text">'+word+'</strong>' : word;
   }).join(' ');
+  console.log(guess);
   return guess;
 };
 
