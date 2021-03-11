@@ -14,11 +14,13 @@
 
 #delete-card-button{
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869202/Landing-page%20background%20and%20logo/card-background.png");
-  border-radius: 10px;
-  padding: 30px;
-  margin:10px;
+  border-radius: 5px;
+  padding: 0.325rem 0.675rem;
+  margin: 10px;
   opacity: 0.8;
   text-align: center;
+  border: 2px solid lightgrey;
+  font-size: 15px;
 }
 
 #delete-card-button a{
@@ -28,11 +30,13 @@
 
 #edit-card-button{
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-blue.png");
-  border-radius: 10px;
-  padding: 30px;
-  margin:10px;
+  border-radius: 5px;
+  padding: 0.325rem 0.675rem;
+  margin: 10px;
   opacity: 0.8;
   text-align: center;
+  border: 2px solid lightgrey;
+  font-size: 15px;
 }
 
 #edit-card-button a{
@@ -45,7 +49,7 @@
   margin: 150px auto;
   padding: 30px;
   width: 600px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid black;
   box-shadow: 2px 2px 4px $black;
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869196/Landing-page%20background%20and%20logo/card-background-orange.png");
@@ -67,6 +71,7 @@
 
 .line-container-cards {
   display:flex;
+  align-items: center;
   #edit-card-button, #delete-card-button {
     visibility: hidden;
   }
@@ -116,4 +121,38 @@
 .card-container strong {
   font-family: 'Dancing Script', cursive;
   font-size: 24px;
+}
+
+.card-search-button{
+  background: url(https://res.cloudinary.com/flashcard/image/upload/v1614869197/Landing-page%20background%20and%20logo/card-background-green.png);
+  border-radius: 5px;
+  padding: 0.325rem 0.675rem;
+  margin: 10px;
+  opacity: 0.8;
+  text-align: center;
+  border: 2px solid lightgrey;
+  font-size: 15px;
+}
+#edit-card-button:hover{
+  background-color: lightgrey;
+  transform: scale(1.1);
+  border:1px solid black;
+}
+
+#delete-card-button:hover{
+  background-color: lightgrey;
+  transform: scale(1.1);
+  border:1px solid black;
+}
+#card-search-button:hover{
+  background-color: lightgrey;
+  transform: scale(1.1);
+  border:1px solid black;
+}
+
+.form-control, .select2 {
+  display: inline;
+  width: 85%;
+  border-radius: 5px;
+
 }

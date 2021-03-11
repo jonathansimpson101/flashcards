@@ -6,13 +6,13 @@
 
   <h3 id="deck-search-header">Card Search</h3>
 
-  <%= form_tag cards_path, method: :get do %>
+  <%= form_tag cards_path,style:"width:86%;", method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find you cards"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn card-search-button" %>
 <% end %>
 
 
