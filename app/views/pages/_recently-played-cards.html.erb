@@ -13,7 +13,7 @@
       <p class="user-name">Made by <%= deck.user.first_name %></p>
       <div class="card-avatar-div">
         <% if deck.user.avatar.attached? %>
-          <%= cl_image_tag deck.user.avatar.key, cloud_name: "flashcard", class: "card-avatar" %>
+          <%= cl_image_tag deck.user.avatar.key, :width=>35, :height=>35,:gravity=>"face", :crop=>"thumb", cloud_name: "flashcard", class: "card-avatar" %>
         <% else %>
           <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1614867653/Landing-page%20background%20and%20logo/default-avatar.jpg", alt: "alttext", class: "card-avatar", alt: "alttext" %>
         <% end %>
