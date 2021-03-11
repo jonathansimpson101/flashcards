@@ -39,6 +39,9 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('card-study-page')) {
     bindFlip();
     scoreIncrement();
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
   };
   if (document.getElementById('hidden_button_edit')) {
     initCardListener();
@@ -58,9 +61,6 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('confetti')) {
     canvasConfetti();
   };
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  });
 });
 
 
