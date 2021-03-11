@@ -12,6 +12,23 @@
   background-color: white;
 }
 
+.edit_deck_category {
+  .form-group {
+    margin-top: 15px;
+    margin-left: 0px;
+  }
+  #deck_name {
+    margin-left: 15px;
+    width: 100%;
+  }
+}
+
+.edit_deck_category {
+  .deck_name{
+    padding-right: 30px;
+  }
+}
+
 
 #hidden_button_edit{
   border-radius: 10px;

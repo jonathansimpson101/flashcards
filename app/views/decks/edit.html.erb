@@ -1,13 +1,15 @@
 <div class="container">
   <%= link_to "Back to overview", deck_path, class: "btn edit-deck-back-button" %>
   <h3>Edit your <%= @deck.name %> deck:</h3>
-  <%= simple_form_for(@deck) do |f| %>
+  <%= simple_form_for @deck, url: deck_path(@deck), method: :get, html: { class: 'edit_deck_category' } do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-    <%= f.input :name %>
-    <%= f.association :category, input_html: { class: 'select2' }  %>
+    <p class="m-0">Name</p>
+    <%= f.input :name, label: false %>
+    <p class="m-0">Category</p>
+    <%= f.association :category, label: false, input_html: { class: 'select2' }  %>
     <%= f.association :cards, label_method: :question, value_method: :id, input_html: {  class: 'select2', multiple: true } %>
+    
     <%= f.simple_fields_for :cards do |card| %>
       <button id="hidden_button_edit" type="button">
         Create New Card
