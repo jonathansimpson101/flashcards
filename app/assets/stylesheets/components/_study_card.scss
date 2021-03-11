@@ -1,7 +1,7 @@
 #card-study-page {
   display:flex;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .card-main {
@@ -104,6 +104,15 @@
   font-size: 14px;
   margin: -15px 0 0 20px;
   text-align: center;
+}
+
+.info-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
+  .fas {
+    margin: 8px;
+  }
 }
 
 .form-group > textarea {

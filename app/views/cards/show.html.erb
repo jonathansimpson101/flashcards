@@ -31,7 +31,9 @@
       <div class="card-answer" id="card-answer-<%= index %>">
         <%= card.answer %>
       </div>
-      <h5 class="question-answer-underline">Your Answer (*)</h5>
+      <span class='info-icon'><h5 class="question-answer-underline">Your Answer </h5>
+        <i class="fas fa-info" data-toggle="tooltip" data-placement="right" title="Highlighted text represent's direct matches, well done!"></i>
+      </span>
       <pre><code><div class="attempt card-attempt<%= index %>">
       </div></code></pre>
       <span class="button-correct">
@@ -45,5 +47,3 @@
   </div>
   <% end %>
 </div>
-<p class="quote-answer-underline">* Highlighted text represent's direct matches, well done!</p>
-

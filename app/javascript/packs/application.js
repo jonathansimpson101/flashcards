@@ -58,6 +58,9 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('confetti')) {
     canvasConfetti();
   };
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
 });
 
 
