@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2021_03_08_152842) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.integer "streaks", default: 0, null: false
+    t.integer "streaks", default: 1, null: false
     t.integer "logins_per_month", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
