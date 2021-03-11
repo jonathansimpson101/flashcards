@@ -5,13 +5,17 @@
   <h3 id="deck-search-header">Deck Search</h3>
 
     <div class="search-bar select2">
-    <%= form_tag decks_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control select2",
-      placeholder: "Search through public decks..."%>
-      <%= submit_tag "Search", class: "btn btn-primary deck-index-search-button", id: "deck-search-button" %>
-    <% end %>
+
+        <%= form_tag decks_path, style: "display: flex;display: flex; justify-content: space-between; width: 88.4%; margin-bottom: -25px;", method: :get do %>
+          <%  %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control select2 search-form",
+
+          placeholder: "Search through public decks..."%>
+          <%= submit_tag "Search", class: "btn btn-primary deck-index-search-button", id: "deck-search-button" %>
+        <% end %>
+
   </div>
   <% shuffled_decks = @decks.shuffle %>
   <% shuffled_decks.each do |deck| %>
