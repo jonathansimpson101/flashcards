@@ -17,6 +17,14 @@
   }
 }
 
+#user_email, #user_password, #user_password_confirmation, #user_first_name, #user_last_name {
+  width: 100%;
+}
+
+.devise-headers {
+  text-align: center;
+}
+
 #devise > .container {
   text-align: center;
   text-decoration: none;
