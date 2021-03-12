@@ -14,6 +14,6 @@ class CardScoresController < ApplicationController
   private
 
   def strong_params
-    params.permit(:card_id, :deck_id, :correct, :final)
+    params.permit(:card_id, :deck_id, :correct, :final, :_method, :authenticity_token)
   end
 end
