@@ -7,9 +7,10 @@
     <div class="details-box">
       <div class="cards-details-box">
         <%= link_to deck_path(deck) do %>
-        <p class = "used-count"></i><%= deck.cards.count %> <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1615289621/Landing-page%20background%20and%20logo/cards-icon.png", class: "cards-icon" %></p>
+          <p class = "used-count"></i><%= deck.cards.count %> <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1615289621/Landing-page%20background%20and%20logo/cards-icon.png", class: "cards-icon" %></p>
+          <p class="attempt-counter"><%= deck.scores.count %><i class="fas fa-play cards-icon"></i></p>
+        <% end %>
       </div>
-      <% end %>
     </div>
     <div class="name-and-avatar">
       <p class="user-name">Made by <%= deck.user.first_name %></p>

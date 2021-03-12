@@ -248,14 +248,22 @@
 .cards-details-box{
   background-color: white;
   border: 1px solid black;
-  display:flex;
+  display: flex;
   justify-content: center;
   border-radius: 6px;
   margin: 5px auto;
   text-align: center;
   padding: 8px;
   width: fit-content;
+  height: fit-content;
   background: url("https://res.cloudinary.com/flashcard/image/upload/v1614869201/Landing-page%20background%20and%20logo/card-background-yellow.png");
+  .attempt-counter {
+    margin: 0;
+    text-align: center;
+    .cards-icon {
+      margin: 0 0 0 3px;
+    }
+  }
 }
 
 .used-count{
