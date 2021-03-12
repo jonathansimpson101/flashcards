@@ -18,9 +18,9 @@
     <div class="display-message">
       <%= "Well done! you got #{user_score_string_fraction} this try!" %>
     </div>
-  <% elsif user_percentage == 100 %>
+  <% elsif user_percentage >= 100 %>
     <div class="big-percent" id="confetti">
-      You Just Scored <%= user_percentage %>%!
+      You Just Scored 100%!
     </div>
       <i class="fas fa-trophy"></i>
   <% else %>
