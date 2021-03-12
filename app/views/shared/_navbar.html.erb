@@ -16,7 +16,7 @@
               <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/c_crop,h_500,w_500/v1614867653/Landing-page%20background%20and%20logo/default-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "#{current_user.first_name}'s Dashbaord", dashboard_path, class: "dropdown-item" %>
+              <%= link_to "#{current_user.first_name}'s Dashboard", dashboard_path, class: "dropdown-item" %>
               <%= link_to "Search for a Deck", decks_path, class: "dropdown-item" %>
               <%= link_to "Add a New Deck", new_deck_path, class: "dropdown-item" %>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
