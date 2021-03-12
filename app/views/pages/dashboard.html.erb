@@ -5,18 +5,18 @@
     <% if @decks %>
     <div class="dashboard-left">
       <div id="deck-list-container">
-        <h5 class="dashboard-subheadings-your-decks" id="deck-list-header">Your decks:</h5>
+        <h5 class="dashboard-subheadings-your-decks" id="deck-list-header">Your Decks:</h5>
         <%= render 'dashboard-deck-list' %>
       </div>
     </div>
     <% end %>
     <div class="dashboard-right">
       <div class="container dashboard-buttons-container">
-        <%= link_to "View your cards", cards_path, class:"btn btn-success", id:"index-user-cards" %>
-        <%= link_to "Create new Deck", new_deck_path, class:"btn btn-success", id:"create-new-deck-button" %>
-        <%= link_to "Find your deck", decks_path, class:"btn btn-success", id:"find-new-deck-button" %>
+        <%= link_to "View Your Cards", cards_path, class:"btn btn-success", id:"index-user-cards" %>
+        <%= link_to "Create New Deck", new_deck_path, class:"btn btn-success", id:"create-new-deck-button" %>
+        <%= link_to "Find A Deck", decks_path, class:"btn btn-success", id:"find-new-deck-button" %>
       </div>
-      <h5 class="dashboard-subheadings-2" >Popular decks:</h5>
+      <h5 class="dashboard-subheadings-2" >Popular Decks:</h5>
       <div id="recently-played-container">
         <%= render 'recently-played-cards' %>
       </div>

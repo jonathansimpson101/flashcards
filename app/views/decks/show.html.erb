@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to "Back to Dashboard", dashboard_path, class:"back-to-dash-button"%>
+  <%= link_to "Back To Dashboard", dashboard_path, class:"back-to-dash-button"%>
   <h2 id="overivew-header"><%= @deck.name %></h2>
   <% if @deck.cards.count != 0 %>
     <h4 class="text-center"><%= @deck.cards.count %> <%= image_tag "https://res.cloudinary.com/flashcard/image/upload/v1615289621/Landing-page%20background%20and%20logo/cards-icon.png", class: "cards-icon" %></h4>
@@ -7,13 +7,13 @@
 
   <div class="buttons-container">
     <% if policy(@deck).edit? %>
-      <%= link_to "Edit this deck", edit_deck_path %>
+      <%= link_to "Edit This Deck", edit_deck_path %>
     <% end %>
     <% if !@deck.cards.empty? %>
-      <%= link_to "Study this deck", deck_card_path(@deck), id: "deck-show-study-deck-button" %>
+      <%= link_to "Study This Deck", deck_card_path(@deck), id: "deck-show-study-deck-button" %>
     <% end %>
     <% if policy(@deck).destroy? %>
-      <%= link_to "Delete this deck", deck_path , method: :delete, data: { confirm: 'Are you sure you want to delete?' }, id: "deck-show-delete-deck-button" %>
+      <%= link_to "Delete This Deck", deck_path , method: :delete, data: { confirm: 'Are you sure you want to delete?' }, id: "deck-show-delete-deck-button" %>
     <% end %>
   </div>
 
