@@ -1,6 +1,6 @@
 <div class="dash-buttons">
-<%= link_to "Back to dashboard", dashboard_path, class: "btn results-buttons"  %>
-<%= link_to "Back to deck overview", deck_path(@deck), class: "btn results-buttons"  %>
+<%= link_to "Back To Dashboard", dashboard_path, class: "btn results-buttons"  %>
+<%= link_to "Back To Deck Overview", deck_path(@deck), class: "btn results-buttons"  %>
 </div>
 <div id="results-container"></div>
 <style type="text/css">
@@ -16,7 +16,7 @@
 </style>
 
 <div class="container" >
-  <h3 class="title-results">Your results for <%= @deck.name %>: </h3>
+  <h3 class="title-results">Your Results For <%= @deck.name %>: </h3>
   <div class="row justify-content-center">
     <div class="results-in-con">
       <div class="col-12 results-box">

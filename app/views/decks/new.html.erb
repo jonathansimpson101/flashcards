@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= link_to "Back to dashboard", dashboard_path, class: "back-to-dash-button", id: "deck-new-back-to-dash-button" %>
+  <%= link_to "Back To Dashboard", dashboard_path, class: "back-to-dash-button", id: "deck-new-back-to-dash-button" %>
 
   <div class="row justify-content-center" id="create-new-deck-box">
 		<div class="col-6" id="create-deck-form">
@@ -11,7 +11,7 @@
                 <%= f.simple_fields_for :category do |category|%>
                 <p> or </p>
                   <button id="hidden_button_new" type="button">
-                    Create a new category
+                    Create A New Category
                   </button>
                   <div class="d-none hidden_form">
                     <%= category.input :name, id: "input-name-form" %>
