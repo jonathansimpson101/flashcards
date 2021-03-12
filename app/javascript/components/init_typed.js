@@ -20,7 +20,7 @@ const callTyped = () => {
   const initTyped2 = new Typed(divContent2, {
                               strings: [
                                 "Bonjour le monde.",
-                                "Bonjour, comment vas tu aujourdi'hui?"
+                                "Bonjour, comment vas-tu aujourdi'hui?"
                               ],
                               typeSpeed: 60,
                               backSpeed: 40,
