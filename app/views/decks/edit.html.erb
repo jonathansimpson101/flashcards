@@ -1,29 +1,31 @@
 <div class="container">
   <%= link_to "Back to overview", deck_path, class: "btn edit-deck-back-button" %>
-  <h3>Edit your <%= @deck.name %> deck:</h3>
-  <%= simple_form_for @deck, url: deck_path(@deck), method: :get, html: { class: 'edit_deck_category' } do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <p class="m-0">Name</p>
-    <%= f.input :name, label: false %>
-    <p class="m-0">Category</p>
-    <%= f.association :category, label: false, input_html: { class: 'select2' }  %>
-    <%= f.association :cards, label_method: :question, value_method: :id, input_html: {  class: 'select2', multiple: true } %>
-    
-    <%= f.simple_fields_for :cards do |card| %>
-      <button id="hidden_button_edit" type="button">
-        Create New Card
-      </button>
-      <span class="update-btn">
-        <%= f.submit %>
-      </span>
-      <div class="d-none hidden_form" , id="add-deck-btn" >
-        <%= card.input :question_1 %>
-        <%= card.input :answer_1 %>
-        <span id="add-card-btn" >
-          <input type="submit" name="commit" value="Add Card" data-disable-with="Add Card">
+  <div id="deck-edit-div">
+    <h3>Edit Your <%= @deck.name %> Deck:</h3>
+    <%= simple_form_for @deck, url: deck_path(@deck), method: :patch, html: { class: 'edit_deck_category' } do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <p class="edit-table-field-header">Name</p>
+      <%= f.input :name, label: false %>
+      <p class="edit-table-field-header">Category</p>
+      <%= f.association :category, label: false, input_html: { class: 'select2' }  %>
+      <%= f.association :cards, label_method: :question, value_method: :id, input_html: {  class: 'select2', multiple: true } %>
+
+      <%= f.simple_fields_for :cards do |card| %>
+        <button id="hidden_button_edit" type="button">
+          Create New Card
+        </button>
+        <span class="update-btn">
+          <%= f.submit %>
         </span>
-      </div>
+        <div class="d-none hidden_form" , id="add-deck-btn" >
+          <%= card.input :question_1 %>
+          <%= card.input :answer_1 %>
+          <span id="add-card-btn" >
+            <input type="submit" name="commit" value="Add Card" data-disable-with="Add Card">
+          </span>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
