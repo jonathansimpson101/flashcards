@@ -23,6 +23,11 @@
       You just scored <%= user_percentage %>%!
     </div>
       <i class="fas fa-trophy"></i>
+  <% elsif user_percentage > 100 %>
+    <div class="big-percent" id="confetti">
+      You just scored 100%!
+    </div>
+      <i class="fas fa-trophy"></i>
   <% else %>
     <div class="big-percent">
       You just scored <%= user_percentage %>%
